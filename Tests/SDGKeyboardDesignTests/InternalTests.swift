@@ -11,6 +11,11 @@
  It may not be used, copied, distributed or modified without first obtaining a private licence from the copyright holder(s).
  */
 
+import Foundation
+#if canImport(FoundationXML)
+import FoundationXML
+#endif
+
 import SDGText
 
 @testable import SDGKeyboardDesign
