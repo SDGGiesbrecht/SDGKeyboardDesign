@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SDGCornerstone",
+        "repositoryURL": "https://github.com/SDGGiesbrecht/SDGCornerstone",
+        "state": {
+          "branch": null,
+          "revision": "8e136caf2ccb702a1bde3a5e341598c9757817d3",
+          "version": "3.0.0"
+        }
+      },
+      {
+        "package": "SDGInterface",
+        "repositoryURL": "https://github.com/SDGGiesbrecht/SDGInterface",
+        "state": {
+          "branch": null,
+          "revision": "85996243c39531e3bbd7cf857aa1fc9f2fc52ee3",
+          "version": "0.4.0"
+        }
+      },
+      {
+        "package": "SDGWeb",
+        "repositoryURL": "https://github.com/SDGGiesbrecht/SDGWeb",
+        "state": {
+          "branch": null,
+          "revision": "d44683b1e46ff102b171e3724ecb205c306c80c6",
+          "version": "4.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

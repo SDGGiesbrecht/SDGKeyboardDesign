@@ -1,0 +1,4 @@
+"CFBundleName" = "Test Keyboard";
+"CFBundleDisplayName" = "Test Keyboard";
+"NSHumanReadableCopyright" = "©0000)";
+"Test Keyboard" = "Test Keyboard";

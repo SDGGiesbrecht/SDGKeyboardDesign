@@ -1,0 +1,70 @@
+/*
+ Logic.swift
+
+ This source file is part of the SDGKeyboardDesign open source project.
+
+ Copyright ©2019 Jeremy David Giesbrecht.
+
+ Soli Deo gloria.
+
+ This software is subject to copyright law.
+ It may not be used, copied, distributed or modified without first obtaining a private licence from the copyright holder(s).
+ */
+
+extension Symbol {
+
+  internal static var logic: [LocalizedSymbol] {
+    return [
+      LocalizedSymbol({ localization in
+        switch localization {
+        case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
+          return SymbolData(symbol: "¬", names: ["not"])
+        case .deutschDeutschland:
+          return SymbolData(symbol: "¬", names: ["nicht"])
+        case .françaisFrance:
+          return SymbolData(symbol: "¬", names: ["non"])
+        }
+      }),
+      LocalizedSymbol({ localization in
+        switch localization {
+        case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
+          return SymbolData(symbol: "∧", names: ["conjunction"])
+        case .deutschDeutschland:
+          return SymbolData(symbol: "∧", names: ["Konjunktion"])
+        case .françaisFrance:
+          return SymbolData(symbol: "∧", names: ["conjonction"])
+        }
+      }),
+      LocalizedSymbol({ localization in
+        switch localization {
+        case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
+          return SymbolData(symbol: "∨", names: ["disjunction"])
+        case .deutschDeutschland:
+          return SymbolData(symbol: "∨", names: ["Disjunktion"])
+        case .françaisFrance:
+          return SymbolData(symbol: "∨", names: ["disjonction"])
+        }
+      }),
+      LocalizedSymbol({ localization in
+        switch localization {
+        case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
+          return SymbolData(symbol: "∴", names: ["therefore"])
+        case .deutschDeutschland:
+          return SymbolData(symbol: "∴", names: ["folglich"])
+        case .françaisFrance:
+          return SymbolData(symbol: "∴", names: ["par conséquent"])
+        }
+      }),
+      LocalizedSymbol({ localization in
+        switch localization {
+        case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
+          return SymbolData(symbol: "∵", names: ["because"])
+        case .deutschDeutschland:
+          return SymbolData(symbol: "∵", names: ["weil"])
+        case .françaisFrance:
+          return SymbolData(symbol: "∵", names: ["parce que"])
+        }
+      })
+    ]
+  }
+}

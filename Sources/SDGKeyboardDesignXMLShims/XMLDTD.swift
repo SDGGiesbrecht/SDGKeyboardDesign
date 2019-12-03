@@ -1,0 +1,37 @@
+/*
+ XMLDTD.swift
+
+ This source file is part of the SDGKeyboardDesign open source project.
+
+ Copyright ©2019 Jeremy David Giesbrecht.
+
+ Soli Deo gloria.
+
+ This software is subject to copyright law.
+ It may not be used, copied, distributed or modified without first obtaining a private licence from the copyright holder(s).
+ */
+
+#if os(iOS) || os(watchOS) || os(tvOS)
+
+  public class XMLDTD: XMLNode {
+
+    // MARK: - Properties
+
+    public var systemID: String?
+
+    // MARK: - Methods
+
+    override internal func source() -> String {
+      var source = "<!DOCTYPE "
+      if let name = self.name {
+        source.append(name)
+      }
+      if let systemID = self.systemID {
+        source.append(" SYSTEM \u{22}\(systemID)\u{22}")
+      }
+      source.append(">\n")
+      return source
+    }
+  }
+
+#endif

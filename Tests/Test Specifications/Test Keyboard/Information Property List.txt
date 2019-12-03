@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en-CA</string>
+	<key>CFBundleDisplayName</key>
+	<string>Test Keyboard</string>
+	<key>CFBundleIdentifier</key>
+	<string>tld.domain.keyboardlayout.Test Keyboard</string>
+	<key>CFBundleName</key>
+	<string>Test Keyboard</string>
+	<key>KLInfo_Test Keyboard</key>
+	<dict>
+		<key>TISIntendedLanguage</key>
+		<string>en-CA</string>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>©0000</string>
+</dict>
+</plist>
