@@ -18,6 +18,14 @@ import FoundationXML
 
 import SDGKeyboardDesignXMLShims
 
+#if !canImport(ObjectiveC)
+// #workaround(Swift 5.1.2, In the core library variant of Foundation, “init() is not yet implemented”.)
+internal typealias XMLDocument = SDGKeyboardDesignXMLShims.XMLDocument
+internal typealias XMLDTD = SDGKeyboardDesignXMLShims.XMLDTD
+internal typealias XMLElement = SDGKeyboardDesignXMLShims.XMLElement
+internal typealias XMLNode = SDGKeyboardDesignXMLShims.XMLElement
+#endif
+
 extension XMLElement {
 
   internal func addAttribute(name: String, value: String) {
