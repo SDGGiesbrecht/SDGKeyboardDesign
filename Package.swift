@@ -17,6 +17,7 @@ import PackageDescription
 
 // #example(1, readMe)
 /// SDGKeyboardDesign provides tools for generating keyboard layouts.
+///
 /// > [עַתָּה בּוֹא כׇתְבָהּ עַל־לוּחַ אִתָּם וְעַל־סֵפֶר חֻקָּהּ וּתְהִי לְיוֹם אַחֲרוֹן לָעַד עַד־עוֹלָם׃](https://www.biblegateway.com/passage/?search=Isaiah+30&version=WLC;NIV)
 /// >
 /// > [Now go, write it for them on a tablet and record it in a book so it will survive until the last day, forever and into eternity.](https://www.biblegateway.com/passage/?search=Isaiah+30&version=WLC;NIV)
@@ -32,6 +33,7 @@ import PackageDescription
 /// ### Exampe Usage
 ///
 /// ```swift
+///
 /// ```
 let package = Package(
     name: "SDGKeyboardDesign",
@@ -77,6 +79,9 @@ let package = Package(
             .product(name: "SDGLocalization", package: "SDGCornerstone"),
             .product(name: "SDGXCTestUtilities", package: "SDGCornerstone"),
             .product(name: "SDGPersistenceTestUtilities", package: "SDGCornerstone")
-            ])
+            ]),
+        .testTarget(name: "SDGKeyboardDesignDocumentationExampleTests", dependencies: [
+            "SDGKeyboardDesign"
+        ])
     ]
 )
