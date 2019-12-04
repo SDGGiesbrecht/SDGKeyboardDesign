@@ -15,10 +15,24 @@
 
 import PackageDescription
 
-// #workaround(Needs verse.)
-// #workaround(Needs feature list.)
-// #workaround(Needs example.)
+// #example(1, readMe)
 /// SDGKeyboardDesign provides tools for generating keyboard layouts.
+/// > [עַתָּה בּוֹא כׇתְבָהּ עַל־לוּחַ אִתָּם וְעַל־סֵפֶר חֻקָּהּ וּתְהִי לְיוֹם אַחֲרוֹן לָעַד עַד־עוֹלָם׃](https://www.biblegateway.com/passage/?search=Isaiah+30&version=WLC;NIV)
+/// >
+/// > [Now go, write it for them on a tablet and record it in a book so it will survive until the last day, forever and into eternity.](https://www.biblegateway.com/passage/?search=Isaiah+30&version=WLC;NIV)
+/// >
+/// > ―⁧יהוה⁩/Yehova
+///
+/// ### Features:
+///
+/// - Generates native keyboard layout bundles for macOS.
+/// - Supports localized metadata.
+/// - Provides a sophisticated symbol key (`¤`, `Symbol.key`), which enables entry of symbols by spelling out their names.
+///
+/// ### Exampe Usage
+///
+/// ```swift
+/// ```
 let package = Package(
     name: "SDGKeyboardDesign",
     products: [
