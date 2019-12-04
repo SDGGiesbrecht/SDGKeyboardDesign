@@ -23,7 +23,7 @@ import SDGKeyboardDesignXMLShims
 internal typealias XMLDocument = SDGKeyboardDesignXMLShims.XMLDocument
 internal typealias XMLDTD = SDGKeyboardDesignXMLShims.XMLDTD
 internal typealias XMLElement = SDGKeyboardDesignXMLShims.XMLElement
-internal typealias XMLNode = SDGKeyboardDesignXMLShims.XMLElement
+internal typealias XMLNode = SDGKeyboardDesignXMLShims.XMLNode
 #endif
 
 extension XMLElement {
