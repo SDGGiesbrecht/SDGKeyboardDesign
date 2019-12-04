@@ -28,7 +28,8 @@ final class InternalTests: TestCase {
 
   func testKeyLayoutFile() throws {
     let xml = testKeyboardLayout.keyLayoutXML()
-    #if !(os(iOS) || os(watchOS) || os(tvOS))
+    // #workaround(Swift 5.1.2, In the core library variant of Foundation, “init() is not yet implemented”.)
+    #if !(os(iOS) || os(watchOS) || os(tvOS)) && canImport(ObjectiveC)
       try xml.validate()
     #endif
   }
