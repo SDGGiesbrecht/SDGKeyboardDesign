@@ -28,7 +28,7 @@ final class ReadMeExampleTests: TestCase {
       // This is the list of localizations to provide metadata for.
       case englishCanada = "en\u{2D}CA"
       case françaisCanada = "fr\u{2D}CA"
-      // This localization will be used when none match the users preferences.
+      // This localization will be used when none match the user’s preferences.
       static let fallbackLocalization = ExampleLocalization.englishCanada
     }
 
