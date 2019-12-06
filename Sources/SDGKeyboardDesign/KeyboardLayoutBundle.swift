@@ -26,12 +26,12 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
   /// - Parameters:
   ///     - name: The name of the keyboard layout bundle.
   ///     - layouts: The keyboard layouts in the bundle.
-  ///     - copyright: The copyright notice.
+  ///     - copyrightNotice: The copyright notice.
   ///     - bundleIdentifier: The macOS bundle identifier.
   public init(
     name: UserFacing<StrictString, L>,
     layouts: [KeyboardLayout<L>],
-    copyright: UserFacing<StrictString, L>,
+    copyright copyrightNotice: UserFacing<StrictString, L>,
     bundleIdentifier: StrictString
   ) {
 
