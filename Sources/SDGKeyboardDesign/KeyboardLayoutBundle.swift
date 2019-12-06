@@ -37,7 +37,7 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
 
     self.name = name
     self.layouts = layouts
-    self.copyright = copyright
+    self.copyright = copyrightNotice
 
     var bundle = bundleIdentifier
     let requiredSubstring: StrictString = ".keyboardlayout."
