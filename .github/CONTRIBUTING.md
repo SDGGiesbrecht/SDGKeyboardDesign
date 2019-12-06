@@ -31,7 +31,7 @@ Even if you think you have the solution, please **do not start working on it** u
 If you have [reported](#step-1-report) your idea and an administrator has given you the green light, follow these steps to get a local copy you can work on.
 
 1. **Fork the repository** by clicking “Fork” in the top‐right of the repository page. (Skip this step if you have been given write access.)
-2. **Create a local clone**.
+2. **Create a local clone**. `git clone https://github.com/user/SDGKeyboardDesign`
 3. **Create a development branch**. `git checkout -b some‐new‐branch‐name`
 4. **Set up the workspace** by double‐clicking `Refresh` in the root folder. (If your system is set to *edit* scripts instead of *execute* them, you may have to execute the file from a terminal instead.)
 

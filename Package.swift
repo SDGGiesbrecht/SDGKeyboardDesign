@@ -265,6 +265,8 @@ import PackageDescription
 let package = Package(
     name: "SDGKeyboardDesign",
     products: [
+        // #documentation(SDGKeyboardDesign)
+        /// Tools for generating keyboard layouts.
         .library(name: "SDGKeyboardDesign", targets: ["SDGKeyboardDesign"])
     ],
     dependencies: [
@@ -276,6 +278,8 @@ let package = Package(
 
         // Products
 
+        // @documentation(SDGKeyboardDesign)
+        /// Tools for generating keyboard layouts.
         .target(name: "SDGKeyboardDesign", dependencies: [
             "SDGKeyboardDesignXMLShims",
             "SDGKeyboardDesignLocalizations",

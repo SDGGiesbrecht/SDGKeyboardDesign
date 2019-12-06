@@ -60,6 +60,23 @@ matrix:
         - "eval \"$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)\""
         - "bash \"./Refresh (macOS).command\""
         - "bash \"./Validate (macOS).command\" •job miscellaneous"
+    - name: "Deployment"
+      os: linux
+      env:
+        - secure: "WuqBO5OK23scAkbILb3M9zwxO6SivVzfV444eflriV81L/Pk/BmIgGjXv2uz5LjlUDPZfU3h2IiCDESl9xNkMsrMkFm80tWrld0L4o65QMA+sO2eNjk71oH08gAOPSxbS+w13AiC4VsuqEdYcdBHh8v9c/qRtD8xNGvEH4G9v0KCPrCoIGjeXird9RdEVj5OeY1coadwRS/DmGu0Xeb8Am4sXgtJwIV6ad6PI0m8yfWZpUzVCyp/fHsk7vY3WEqEs9H2/9bQmcMxS8BJY4Vxlx/KZmDxHqWOeAS77d9JoKXGsc1WAnVzFyEFu4umFybOT9FddEHS60DEkX6P0mxfMyt+lbdBi6BK/pRwostw3aNPYShlLW7Ai3LvzONLWmSeO58gawhHmY6jtkZYqZDdHINvORFAuTGeO05nIfXeHBjEdPq5L3K93IGk8nQk2YdkFAZ/sTN8U8ybXXloTGmgo7ONtgtjNyocqiXU4MYpsGNXcBKVyyxCRM6lhQfyxnj0O/bSJBJixoNsuu56XnjbhhF/zqSEmF+sl7P5Y56PAk+XPZbCDk2hN4rKBjWbwBR/PjsMLmghlSfhP2OxxGiirBKvFcr5qkI2R+3d10IPzhoAWTH/nHBPeOEVGguiMGNIt+z5V/MbyTkqbRtduKWOrA8PDkRRAQhDIRN7gV1uNSQ="
+      if: branch = master and (not type = pull_request)
+
+      deploy:
+        provider: pages
+        local_dir: docs
+        github_token: $GITHUB_TOKEN
+        skip_cleanup: true
+      dist: bionic
+      script:
+        - "export SWIFT_VERSION=5.1.1"
+        - "eval \"$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)\""
+        - "bash \"./Refresh (macOS).command\""
+        - "bash \"./Validate (macOS).command\" •job deployment"
 
 cache:
   directories:

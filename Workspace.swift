@@ -20,6 +20,7 @@ configuration.documentation.currentVersion = Version(0, 0, 0)
 
 configuration.documentation.localizations = ["🇨🇦EN"]
 
+configuration.documentation.api.yearFirstPublished = 2019
 configuration.documentation.repositoryURL = URL(
   string: "https://github.com/SDGGiesbrecht/SDGKeyboardDesign"
 )!
@@ -42,4 +43,3 @@ configuration.fileHeaders.copyrightNotice = Lazy<
       "Copyright #dates \(configuration.documentation.primaryAuthor!)."
   ]
 })
-configuration.documentation.api.enforceCoverage = false

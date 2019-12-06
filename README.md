@@ -262,13 +262,39 @@ let exportURL = URL(fileURLWithPath: NSHomeDirectory())
 try exampleBundle.generate(in: exportURL)
 ```
 
+## Importing
+
+SDGKeyboardDesign provides a library for use with the [Swift Package Manager](https://swift.org/package-manager/).
+
+Simply add SDGKeyboardDesign as a dependency in `Package.swift`:
+
+```swift
+let package = Package(
+    name: "MyPackage",
+    dependencies: [
+        .package(url: "https://github.com/SDGGiesbrecht/SDGKeyboardDesign", .upToNextMinor(from: Version(0, 0, 0))),
+    ],
+    targets: [
+        .target(name: "MyTarget", dependencies: [
+            .productItem(name: "SDGKeyboardDesign", package: "SDGKeyboardDesign"),
+        ])
+    ]
+)
+```
+
+The module can then be imported in source files:
+
+```swift
+import SDGKeyboardDesign
+```
+
 ## About
 
 The SDGKeyboardDesign project is maintained by Jeremy David Giesbrecht.
 
 If SDGKeyboardDesign saves you money, consider giving some of it as a [donation](https://paypal.me/JeremyGiesbrecht).
 
-If SDGKeyboardDesign saves you time, consider devoting some of it to [contributing]() back to the project.
+If SDGKeyboardDesign saves you time, consider devoting some of it to [contributing](https://github.com/SDGGiesbrecht/SDGKeyboardDesign) back to the project.
 
 > [Ἄξιος γὰρ ὁ ἐργάτης τοῦ μισθοῦ αὐτοῦ ἐστι.](https://www.biblegateway.com/passage/?search=Luke+10&version=SBLGNT;NIV)
 >
