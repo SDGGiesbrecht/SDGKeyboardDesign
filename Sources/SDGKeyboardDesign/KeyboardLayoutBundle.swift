@@ -26,17 +26,18 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
   /// - Parameters:
   ///     - name: The name of the keyboard layout bundle.
   ///     - layouts: The keyboard layouts in the bundle.
+  ///     - copyrightNotice: The copyright notice.
   ///     - bundleIdentifier: The macOS bundle identifier.
   public init(
     name: UserFacing<StrictString, L>,
     layouts: [KeyboardLayout<L>],
-    copyright: UserFacing<StrictString, L>,
+    copyright copyrightNotice: UserFacing<StrictString, L>,
     bundleIdentifier: StrictString
   ) {
 
     self.name = name
     self.layouts = layouts
-    self.copyright = copyright
+    self.copyright = copyrightNotice
 
     var bundle = bundleIdentifier
     let requiredSubstring: StrictString = ".keyboardlayout."
@@ -61,6 +62,9 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
   // MARK: - Generation
 
   /// Exports a macOS keyboard layout bundle in the specified directory.
+  ///
+  /// - Parameters:
+  ///   - directory: The directory in which to place the exported layout.
   public func generate(in directory: URL) throws {
     let bundleDirectory = directory.appendingPathComponent("\(unlocalizedName).bundle")
     let contentsDirectory = bundleDirectory.appendingPathComponent("Contents")
@@ -106,7 +110,7 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
     return result
   }
 
-  /// The information property list of the macOS keyboard layout bundle.
+  /// Returns the information property list of the macOS keyboard layout bundle.
   public func macOSKeyboardLayoutBundleInfoPlist() -> StrictString {
     let encoded = try! PropertyListSerialization.data(
       fromPropertyList: macOSKeyboardLayoutBundleInfoPlistDictionary(),
@@ -116,6 +120,10 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
     return try! StrictString(file: encoded, origin: nil)
   }
 
+  /// Returns the information property list strings file for the macOS keyboard layout bundle.
+  ///
+  /// - Parameters:
+  ///   - localization: The localization.
   public func macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(_ localization: L) -> StrictString
   {
     var result: [StrictString] = []
