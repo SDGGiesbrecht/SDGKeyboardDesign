@@ -263,59 +263,77 @@ import PackageDescription
 /// try exampleBundle.generate(in: exportURL)
 /// ```
 let package = Package(
-    name: "SDGKeyboardDesign",
-    products: [
-        // #documentation(SDGKeyboardDesign)
-        /// Tools for generating keyboard layouts.
-        .library(name: "SDGKeyboardDesign", targets: ["SDGKeyboardDesign"])
-    ],
-    dependencies: [
-        .package(url: "https://github.com/SDGGiesbrecht/SDGCornerstone", from: Version(4, 0, 0)),
-        .package(url: "https://github.com/SDGGiesbrecht/SDGInterface", .upToNextMinor(from: Version(0, 5, 0))),
-        .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", .upToNextMinor(from: Version(4, 0, 1)))
-    ],
-    targets: [
+  name: "SDGKeyboardDesign",
+  products: [
+    // #documentation(SDGKeyboardDesign)
+    /// Tools for generating keyboard layouts.
+    .library(name: "SDGKeyboardDesign", targets: ["SDGKeyboardDesign"])
+  ],
+  dependencies: [
+    .package(url: "https://github.com/SDGGiesbrecht/SDGCornerstone", from: Version(4, 0, 0)),
+    .package(
+      url: "https://github.com/SDGGiesbrecht/SDGInterface",
+      .upToNextMinor(from: Version(0, 5, 0))
+    ),
+    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", .upToNextMinor(from: Version(4, 0, 1)))
+  ],
+  targets: [
 
-        // Products
+    // Products
 
-        // @documentation(SDGKeyboardDesign)
-        /// Tools for generating keyboard layouts.
-        .target(name: "SDGKeyboardDesign", dependencies: [
-            "SDGKeyboardDesignXMLShims",
-            "SDGKeyboardDesignLocalizations",
-            .product(name: "SDGLogic", package: "SDGCornerstone"),
-            .product(name: "SDGMathematics", package: "SDGCornerstone"),
-            .product(name: "SDGCollections", package: "SDGCornerstone"),
-            .product(name: "SDGText", package: "SDGCornerstone"),
-            .product(name: "SDGPersistence", package: "SDGCornerstone"),
-            .product(name: "SDGLocalization", package: "SDGCornerstone"),
-            .product(name: "SDGKeyboard", package: "SDGInterface"),
-            ]),
+    // @documentation(SDGKeyboardDesign)
+    /// Tools for generating keyboard layouts.
+    .target(
+      name: "SDGKeyboardDesign",
+      dependencies: [
+        "SDGKeyboardDesignXMLShims",
+        "SDGKeyboardDesignLocalizations",
+        .product(name: "SDGLogic", package: "SDGCornerstone"),
+        .product(name: "SDGMathematics", package: "SDGCornerstone"),
+        .product(name: "SDGCollections", package: "SDGCornerstone"),
+        .product(name: "SDGText", package: "SDGCornerstone"),
+        .product(name: "SDGPersistence", package: "SDGCornerstone"),
+        .product(name: "SDGLocalization", package: "SDGCornerstone"),
+        .product(name: "SDGKeyboard", package: "SDGInterface"),
+      ]
+    ),
 
-        // Internal
+    // Internal
 
-        .target(name: "SDGKeyboardDesignLocalizations", dependencies: [
-            .product(name: "SDGLocalization", package: "SDGCornerstone")
-            ]),
-        .target(name: "SDGKeyboardDesignXMLShims", dependencies: [
-            .product(name: "SDGLogic", package: "SDGCornerstone"),
-            .product(name: "SDGHTML", package: "SDGWeb")
-            ]),
+    .target(
+      name: "SDGKeyboardDesignLocalizations",
+      dependencies: [
+        .product(name: "SDGLocalization", package: "SDGCornerstone")
+      ]
+    ),
+    .target(
+      name: "SDGKeyboardDesignXMLShims",
+      dependencies: [
+        .product(name: "SDGLogic", package: "SDGCornerstone"),
+        .product(name: "SDGHTML", package: "SDGWeb")
+      ]
+    ),
 
-        // Tests
+    // Tests
 
-        .testTarget(name: "SDGKeyboardDesignTests", dependencies: [
-            "SDGKeyboardDesign",
-            .product(name: "SDGText", package: "SDGCornerstone"),
-            .product(name: "SDGLocalization", package: "SDGCornerstone"),
-            .product(name: "SDGXCTestUtilities", package: "SDGCornerstone"),
-            .product(name: "SDGPersistenceTestUtilities", package: "SDGCornerstone")
-            ]),
-        .testTarget(name: "SDGKeyboardDesignDocumentationExampleTests", dependencies: [
-            "SDGKeyboardDesign",
-            .product(name: "SDGText", package: "SDGCornerstone"),
-            .product(name: "SDGLocalization", package: "SDGCornerstone"),
-            .product(name: "SDGXCTestUtilities", package: "SDGCornerstone")
-        ])
-    ]
+    .testTarget(
+      name: "SDGKeyboardDesignTests",
+      dependencies: [
+        "SDGKeyboardDesign",
+        .product(name: "SDGText", package: "SDGCornerstone"),
+        .product(name: "SDGLocalization", package: "SDGCornerstone"),
+        .product(name: "SDGXCTestUtilities", package: "SDGCornerstone"),
+        .product(name: "SDGPersistenceTestUtilities", package: "SDGCornerstone")
+      ]
+    ),
+    .testTarget(
+      name: "SDGKeyboardDesignDocumentationExampleTests",
+      dependencies: [
+        "SDGKeyboardDesign",
+        .product(name: "SDGText", package: "SDGCornerstone"),
+        .product(name: "SDGLocalization", package: "SDGCornerstone"),
+        .product(name: "SDGXCTestUtilities", package: "SDGCornerstone")
+      ]
+    )
+  ]
 )
