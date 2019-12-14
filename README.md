@@ -2,6 +2,7 @@
  README.md
 
  This source file is part of the SDGKeyboardDesign open source project.
+ https://sdggiesbrecht.github.io/SDGKeyboardDesign
 
  Copyright ©2019 Jeremy David Giesbrecht.
 
@@ -12,6 +13,8 @@
  -->
 
 macOS • Linux • iOS • watchOS • tvOS
+
+[Documentation](https://sdggiesbrecht.github.io/SDGKeyboardDesign/%F0%9F%87%A8%F0%9F%87%A6EN)
 
 # SDGKeyboardDesign
 

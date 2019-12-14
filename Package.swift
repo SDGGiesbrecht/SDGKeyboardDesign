@@ -4,6 +4,7 @@
  Package.swift
 
  This source file is part of the SDGKeyboardDesign open source project.
+ https://sdggiesbrecht.github.io/SDGKeyboardDesign
 
  Copyright ©2019 Jeremy David Giesbrecht.
 
