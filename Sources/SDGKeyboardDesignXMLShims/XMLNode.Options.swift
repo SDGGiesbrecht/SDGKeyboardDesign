@@ -12,7 +12,7 @@
  It may not be used, copied, distributed or modified without first obtaining a private licence from the copyright holder(s).
  */
 
-// #workaround(Swift 5.1.2, In the core library variant of Foundation, “init() is not yet implemented”.)
+// #workaround(Swift 5.1.3, In the core library variant of Foundation, “init() is not yet implemented”.)
 #if os(iOS) || os(watchOS) || os(tvOS) || !canImport(ObjectiveC)
 
   extension XMLNode {
