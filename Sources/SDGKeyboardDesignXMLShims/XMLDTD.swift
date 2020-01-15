@@ -4,12 +4,9 @@
  This source file is part of the SDGKeyboardDesign open source project.
  https://sdggiesbrecht.github.io/SDGKeyboardDesign
 
- Copyright ©2019–2020 Jeremy David Giesbrecht.
+ Copyright ©2019–2020 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
 
  Soli Deo gloria.
-
- This software is subject to copyright law.
- It may not be used, copied, distributed or modified without first obtaining a private licence from the copyright holder(s).
  */
 
 // #workaround(Swift 5.1.3, In the core library variant of Foundation, “init() is not yet implemented”.)
