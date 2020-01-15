@@ -7,9 +7,6 @@
  Copyright ©2019–2020 Jeremy David Giesbrecht.
 
  Soli Deo gloria.
-
- This software is subject to copyright law.
- It may not be used, copied, distributed or modified without first obtaining a private licence from the copyright holder(s).
  */
 
 // #workaround(Swift 5.1.3, In the core library variant of Foundation, “init() is not yet implemented”.)

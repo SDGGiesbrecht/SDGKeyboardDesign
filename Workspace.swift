@@ -7,9 +7,6 @@
  Copyright ©2019–2020 Jeremy David Giesbrecht.
 
  Soli Deo gloria.
-
- This software is subject to copyright law.
- It may not be used, copied, distributed or modified without first obtaining a private licence from the copyright holder(s).
  */
 
 import WorkspaceConfiguration
@@ -35,12 +32,13 @@ configuration.documentation.localizations = ["🇨🇦EN"]
 configuration._applySDGOverrides()
 configuration._validateSDGStandards()
 
+configuration.licence.licence = nil
 configuration.licence.manage = false
 configuration.fileHeaders.copyrightNotice = Lazy<[LocalizationIdentifier: StrictString]>(
   resolve: { configuration in
     return [
       "🇨🇦EN":
-      "Copyright #dates \(configuration.documentation.primaryAuthor!)."
+        "Copyright #dates \(configuration.documentation.primaryAuthor!)."
     ]
   }
 )
