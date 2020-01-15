@@ -4,7 +4,7 @@
  This source file is part of the SDGKeyboardDesign open source project.
  https://sdggiesbrecht.github.io/SDGKeyboardDesign
 
- Copyright ©2019–2020 Jeremy David Giesbrecht.
+ Copyright ©2019–2020 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
 
  Soli Deo gloria.
  */
@@ -34,14 +34,6 @@ configuration._validateSDGStandards()
 
 configuration.licence.licence = nil
 configuration.licence.manage = false
-configuration.fileHeaders.copyrightNotice = Lazy<[LocalizationIdentifier: StrictString]>(
-  resolve: { configuration in
-    return [
-      "🇨🇦EN":
-        "Copyright #dates \(configuration.documentation.primaryAuthor!)."
-    ]
-  }
-)
 
 configuration.documentation.api.ignoredDependencies = [
 
