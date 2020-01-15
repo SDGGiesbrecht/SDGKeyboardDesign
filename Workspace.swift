@@ -35,6 +35,16 @@ configuration.documentation.localizations = ["🇨🇦EN"]
 configuration._applySDGOverrides()
 configuration._validateSDGStandards()
 
+configuration.licence.manage = false
+configuration.fileHeaders.copyrightNotice = Lazy<[LocalizationIdentifier: StrictString]>(
+  resolve: { configuration in
+    return [
+      "🇨🇦EN":
+      "Copyright #dates \(configuration.documentation.primaryAuthor!)."
+    ]
+  }
+)
+
 configuration.documentation.api.ignoredDependencies = [
 
   // SDGCornerstone
@@ -64,15 +74,3 @@ configuration.documentation.api.ignoredDependencies = [
   "Swift",
   "XCTest"
 ]
-
-// #workaround(Not finished setting up yet.)
-configuration.licence.licence = .copyright
-configuration.licence.manage = false
-configuration.fileHeaders.copyrightNotice = Lazy<
-  [LocalizationIdentifier: StrictString]
->(resolve: { configuration in
-  return [
-    "🇨🇦EN":
-      "Copyright #dates \(configuration.documentation.primaryAuthor!)."
-  ]
-})
