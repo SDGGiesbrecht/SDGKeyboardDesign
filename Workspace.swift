@@ -14,7 +14,7 @@ import WorkspaceConfiguration
 let configuration = WorkspaceConfiguration()
 configuration._applySDGDefaults()
 
-configuration.documentation.currentVersion = Version(0, 1, 0)
+configuration.documentation.currentVersion = Version(1, 0, 0)
 
 configuration.documentation.documentationURL = URL(
   string: "https://sdggiesbrecht.github.io/SDGKeyboardDesign"
@@ -64,3 +64,6 @@ configuration.documentation.api.ignoredDependencies = [
   "Swift",
   "XCTest"
 ]
+
+// #workaround(workspace version 0.28.0, GitHub Action cache became invalid?)
+configuration.continuousIntegration.manage = false
