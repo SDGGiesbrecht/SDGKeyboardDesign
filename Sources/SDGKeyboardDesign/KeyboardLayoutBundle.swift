@@ -137,6 +137,6 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
         "\u{22}\(layout.unlocalizedName)\u{22} = \u{22}\(layout.name.resolved(for: localization))\u{22};"
       )
     }
-    return result.joined(separator: "\n")
+    return StrictString(result.joined(separator: "\n".scalars))
   }
 }
