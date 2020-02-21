@@ -20,49 +20,55 @@ import SDGPersistenceTestUtilities
 final class APITests: TestCase {
 
   func testArrangements() {
-    XCTAssertEqual(Arrangement.ansiLowercase[.rightIndexHome], "j")
-    XCTAssertEqual(Arrangement.ansiUppercase[.leftIndexHome], "F")
+    #if !os(Android)  // #workaround(Swift 5.1.3, Illegal instruction.)
+      XCTAssertEqual(Arrangement.ansiLowercase[.rightIndexHome], "j")
+      XCTAssertEqual(Arrangement.ansiUppercase[.leftIndexHome], "F")
+    #endif
   }
 
   func testKeyboardLayout() throws {
-    let layout = SDGKeyboardDesignTests.testKeyboardLayout
+    #if !os(Android)  // #workaround(Swift 5.1.3, Illegal instruction.)
+      let layout = SDGKeyboardDesignTests.testKeyboardLayout
 
-    let keylayoutFile = layout.keyLayoutFile()
-    compare(
-      String(keylayoutFile),
-      against: specificationDirectory.appendingPathComponent("Key Layout.txt"),
-      overwriteSpecificationInsteadOfFailing: false
-    )
+      let keylayoutFile = layout.keyLayoutFile()
+      compare(
+        String(keylayoutFile),
+        against: specificationDirectory.appendingPathComponent("Key Layout.txt"),
+        overwriteSpecificationInsteadOfFailing: false
+      )
+    #endif
   }
 
   func testKeyboardLayoutBundle() throws {
-    let bundle = SDGKeyboardDesignTests.testKeyboardLayoutBundle
+    #if !os(Android)  // #workaround(Swift 5.1.3, Illegal instruction.)
+      let bundle = SDGKeyboardDesignTests.testKeyboardLayoutBundle
 
-    let infoPlist = bundle.macOSKeyboardLayoutBundleInfoPlist()
-    compare(
-      String(infoPlist),
-      against: specificationDirectory.appendingPathComponent("Information Property List.txt"),
-      overwriteSpecificationInsteadOfFailing: false
-    )
+      let infoPlist = bundle.macOSKeyboardLayoutBundleInfoPlist()
+      compare(
+        String(infoPlist),
+        against: specificationDirectory.appendingPathComponent("Information Property List.txt"),
+        overwriteSpecificationInsteadOfFailing: false
+      )
 
-    let unusualBundle = withUnusualIdentifier.macOSKeyboardLayoutBundleInfoPlist()
-    compare(
-      String(unusualBundle),
-      against: specificationDirectory.appendingPathComponent("Unusual Identifier.txt"),
-      overwriteSpecificationInsteadOfFailing: false
-    )
+      let unusualBundle = withUnusualIdentifier.macOSKeyboardLayoutBundleInfoPlist()
+      compare(
+        String(unusualBundle),
+        against: specificationDirectory.appendingPathComponent("Unusual Identifier.txt"),
+        overwriteSpecificationInsteadOfFailing: false
+      )
 
-    let strings = bundle.macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(.englishCanada)
-    compare(
-      String(strings),
-      against: specificationDirectory.appendingPathComponent(
-        "Information Property List Strings.txt"
-      ),
-      overwriteSpecificationInsteadOfFailing: false
-    )
+      let strings = bundle.macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(.englishCanada)
+      compare(
+        String(strings),
+        against: specificationDirectory.appendingPathComponent(
+          "Information Property List Strings.txt"
+        ),
+        overwriteSpecificationInsteadOfFailing: false
+      )
 
-    try FileManager.default.withTemporaryDirectory(appropriateFor: nil) { temporary in
-      try bundle.generate(in: temporary)
-    }
+      try FileManager.default.withTemporaryDirectory(appropriateFor: nil) { temporary in
+        try bundle.generate(in: temporary)
+      }
+    #endif
   }
 }
