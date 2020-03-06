@@ -14,7 +14,7 @@ import XCTest
 @testable import SDGKeyboardDesignDocumentationExampleTests
 @testable import SDGKeyboardDesignTests
 
-extension ReadMeExampleTests {
+extension SDGKeyboardDesignDocumentationExampleTests.ReadMeExampleTests {
   static let windowsTests: [XCTestCaseEntry] = [
     testCase([
       ("testReadMeExample", testReadMeExample),
@@ -22,7 +22,7 @@ extension ReadMeExampleTests {
   ]
 }
 
-extension APITests {
+extension SDGKeyboardDesignTests.APITests {
   static let windowsTests: [XCTestCaseEntry] = [
     testCase([
       ("testArrangements", testArrangements),
@@ -32,7 +32,7 @@ extension APITests {
   ]
 }
 
-extension InternalTests {
+extension SDGKeyboardDesignTests.InternalTests {
   static let windowsTests: [XCTestCaseEntry] = [
     testCase([
       ("testKeyLayoutFile", testKeyLayoutFile),
@@ -43,8 +43,8 @@ extension InternalTests {
 }
 
 var tests = [XCTestCaseEntry]()
-tests += ReadMeExampleTests.windowsTests
-tests += APITests.windowsTests
-tests += InternalTests.windowsTests
+tests += SDGKeyboardDesignDocumentationExampleTests.ReadMeExampleTests.windowsTests
+tests += SDGKeyboardDesignTests.APITests.windowsTests
+tests += SDGKeyboardDesignTests.InternalTests.windowsTests
 
 XCTMain(tests)
