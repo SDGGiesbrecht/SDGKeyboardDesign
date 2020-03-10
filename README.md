@@ -49,7 +49,6 @@ SDGKeyboardDesign is a Swift library and can be used in many ways, but even if y
 7. Open System Preferences, go to “Keyboard”, then “Input Methods” and click the plus sign. Your custom keyboard should be somewhere in the list.
 
 ```swift
-
 enum ExampleLocalization: String, InputLocalization {
   // This is the list of localizations to provide metadata for.
   case englishCanada = "en\u{2D}CA"
