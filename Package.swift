@@ -48,7 +48,6 @@ import PackageDescription
 /// 7. Open System Preferences, go to “Keyboard”, then “Input Methods” and click the plus sign. Your custom keyboard should be somewhere in the list.
 ///
 /// ```swift
-///
 /// enum ExampleLocalization: String, InputLocalization {
 ///   // This is the list of localizations to provide metadata for.
 ///   case englishCanada = "en\u{2D}CA"
@@ -268,7 +267,7 @@ let package = Package(
     .library(name: "SDGKeyboardDesign", targets: ["SDGKeyboardDesign"])
   ],
   dependencies: [
-    .package(url: "https://github.com/SDGGiesbrecht/SDGCornerstone", from: Version(4, 3, 1)),
+    .package(url: "https://github.com/SDGGiesbrecht/SDGCornerstone", from: Version(4, 4, 1)),
     .package(
       url: "https://github.com/SDGGiesbrecht/SDGInterface",
       .upToNextMinor(from: Version(0, 6, 0))

@@ -20,9 +20,9 @@ import SDGXCTestUtilities
 final class ReadMeExampleTests: TestCase {
 
   func testReadMeExample() throws {
-    #if !os(Android)  // #workaround(Swift 5.1.3, Illegal instruction.)
-      // @example(readMe)
+    #if !os(Android)  // Relative paths invalid after copying to the emulator.
 
+      // @example(readMe)
       enum ExampleLocalization: String, InputLocalization {
         // This is the list of localizations to provide metadata for.
         case englishCanada = "en\u{2D}CA"
