@@ -9,7 +9,7 @@
  Soli Deo gloria.
  -->
 
-macOS • Windows • Web • Linux • tvOS • iOS • Android • watchOS
+macOS • Windows • Linux • tvOS • iOS • Android • watchOS
 
 [Documentation](https://sdggiesbrecht.github.io/SDGKeyboardDesign/%F0%9F%87%A8%F0%9F%87%A6EN)
 
@@ -136,14 +136,14 @@ let exampleLayout = KeyboardLayout<ExampleLocalization>(
       .rightIndexLower: "د",
       .rightMiddleLower: "ج",
       .rightRingLower: "ب",
-      .rightLittleLower: "ا"
+      .rightLittleLower: "ا",
     ],
     .shift: [
       // In many cases, uppercase characters will be inferred automatically.
       // But where it is ambiguous, or there is none, the shift layer can done manually.
       // Explicit entries will override automated values.
       .leftIndexHome: "I",
-      .rightIndexHome: "İ"
+      .rightIndexHome: "İ",
     ],
     .option: [
       // These are the characters produced when option (⌥) is pressed.
@@ -170,7 +170,7 @@ let exampleLayout = KeyboardLayout<ExampleLocalization>(
       .rightRingHome: "Inversion",  // Custom. See below.
 
       // The symbol key allows inserting symbols by spelling their names.
-      .rightDoubleOutsideHomeISO_JIS_RightTripleOutsideUpperANSI: Symbol.key
+      .rightDoubleOutsideHomeISO_JIS_RightTripleOutsideUpperANSI: Symbol.key,
     ],
     // More layers are available:
     .shiftOption: [
@@ -206,7 +206,7 @@ let exampleLayout = KeyboardLayout<ExampleLocalization>(
     "Inversion": [
       "a": "ɐ",
       "c": "ɔ",
-      "e": "ə"
+      "e": "ə",
     ]
   ]),
   symbols: Symbol.defaultDictionary.mergedByOverwriting(from: [
@@ -217,7 +217,7 @@ let exampleLayout = KeyboardLayout<ExampleLocalization>(
     "euros": "€",
     "dollars": "$",
     "roubles": "₽",
-    "pounds": "£"
+    "pounds": "£",
   ]),
   // This must be a unique identifier for the layout.
   uniqueIdentifier: 1_234_567,
