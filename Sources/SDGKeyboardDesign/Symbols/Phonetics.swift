@@ -1757,7 +1757,7 @@ extension Symbol {
         case .deutschDeutschland, .françaisFrance:
           return nil
         }
-      })
+      }),
     ]
   }
 }

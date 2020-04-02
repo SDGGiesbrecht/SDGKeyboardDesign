@@ -272,7 +272,7 @@ let package = Package(
       url: "https://github.com/SDGGiesbrecht/SDGInterface",
       .upToNextMinor(from: Version(0, 6, 0))
     ),
-    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 1, 0))
+    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 1, 0)),
   ],
   targets: [
 
@@ -307,7 +307,7 @@ let package = Package(
       name: "SDGKeyboardDesignXMLShims",
       dependencies: [
         .product(name: "SDGLogic", package: "SDGCornerstone"),
-        .product(name: "SDGHTML", package: "SDGWeb")
+        .product(name: "SDGHTML", package: "SDGWeb"),
       ]
     ),
 
@@ -320,7 +320,7 @@ let package = Package(
         .product(name: "SDGText", package: "SDGCornerstone"),
         .product(name: "SDGLocalization", package: "SDGCornerstone"),
         .product(name: "SDGXCTestUtilities", package: "SDGCornerstone"),
-        .product(name: "SDGPersistenceTestUtilities", package: "SDGCornerstone")
+        .product(name: "SDGPersistenceTestUtilities", package: "SDGCornerstone"),
       ]
     ),
     .testTarget(
@@ -329,8 +329,8 @@ let package = Package(
         "SDGKeyboardDesign",
         .product(name: "SDGText", package: "SDGCornerstone"),
         .product(name: "SDGLocalization", package: "SDGCornerstone"),
-        .product(name: "SDGXCTestUtilities", package: "SDGCornerstone")
+        .product(name: "SDGXCTestUtilities", package: "SDGCornerstone"),
       ]
-    )
+    ),
   ]
 )
