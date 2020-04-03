@@ -40,7 +40,7 @@ let testKeyboardLayout = KeyboardLayout<TestLocalization>(
     ],
     .option: [
       .rightRingHome: DeadKey.stroke
-    ]
+    ],
   ],
   uniqueIdentifier: 1_234_567,
   script: .latinEastern,

@@ -110,14 +110,14 @@ final class ReadMeExampleTests: TestCase {
             .rightIndexLower: "د",
             .rightMiddleLower: "ج",
             .rightRingLower: "ب",
-            .rightLittleLower: "ا"
+            .rightLittleLower: "ا",
           ],
           .shift: [
             // In many cases, uppercase characters will be inferred automatically.
             // But where it is ambiguous, or there is none, the shift layer can done manually.
             // Explicit entries will override automated values.
             .leftIndexHome: "I",
-            .rightIndexHome: "İ"
+            .rightIndexHome: "İ",
           ],
           .option: [
             // These are the characters produced when option (⌥) is pressed.
@@ -144,7 +144,7 @@ final class ReadMeExampleTests: TestCase {
             .rightRingHome: "Inversion",  // Custom. See below.
 
             // The symbol key allows inserting symbols by spelling their names.
-            .rightDoubleOutsideHomeISO_JIS_RightTripleOutsideUpperANSI: Symbol.key
+            .rightDoubleOutsideHomeISO_JIS_RightTripleOutsideUpperANSI: Symbol.key,
           ],
           // More layers are available:
           .shiftOption: [
@@ -180,7 +180,7 @@ final class ReadMeExampleTests: TestCase {
           "Inversion": [
             "a": "ɐ",
             "c": "ɔ",
-            "e": "ə"
+            "e": "ə",
           ]
         ]),
         symbols: Symbol.defaultDictionary.mergedByOverwriting(from: [
@@ -191,7 +191,7 @@ final class ReadMeExampleTests: TestCase {
           "euros": "€",
           "dollars": "$",
           "roubles": "₽",
-          "pounds": "£"
+          "pounds": "£",
         ]),
         // This must be a unique identifier for the layout.
         uniqueIdentifier: 1_234_567,
@@ -235,10 +235,9 @@ final class ReadMeExampleTests: TestCase {
       try exampleBundle.generate(in: exportURL)
       // @endExample
 
-      if (
-        try exportURL.appendingPathComponent("Example Keyboards.bundle")
-          .checkResourceIsReachable()
-      ) == true {
+      if (try exportURL.appendingPathComponent("Example Keyboards.bundle")
+        .checkResourceIsReachable()) == true
+      {
         try? FileManager.default.removeItem(at: exportURL)
       }
     #endif

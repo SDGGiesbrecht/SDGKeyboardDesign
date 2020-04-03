@@ -62,5 +62,8 @@ configuration.documentation.api.ignoredDependencies = [
   "Dispatch",
   "Foundation",
   "Swift",
-  "XCTest"
+  "XCTest",
 ]
+
+// #workaround(For now.)
+configuration.supportedPlatforms.remove(.web)

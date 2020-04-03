@@ -135,14 +135,14 @@ import PackageDescription
 ///       .rightIndexLower: "د",
 ///       .rightMiddleLower: "ج",
 ///       .rightRingLower: "ب",
-///       .rightLittleLower: "ا"
+///       .rightLittleLower: "ا",
 ///     ],
 ///     .shift: [
 ///       // In many cases, uppercase characters will be inferred automatically.
 ///       // But where it is ambiguous, or there is none, the shift layer can done manually.
 ///       // Explicit entries will override automated values.
 ///       .leftIndexHome: "I",
-///       .rightIndexHome: "İ"
+///       .rightIndexHome: "İ",
 ///     ],
 ///     .option: [
 ///       // These are the characters produced when option (⌥) is pressed.
@@ -169,7 +169,7 @@ import PackageDescription
 ///       .rightRingHome: "Inversion",  // Custom. See below.
 ///
 ///       // The symbol key allows inserting symbols by spelling their names.
-///       .rightDoubleOutsideHomeISO_JIS_RightTripleOutsideUpperANSI: Symbol.key
+///       .rightDoubleOutsideHomeISO_JIS_RightTripleOutsideUpperANSI: Symbol.key,
 ///     ],
 ///     // More layers are available:
 ///     .shiftOption: [
@@ -205,7 +205,7 @@ import PackageDescription
 ///     "Inversion": [
 ///       "a": "ɐ",
 ///       "c": "ɔ",
-///       "e": "ə"
+///       "e": "ə",
 ///     ]
 ///   ]),
 ///   symbols: Symbol.defaultDictionary.mergedByOverwriting(from: [
@@ -216,7 +216,7 @@ import PackageDescription
 ///     "euros": "€",
 ///     "dollars": "$",
 ///     "roubles": "₽",
-///     "pounds": "£"
+///     "pounds": "£",
 ///   ]),
 ///   // This must be a unique identifier for the layout.
 ///   uniqueIdentifier: 1_234_567,
@@ -272,7 +272,7 @@ let package = Package(
       url: "https://github.com/SDGGiesbrecht/SDGInterface",
       .upToNextMinor(from: Version(0, 6, 0))
     ),
-    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 1, 0))
+    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 1, 0)),
   ],
   targets: [
 
@@ -307,7 +307,7 @@ let package = Package(
       name: "SDGKeyboardDesignXMLShims",
       dependencies: [
         .product(name: "SDGLogic", package: "SDGCornerstone"),
-        .product(name: "SDGHTML", package: "SDGWeb")
+        .product(name: "SDGHTML", package: "SDGWeb"),
       ]
     ),
 
@@ -320,7 +320,7 @@ let package = Package(
         .product(name: "SDGText", package: "SDGCornerstone"),
         .product(name: "SDGLocalization", package: "SDGCornerstone"),
         .product(name: "SDGXCTestUtilities", package: "SDGCornerstone"),
-        .product(name: "SDGPersistenceTestUtilities", package: "SDGCornerstone")
+        .product(name: "SDGPersistenceTestUtilities", package: "SDGCornerstone"),
       ]
     ),
     .testTarget(
@@ -329,8 +329,8 @@ let package = Package(
         "SDGKeyboardDesign",
         .product(name: "SDGText", package: "SDGCornerstone"),
         .product(name: "SDGLocalization", package: "SDGCornerstone"),
-        .product(name: "SDGXCTestUtilities", package: "SDGCornerstone")
+        .product(name: "SDGXCTestUtilities", package: "SDGCornerstone"),
       ]
-    )
+    ),
   ]
 )

@@ -99,7 +99,7 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
       "CFBundleIdentifier": String(bundleIdentifier),
       "CFBundleName": String(name.resolved(for: L.fallbackLocalization)),
       "CFBundleDisplayName": String(name.resolved(for: L.fallbackLocalization)),
-      "NSHumanReadableCopyright": String(copyright.resolved(for: L.fallbackLocalization))
+      "NSHumanReadableCopyright": String(copyright.resolved(for: L.fallbackLocalization)),
     ]
     for layout in layouts {
       result["KLInfo_" + String(layout.unlocalizedName)] =

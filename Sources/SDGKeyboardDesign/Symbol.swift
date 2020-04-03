@@ -43,7 +43,7 @@ public enum Symbol {
       music,
       phonetics,
       setLogic,
-      units
+      units,
     ].lazy.joined() {
 
       for localization in ContentLocalization.allCases {

@@ -45,7 +45,7 @@ final class InternalTests: TestCase {
       "minus": "−",
       "percent": "%",
       "dollar": "$",
-      "dollars": "$"
+      "dollars": "$",
     ]
 
     let mapping = Symbol.mapping(from: dictionary)

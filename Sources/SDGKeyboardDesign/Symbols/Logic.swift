@@ -62,7 +62,7 @@ extension Symbol {
         case .françaisFrance:
           return SymbolData(symbol: "∵", names: ["parce que"])
         }
-      })
+      }),
     ]
   }
 }

@@ -32,7 +32,7 @@ extension Symbol {
         case .françaisFrance:
           return SymbolData(symbol: "∅", names: ["ensemble vide"])
         }
-      })
+      }),
     ]
   }
 }
