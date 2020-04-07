@@ -11,5 +11,5 @@
 
 #if os(Windows)
   // #workaround(workspace version 0.32.0, CMake won’t create empty libraries.)
-  public func _cmakePleaseCreateLibrary()
+  public func _cmakePleaseCreateLibrary() {}
 #endif
