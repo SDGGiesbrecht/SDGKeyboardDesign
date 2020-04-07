@@ -454,6 +454,7 @@ target_link_libraries("SDGHTML" PRIVATE
 )
 
 add_library("SDGKeyboardDesignXMLShims"
+  "../../../Sources/SDGKeyboardDesignXMLShims/Windows.swift"
   "../../../Sources/SDGKeyboardDesignXMLShims/XMLDTD.swift"
   "../../../Sources/SDGKeyboardDesignXMLShims/XMLDocument.swift"
   "../../../Sources/SDGKeyboardDesignXMLShims/XMLElement.swift"
