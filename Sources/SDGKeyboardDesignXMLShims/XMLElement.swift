@@ -9,8 +9,7 @@
  Soli Deo gloria.
  */
 
-// #workaround(Swift 5.1.3, In the core library variant of Foundation, “init() is not yet implemented”.)
-#if os(iOS) || os(watchOS) || os(tvOS) || !canImport(ObjectiveC)
+#if os(tvOS) || os(iOS) || os(watchOS)
   import SDGLogic
 
   public class XMLElement: XMLNode {
