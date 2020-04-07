@@ -116,6 +116,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
   private func keyLayoutDTD() -> XMLDTD {
     let dtd = XMLDTD()
     dtd.name = "keyboard"
+    dtd.publicID = nil
     dtd.systemID = "file://localhost/System/Library/DTDs/KeyboardLayout.dtd"
     return dtd
   }
