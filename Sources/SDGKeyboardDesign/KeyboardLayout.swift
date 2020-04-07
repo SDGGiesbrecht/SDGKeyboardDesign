@@ -14,6 +14,7 @@ import Foundation
   import FoundationXML
 #endif
 
+import SDGLogic
 import SDGMathematics
 import SDGCollections
 import SDGText
@@ -425,8 +426,11 @@ public struct KeyboardLayout<L> where L: InputLocalization {
         return "\n\(newSpaces)".scalars
       }
       string.scalars.replaceMatches(for: "\n\n".scalars, with: "\n".scalars)
+      if string.scalars.last ≠ "\n" {
+        string.scalars.append("\n")
+      }
     #else
-      string.scalars.replaceMatches(for: " standalone=\u{2D}no\u{2D}".scalars, with: "".scalars)
+      string.scalars.replaceMatches(for: " standalone=\u{22}no\u{22}".scalars, with: "".scalars)
       string = string.replacingOccurrences(of: "&#9;", with: "&#x0009;")
       string = string.replacingOccurrences(of: "&#13;", with: "&#x000D;")
     #endif
