@@ -36,7 +36,7 @@
     }
 
     internal func source(indent: Int) -> String {
-      let indentString = String(repeating: "    ", count: indent)
+      let indentString = String(repeating: "  ", count: indent)
 
       var source = "\(indentString)<"
       if let name = self.name {

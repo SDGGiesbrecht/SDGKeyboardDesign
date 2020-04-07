@@ -15,6 +15,7 @@ import Foundation
 #endif
 
 import SDGMathematics
+import SDGCollections
 import SDGText
 import SDGLocalization
 import SDGKeyboard
@@ -411,6 +412,16 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     string = string.replacingOccurrences(of: "&amp;", with: "&#x0026;")
     string = string.replacingOccurrences(of: "&lt;", with: "&#x003C;")
     string = string.replacingOccurrences(of: "&gt;", with: "&#x003E;")
+
+    #if os(macOS)
+      string.scalars.mutateMatches(
+        for: "\n".scalars + RepetitionPattern(" ".scalars)
+      ) { (match: PatternMatch<String.ScalarView>) -> String.ScalarView in
+        let spaces = match.contents.dropFirst()
+        let newSpaces = String(repeating: " ", count: spaces.count.dividedAccordingToEuclid(by: 2))
+        return "\n\(newSpaces)".scalars
+      }
+    #endif
 
     return StrictString(string)
   }
