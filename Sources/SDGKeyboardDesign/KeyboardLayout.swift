@@ -381,6 +381,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     let document = XMLDocument(rootElement: keyLayoutKeyboard())
     document.version = "1.0"
     document.characterEncoding = "UTF\u{2D}8"
+    document.isStandalone = false
     document.dtd = keyLayoutDTD()
     return document
   }
@@ -413,6 +414,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     string = string.replacingOccurrences(of: "&lt;", with: "&#x003C;")
     string = string.replacingOccurrences(of: "&gt;", with: "&#x003E;")
 
+    // Eliminate platform differences
     #if os(macOS)
       string.scalars.mutateMatches(
         for: "\n".scalars + RepetitionPattern(" ".scalars)
@@ -421,6 +423,8 @@ public struct KeyboardLayout<L> where L: InputLocalization {
         let newSpaces = String(repeating: " ", count: spaces.count.dividedAccordingToEuclid(by: 2))
         return "\n\(newSpaces)".scalars
       }
+    #else
+      string.scalars.replaceMatches(for: " standalone=\u{2D}no\u{2D}".scalars, with: "".scalars)
     #endif
 
     return StrictString(string)
