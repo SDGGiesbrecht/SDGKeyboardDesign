@@ -426,6 +426,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
       }
     #else
       string.scalars.replaceMatches(for: " standalone=\u{2D}no\u{2D}".scalars, with: "".scalars)
+      string.scalars.replaceMatches(for: "\n\n".scalars, with: "\n".scalars)
       string = string.replacingOccurrences(of: "&#9;", with: "&#x0009;")
       string = string.replacingOccurrences(of: "&#13;", with: "&#x000D;")
     #endif
