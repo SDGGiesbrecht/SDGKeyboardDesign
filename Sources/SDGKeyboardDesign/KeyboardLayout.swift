@@ -430,6 +430,10 @@ public struct KeyboardLayout<L> where L: InputLocalization {
         string.scalars.append("\n")
       }
     #else
+      string.scalars.replaceMatches(
+        for: "encoding=\u{22}utf\u{2D}8\u{22}".scalars,
+        with: "encoding=\u{22}UTF\u{2D}8\u{22}".scalars
+      )
       string.scalars.replaceMatches(for: " standalone=\u{22}no\u{22}".scalars, with: "".scalars)
       string = string.replacingOccurrences(of: "&#9;", with: "&#x0009;")
       string = string.replacingOccurrences(of: "&#13;", with: "&#x000D;")
