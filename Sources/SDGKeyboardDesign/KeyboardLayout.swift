@@ -424,9 +424,9 @@ public struct KeyboardLayout<L> where L: InputLocalization {
         let newSpaces = String(repeating: " ", count: spaces.count.dividedAccordingToEuclid(by: 2))
         return "\n\(newSpaces)".scalars
       }
+      string.scalars.replaceMatches(for: "\n\n".scalars, with: "\n".scalars)
     #else
       string.scalars.replaceMatches(for: " standalone=\u{2D}no\u{2D}".scalars, with: "".scalars)
-      string.scalars.replaceMatches(for: "\n\n".scalars, with: "\n".scalars)
       string = string.replacingOccurrences(of: "&#9;", with: "&#x0009;")
       string = string.replacingOccurrences(of: "&#13;", with: "&#x000D;")
     #endif
