@@ -44,7 +44,7 @@
         source.append("\(dtd.source())\n")
       }
       if let rootElement = self.rootElement {
-        source.append("\(rootElement.source(indent: 0))")
+        source.append("\(rootElement.source(indent: 0))\n")
       }
       return source.data(using: .utf8)!
     }
