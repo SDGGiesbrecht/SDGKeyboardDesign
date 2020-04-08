@@ -26,7 +26,7 @@ final class InternalTests: TestCase {
 
   func testKeyLayoutFile() throws {
     let xml = testKeyboardLayout.keyLayoutXML()
-    #if !(os(tvOS) || os(iOS) || os(watchOS))
+    #if os(macOS)
       try xml.validate()
     #endif
   }
