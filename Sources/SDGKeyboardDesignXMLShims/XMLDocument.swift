@@ -24,6 +24,7 @@
 
     public var characterEncoding: String?
     public var version: String?
+    public var isStandalone: Bool = false
     public var dtd: XMLDTD?
 
     private var rootElement: XMLElement?

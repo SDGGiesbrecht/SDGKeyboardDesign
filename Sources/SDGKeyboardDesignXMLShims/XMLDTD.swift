@@ -15,6 +15,7 @@
 
     // MARK: - Properties
 
+    public var publicID: String?
     public var systemID: String?
 
     // MARK: - Methods

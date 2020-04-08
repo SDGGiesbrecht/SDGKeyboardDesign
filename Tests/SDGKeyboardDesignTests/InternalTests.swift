@@ -26,7 +26,7 @@ final class InternalTests: TestCase {
 
   func testKeyLayoutFile() throws {
     let xml = testKeyboardLayout.keyLayoutXML()
-    #if os(macOS)
+    #if os(macOS)  // Only macOS actually has the DTD.
       try xml.validate()
     #endif
   }
