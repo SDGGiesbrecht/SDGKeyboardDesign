@@ -28,7 +28,7 @@
       if let systemID = self.systemID {
         source.append(" SYSTEM \u{22}\(systemID)\u{22}")
       }
-      source.append(">\n")
+      source.append(">")
       return source
     }
   }
