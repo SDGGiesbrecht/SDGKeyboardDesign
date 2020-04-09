@@ -272,7 +272,7 @@ let package = Package(
       url: "https://github.com/SDGGiesbrecht/SDGInterface",
       .upToNextMinor(from: Version(0, 7, 0))
     ),
-    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 1, 0)),
+    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 2, 0)),
   ],
   targets: [
 
