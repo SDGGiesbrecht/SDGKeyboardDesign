@@ -9,7 +9,10 @@
  Soli Deo gloria.
  */
 
-import Foundation
+// #workaround(Swift 5.2.1, Web lacks Foundation.)
+#if !os(WASI)
+  import Foundation
+#endif
 
 import SDGLogic
 import SDGCollections
@@ -59,38 +62,42 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
 
   // MARK: - Generation
 
-  /// Exports a macOS keyboard layout bundle in the specified directory.
-  ///
-  /// - Parameters:
-  ///   - directory: The directory in which to place the exported layout.
-  public func generate(in directory: URL) throws {
-    let bundleDirectory = directory.appendingPathComponent("\(unlocalizedName).bundle")
-    let contentsDirectory = bundleDirectory.appendingPathComponent("Contents")
+  // #workaround(Swift 5.2.1, Web lacks Foundation.)
+  #if !os(WASI)
+    /// Exports a macOS keyboard layout bundle in the specified directory.
+    ///
+    /// - Parameters:
+    ///   - directory: The directory in which to place the exported layout.
+    public func generate(in directory: URL) throws {
+      let bundleDirectory = directory.appendingPathComponent("\(unlocalizedName).bundle")
+      let contentsDirectory = bundleDirectory.appendingPathComponent("Contents")
 
-    try macOSKeyboardLayoutBundleInfoPlist().save(
-      to: contentsDirectory.appendingPathComponent("Info.plist")
-    )
-
-    let resourcesDirectory = contentsDirectory.appendingPathComponent("Resources")
-    for layout in layouts {
-      try layout.keyLayoutFile().save(
-        to: resourcesDirectory.appendingPathComponent("\(layout.unlocalizedName).keylayout")
+      try macOSKeyboardLayoutBundleInfoPlist().save(
+        to: contentsDirectory.appendingPathComponent("Info.plist")
       )
-      if let icon = layout.icon {
-        try FileManager.default.copy(
-          icon,
-          to: resourcesDirectory.appendingPathComponent("\(layout.unlocalizedName).icns")
+
+      let resourcesDirectory = contentsDirectory.appendingPathComponent("Resources")
+      for layout in layouts {
+        try layout.keyLayoutFile().save(
+          to: resourcesDirectory.appendingPathComponent("\(layout.unlocalizedName).keylayout")
         )
+        if let icon = layout.icon {
+          try FileManager.default.copy(
+            icon,
+            to: resourcesDirectory.appendingPathComponent("\(layout.unlocalizedName).icns")
+          )
+        }
+      }
+      for localization in L.allCases {
+        let strings = macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(localization)
+        let localizationDirectory = resourcesDirectory.appendingPathComponent(
+          "\(localization.code).lproj"
+        )
+        try strings.save(to: localizationDirectory.appendingPathComponent("InfoPlist.strings"))
       }
     }
-    for localization in L.allCases {
-      let strings = macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(localization)
-      let localizationDirectory = resourcesDirectory.appendingPathComponent(
-        "\(localization.code).lproj"
-      )
-      try strings.save(to: localizationDirectory.appendingPathComponent("InfoPlist.strings"))
-    }
-  }
+  #endif
+
   // MARK: - macOS Keyboard Layout Bundle
 
   private func macOSKeyboardLayoutBundleInfoPlistDictionary() -> [String: Any] {
@@ -108,22 +115,26 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
     return result
   }
 
-  /// Returns the information property list of the macOS keyboard layout bundle.
-  public func macOSKeyboardLayoutBundleInfoPlist() -> StrictString {
-    let encoded = try! PropertyListSerialization.data(
-      fromPropertyList: macOSKeyboardLayoutBundleInfoPlistDictionary(),
-      format: .xml,
-      options: 0
-    )
-    return try! StrictString(file: encoded, origin: nil)
-  }
+  // #workaround(Swift 5.2.1, Web lacks Foundation.)
+  #if !os(WASI)
+    /// Returns the information property list of the macOS keyboard layout bundle.
+    public func macOSKeyboardLayoutBundleInfoPlist() -> StrictString {
+      let encoded = try! PropertyListSerialization.data(
+        fromPropertyList: macOSKeyboardLayoutBundleInfoPlistDictionary(),
+        format: .xml,
+        options: 0
+      )
+      return try! StrictString(file: encoded, origin: nil)
+    }
+  #endif
 
   /// Returns the information property list strings file for the macOS keyboard layout bundle.
   ///
   /// - Parameters:
   ///   - localization: The localization.
-  public func macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(_ localization: L) -> StrictString
-  {
+  public func macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(
+    _ localization: L
+  ) -> StrictString {
     var result: [StrictString] = []
     result.append("\u{22}CFBundleName\u{22} = \u{22}\(name.resolved(for: localization))\u{22};")
     result.append(
