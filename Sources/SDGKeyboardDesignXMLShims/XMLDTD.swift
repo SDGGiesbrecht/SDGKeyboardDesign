@@ -9,13 +9,13 @@
  Soli Deo gloria.
  */
 
-// #workaround(Swift 5.1.3, In the core library variant of Foundation, “init() is not yet implemented”.)
-#if os(iOS) || os(watchOS) || os(tvOS) || !canImport(ObjectiveC)
+#if os(tvOS) || os(iOS) || os(watchOS)
 
   public class XMLDTD: XMLNode {
 
     // MARK: - Properties
 
+    public var publicID: String?
     public var systemID: String?
 
     // MARK: - Methods
@@ -28,7 +28,7 @@
       if let systemID = self.systemID {
         source.append(" SYSTEM \u{22}\(systemID)\u{22}")
       }
-      source.append(">\n")
+      source.append(">")
       return source
     }
   }

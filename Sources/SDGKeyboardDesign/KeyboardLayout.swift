@@ -14,7 +14,9 @@ import Foundation
   import FoundationXML
 #endif
 
+import SDGLogic
 import SDGMathematics
+import SDGCollections
 import SDGText
 import SDGLocalization
 import SDGKeyboard
@@ -115,6 +117,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
   private func keyLayoutDTD() -> XMLDTD {
     let dtd = XMLDTD()
     dtd.name = "keyboard"
+    dtd.publicID = nil
     dtd.systemID = "file://localhost/System/Library/DTDs/KeyboardLayout.dtd"
     return dtd
   }
@@ -380,6 +383,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     let document = XMLDocument(rootElement: keyLayoutKeyboard())
     document.version = "1.0"
     document.characterEncoding = "UTF\u{2D}8"
+    document.isStandalone = false
     document.dtd = keyLayoutDTD()
     return document
   }
@@ -411,6 +415,29 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     string = string.replacingOccurrences(of: "&amp;", with: "&#x0026;")
     string = string.replacingOccurrences(of: "&lt;", with: "&#x003C;")
     string = string.replacingOccurrences(of: "&gt;", with: "&#x003E;")
+
+    // Eliminate platform differences
+    #if os(macOS)
+      string.scalars.mutateMatches(
+        for: "\n".scalars + RepetitionPattern(" ".scalars)
+      ) { (match: PatternMatch<String.ScalarView>) -> String.ScalarView in
+        let spaces = match.contents.dropFirst()
+        let newSpaces = String(repeating: " ", count: spaces.count.dividedAccordingToEuclid(by: 2))
+        return "\n\(newSpaces)".scalars
+      }
+      string.scalars.replaceMatches(for: "\n\n".scalars, with: "\n".scalars)
+      if string.scalars.last ≠ "\n" {
+        string.scalars.append("\n")
+      }
+    #else
+      string.scalars.replaceMatches(
+        for: "encoding=\u{22}utf\u{2D}8\u{22}".scalars,
+        with: "encoding=\u{22}UTF\u{2D}8\u{22}".scalars
+      )
+      string.scalars.replaceMatches(for: " standalone=\u{22}no\u{22}".scalars, with: "".scalars)
+      string = string.replacingOccurrences(of: "&#9;", with: "&#x0009;")
+      string = string.replacingOccurrences(of: "&#13;", with: "&#x000D;")
+    #endif
 
     return StrictString(string)
   }

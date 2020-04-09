@@ -9,8 +9,7 @@
  Soli Deo gloria.
  */
 
-// #workaround(Swift 5.1.3, In the core library variant of Foundation, “init() is not yet implemented”.)
-#if os(iOS) || os(watchOS) || os(tvOS) || !canImport(ObjectiveC)
+#if os(tvOS) || os(iOS) || os(watchOS)
   import Foundation
 
   public class XMLDocument: XMLNode {
@@ -25,6 +24,7 @@
 
     public var characterEncoding: String?
     public var version: String?
+    public var isStandalone: Bool = false
     public var dtd: XMLDTD?
 
     private var rootElement: XMLElement?
@@ -44,7 +44,7 @@
         source.append("\(dtd.source())\n")
       }
       if let rootElement = self.rootElement {
-        source.append("\(rootElement.source(indent: 0))")
+        source.append("\(rootElement.source(indent: 0))\n")
       }
       return source.data(using: .utf8)!
     }
