@@ -271,7 +271,7 @@ Simply add SDGKeyboardDesign as a dependency in `Package.swift`:
 let package = Package(
     name: "MyPackage",
     dependencies: [
-        .package(url: "https://github.com/SDGGiesbrecht/SDGKeyboardDesign", from: Version(1, 1, 1)),
+        .package(url: "https://github.com/SDGGiesbrecht/SDGKeyboardDesign", from: Version(1, 2, 0)),
     ],
     targets: [
         .target(name: "MyTarget", dependencies: [
