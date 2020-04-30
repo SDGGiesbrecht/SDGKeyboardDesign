@@ -158,10 +158,9 @@ jobs:
       shell: bash
       run: |
         set -x
-        git clone https://github.com/SDGGiesbrecht/SDGCornerstone .build/SDG/Dependencies/SDGCornerstone --branch 4.6.0 --depth 1 --config advice.detachedHead=false
-        git clone https://github.com/SDGGiesbrecht/SDGInterface .build/SDG/Dependencies/SDGInterface --branch 0.7.0 --depth 1 --config advice.detachedHead=false
-        git clone https://github.com/SDGGiesbrecht/SDGWeb .build/SDG/Dependencies/SDGWeb --branch 5.2.0 --depth 1 --config advice.detachedHead=false
-        git clone https://github.com/apple/swift-numerics .build/SDG/Dependencies/swift-numerics --branch 0.0.5 --depth 1 --config advice.detachedHead=false
+        git clone https://github.com/SDGGiesbrecht/SDGCornerstone .build/SDG/Dependencies/SDGCornerstone --branch 5.0.0 --depth 1 --config advice.detachedHead=false
+        git clone https://github.com/SDGGiesbrecht/SDGInterface .build/SDG/Dependencies/SDGInterface --branch 0.8.0 --depth 1 --config advice.detachedHead=false
+        git clone https://github.com/SDGGiesbrecht/SDGWeb .build/SDG/Dependencies/SDGWeb --branch 5.3.1 --depth 1 --config advice.detachedHead=false
     - name: Build
       shell: bash
       run: |
