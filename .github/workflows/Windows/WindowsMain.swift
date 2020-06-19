@@ -17,7 +17,7 @@ import XCTest
 extension SDGKeyboardDesignDocumentationExampleTests.ReadMeExampleTests {
   static let windowsTests: [XCTestCaseEntry] = [
     testCase([
-      ("testReadMeExample", testReadMeExample),
+      ("testReadMeExample", testReadMeExample)
     ])
   ]
 }
