@@ -12,7 +12,7 @@
 #if os(tvOS) || os(iOS) || os(watchOS)
   import SDGLogic
 
-  public class XMLElement: XMLNode {
+  public final class XMLElement: XMLNode {
 
     // MARK: - Initialization
 
