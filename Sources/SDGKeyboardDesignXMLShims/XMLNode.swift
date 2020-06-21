@@ -15,7 +15,7 @@
 
   import SDGHTML
 
-  public class XMLNode: NSObject {
+  open class XMLNode: NSObject {
 
     // MARK: - Class Methods
 

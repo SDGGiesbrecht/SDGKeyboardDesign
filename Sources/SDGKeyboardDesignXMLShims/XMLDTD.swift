@@ -11,7 +11,7 @@
 
 #if os(tvOS) || os(iOS) || os(watchOS)
 
-  public class XMLDTD: XMLNode {
+  public final class XMLDTD: XMLNode {
 
     // MARK: - Properties
 

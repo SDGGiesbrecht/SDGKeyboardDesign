@@ -173,27 +173,27 @@ import PackageDescription
 ///     ],
 ///     // More layers are available:
 ///     .shiftOption: [
-///       .leftIndexHome: "⇧⌥",
+///       .leftIndexHome: "⇧⌥"
 ///     ],
 ///     .capsLock: [
-///       .leftIndexHome: "⇪",
+///       .leftIndexHome: "⇪"
 ///     ],
 ///     .capsLockShift: [
-///       .leftIndexHome: "⇪⇧",
+///       .leftIndexHome: "⇪⇧"
 ///     ],
 ///     .capsLockOption: [
-///       .leftIndexHome: "⇪⌥",
+///       .leftIndexHome: "⇪⌥"
 ///     ],
 ///     .capsLockShiftOption: [
-///       .leftIndexHome: "⇪⇧⌥",
+///       .leftIndexHome: "⇪⇧⌥"
 ///     ],
 ///     // Beware that rearranging the command layers affects hotkeys!
 ///     // (If omitted, they will be automatically filled in according to ANSII.)
 ///     .command: [
-///       .leftIndexHome: "⌘",
+///       .leftIndexHome: "⌘"
 ///     ],
 ///     .shiftCommand: [
-///       .leftIndexHome: "⇧⌘",
+///       .leftIndexHome: "⇧⌘"
 ///     ],
 ///   ],
 ///   deadKeyLabels: DeadKey.defaultLabels.mergedByOverwriting(from: [

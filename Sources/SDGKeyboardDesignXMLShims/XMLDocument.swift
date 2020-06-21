@@ -12,7 +12,7 @@
 #if os(tvOS) || os(iOS) || os(watchOS)
   import Foundation
 
-  public class XMLDocument: XMLNode {
+  public final class XMLDocument: XMLNode {
 
     // MARK: - Initialization
 
