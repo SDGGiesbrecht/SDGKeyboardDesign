@@ -10,6 +10,6 @@
  */
 
 #if os(Windows)
-  // #workaround(Swift 5.2.3, CMake won’t create empty libraries.)
+  // #workaround(Swift 5.2.4, CMake won’t create empty libraries.)
   public func _cmakePleaseCreateLibrary() {}
 #endif
