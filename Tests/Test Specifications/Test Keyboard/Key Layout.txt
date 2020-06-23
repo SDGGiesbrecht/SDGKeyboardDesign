@@ -669,6 +669,7 @@
       <when state="_C2_A4low_20tone" next="_C2_A4low_20tone_20"/>
       <when state="_C2_A4lowered_E2_80_90close" next="_C2_A4lowered_E2_80_90close_20"/>
       <when state="_C2_A4lowered_E2_80_90close_20front" next="_C2_A4lowered_E2_80_90close_20front_20"/>
+      <when state="_C2_A4marque" next="_C2_A4marque_20"/>
       <when state="_C2_A4mid" next="_C2_A4mid_20"/>
       <when state="_C2_A4mid_20tone" next="_C2_A4mid_20tone_20"/>
       <when state="_C2_A4minus" output="∓"/>
@@ -1176,6 +1177,7 @@
       <when state="_C2_A4palatal_20" output="j"/>
       <when state="_C2_A4par" output="¶"/>
       <when state="_C2_A4ph" output="ʕ"/>
+      <when state="_C2_A4pl" output="◌"/>
       <when state="_C2_A4plus_20" next="_C2_A4plus_20a"/>
       <when state="_C2_A4prim" output="ˈ"/>
       <when state="_C2_A4r" next="_C2_A4ra"/>
@@ -1450,6 +1452,7 @@
       <when state="_C2_A4gerun" next="_C2_A4gerund"/>
       <when state="_C2_A4labio" next="_C2_A4labiod"/>
       <when state="_C2_A4lowere" next="_C2_A4lowered"/>
+      <when state="_C2_A4marque_20" output="®"/>
       <when state="_C2_A4mi" next="_C2_A4mid"/>
       <when state="_C2_A4nie" next="_C2_A4nied"/>
       <when state="_C2_A4nor" next="_C2_A4nord"/>
@@ -1631,6 +1634,7 @@
       <when state="_C2_A4lowered_E2_80_90clos" next="_C2_A4lowered_E2_80_90close"/>
       <when state="_C2_A4m" next="_C2_A4me"/>
       <when state="_C2_A4mal" output="♂"/>
+      <when state="_C2_A4marqu" next="_C2_A4marque"/>
       <when state="_C2_A4mid_20ton" next="_C2_A4mid_20tone"/>
       <when state="_C2_A4mittl" next="_C2_A4mittle"/>
       <when state="_C2_A4mittler" output="ə"/>
@@ -2189,6 +2193,7 @@
       <when state="_C2_A4Ma" next="_C2_A4Mal"/>
       <when state="_C2_A4Mi" output="m"/>
       <when state="_C2_A4Mo" next="_C2_A4Mol"/>
+      <when state="_C2_A4P" output="◌"/>
       <when state="_C2_A4Pa" output="🇵🇼"/>
       <when state="_C2_A4Phi" next="_C2_A4Phil"/>
       <when state="_C2_A4Po" output="🇵🇱"/>
@@ -2782,6 +2787,7 @@
       <when state="_C2_A4E" output="🇬🇶"/>
       <when state="_C2_A4affri" next="_C2_A4affriq"/>
       <when state="_C2_A4e" output="="/>
+      <when state="_C2_A4mar" next="_C2_A4marq"/>
       <when state="_C2_A4pi" output="♠"/>
       <when state="_C2_A4pres" output="≈"/>
       <when state="_C2_A4A_CC_88" output="🇬🇶"/>
@@ -2909,7 +2915,7 @@
       <when state="_C2_A4lowe" next="_C2_A4lower"/>
       <when state="_C2_A4lowered_E2_80_90close_20f" next="_C2_A4lowered_E2_80_90close_20fr"/>
       <when state="_C2_A4lowered_E2_80_90close_20front_20" output="ʏ"/>
-      <when state="_C2_A4ma" output="®"/>
+      <when state="_C2_A4ma" next="_C2_A4mar"/>
       <when state="_C2_A4mittle" next="_C2_A4mittler"/>
       <when state="_C2_A4mo" output="̹"/>
       <when state="_C2_A4nasal_20" output="n"/>
@@ -3108,6 +3114,7 @@
       <when state="_C2_A4link" output="←"/>
       <when state="_C2_A4lowered_E2_80_90clo" next="_C2_A4lowered_E2_80_90clos"/>
       <when state="_C2_A4ma" output="♂"/>
+      <when state="_C2_A4marque_20" output="◌"/>
       <when state="_C2_A4minu" next="_C2_A4minus"/>
       <when state="_C2_A4mittle" output="̄"/>
       <when state="_C2_A4moin" next="_C2_A4moins"/>
@@ -3367,6 +3374,7 @@
       <when state="_C2_A4lowered_E2_80_90close_20front_20" output="ɪ"/>
       <when state="_C2_A4m" output="̤"/>
       <when state="_C2_A4maj" output="⇧"/>
+      <when state="_C2_A4marq" next="_C2_A4marqu"/>
       <when state="_C2_A4min" next="_C2_A4minu"/>
       <when state="_C2_A4n" output="#"/>
       <when state="_C2_A4nasale_20" output="ɴ"/>
@@ -4672,6 +4680,11 @@
     <when state="_C2_A4ma" output="¤ma"/>
     <when state="_C2_A4maj" output="¤maj"/>
     <when state="_C2_A4mal" output="¤mal"/>
+    <when state="_C2_A4mar" output="¤mar"/>
+    <when state="_C2_A4marq" output="¤marq"/>
+    <when state="_C2_A4marqu" output="¤marqu"/>
+    <when state="_C2_A4marque" output="¤marque"/>
+    <when state="_C2_A4marque_20" output="¤marque "/>
     <when state="_C2_A4me" output="¤me"/>
     <when state="_C2_A4mi" output="¤mi"/>
     <when state="_C2_A4mid" output="¤mid"/>
