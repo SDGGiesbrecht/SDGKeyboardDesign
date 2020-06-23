@@ -81,6 +81,16 @@ extension Symbol {
           return SymbolData(symbol: "☹", names: ["grimace"])
         }
       }),
+      LocalizedSymbol({ localization in
+        switch localization {
+        case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
+          return SymbolData(symbol: "◌", names: ["placeholder"])
+        case .deutschDeutschland:
+          return SymbolData(symbol: "◌", names: ["Platzhalter"])
+        case .françaisFrance:
+          return SymbolData(symbol: "◌", names: ["marque substitutive"])
+        }
+      }),
     ]
   }
 }
