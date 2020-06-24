@@ -64,6 +64,3 @@ configuration.documentation.api.ignoredDependencies = [
   "Swift",
   "XCTest",
 ]
-
-// #workaround(workspace version 0.33.0, False positives.)
-configuration.proofreading.rules.remove(.bullets)
