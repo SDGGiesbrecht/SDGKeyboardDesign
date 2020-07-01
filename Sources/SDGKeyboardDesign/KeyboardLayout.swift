@@ -458,6 +458,9 @@ public struct KeyboardLayout<L> where L: InputLocalization {
         string = string.replacingOccurrences(of: "&#13;", with: "&#x000D;")
       #endif
 
+      // macOS fails to parse 2‐spaced indentation.
+      string.scalars.replaceMatches(for: "  ".scalars, with: "    ".scalars)
+
       return StrictString(string)
     }
   #endif
