@@ -33,21 +33,7 @@ final class RegressionTests: TestCase {
     let keyboard = KeyboardLayout(
       name: UserFacing<StrictString, TestLocalization>({ _ in "Limit Test" }),
       icon: nil,
-      layers: [
-        .noModifiers:
-          [
-            .leftLittleHome: "1",
-            .leftRingHome: "2",
-            .leftMiddleHome: "3",
-            .leftIndexHome: "4",
-            .leftInsideHome: "5",
-            .rightInsideHome: "6",
-            .rightIndexHome: "7",
-            .rightMiddleHome: "8",
-            .rightRingHome: "9",
-            .rightLittleHome: "0",
-        ]
-      ],
+      layers: [:],
       deadKeyLabels: deadKeyLabels,
       deadKeyMappings: [:],
       symbols: [:],
