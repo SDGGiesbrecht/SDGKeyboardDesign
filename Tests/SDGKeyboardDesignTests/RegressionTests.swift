@@ -37,6 +37,10 @@ final class RegressionTests: TestCase {
       script: .none,
       targetedLanguage: nil
     )
+    let specification = testSpecificationDirectory().appendingPathComponent("Limit Test.keylayout")
+    let source = keyboard.keyLayoutFile()
+    try source.save(to: specification)
+
     let xml = keyboard.keyLayoutXML()
     print(xml)
   }
