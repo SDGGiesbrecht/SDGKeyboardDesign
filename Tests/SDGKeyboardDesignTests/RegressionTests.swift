@@ -52,7 +52,7 @@ final class RegressionTests: TestCase {
       .appendingPathComponent("Contents")
       .appendingPathComponent("Resources")
       .appendingPathComponent("Limit Test.keylayout")
-    let xml = try XMLDocument(contentsOf: xmlFile, options: [])
+    let xml = try XMLDocument(contentsOf: xmlFile, options: [.documentValidate])
     print(xml)
   }
 }
