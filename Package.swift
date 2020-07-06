@@ -318,6 +318,7 @@ let package = Package(
       dependencies: [
         "SDGKeyboardDesign",
         .product(name: "SDGText", package: "SDGCornerstone"),
+        .product(name: "SDGPersistence", package: "SDGCornerstone"),
         .product(name: "SDGLocalization", package: "SDGCornerstone"),
         .product(name: "SDGXCTestUtilities", package: "SDGCornerstone"),
         .product(name: "SDGPersistenceTestUtilities", package: "SDGCornerstone"),

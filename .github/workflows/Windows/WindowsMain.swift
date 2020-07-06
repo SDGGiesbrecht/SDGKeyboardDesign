@@ -42,9 +42,18 @@ extension SDGKeyboardDesignTests.InternalTests {
   ]
 }
 
+extension SDGKeyboardDesignTests.RegressionTests {
+  static let windowsTests: [XCTestCaseEntry] = [
+    testCase([
+      ("testStateLimit", testStateLimit)
+    ])
+  ]
+}
+
 var tests = [XCTestCaseEntry]()
 tests += SDGKeyboardDesignDocumentationExampleTests.ReadMeExampleTests.windowsTests
 tests += SDGKeyboardDesignTests.APITests.windowsTests
 tests += SDGKeyboardDesignTests.InternalTests.windowsTests
+tests += SDGKeyboardDesignTests.RegressionTests.windowsTests
 
 XCTMain(tests)
