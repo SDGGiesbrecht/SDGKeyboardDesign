@@ -35,6 +35,8 @@ configuration._validateSDGStandards()
 configuration.licence.licence = nil
 configuration.licence.manage = false
 
+configuration.repository.ignoredPaths.insert("Tests/Test Specifications/Limit Test")
+
 configuration.documentation.api.ignoredDependencies = [
 
   // SDGCornerstone

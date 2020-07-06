@@ -45,5 +45,14 @@ final class RegressionTests: TestCase {
     )
     let specification = testSpecificationDirectory().appendingPathComponent("Limit Test")
     try bundle.generate(in: specification)
+
+    let xmlFile =
+      specification
+      .appendingPathComponent("Limit Test.bundle")
+      .appendingPathComponent("Contents")
+      .appendingPathComponent("Resources")
+      .appendingPathComponent("Limit Test.keylayout")
+    let xml = try XMLDocument(contentsOf: xmlFile, options: [])
+    print(xml)
   }
 }
