@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en-CA</string>
+	<key>CFBundleDisplayName</key>
+	<string>Limit Test</string>
+	<key>CFBundleIdentifier</key>
+	<string>ca.solideogloria.SDGKeyboardDesign.keyboardlayout.Limit</string>
+	<key>CFBundleName</key>
+	<string>Limit Test</string>
+	<key>KLInfo_Limit Test</key>
+	<dict/>
+	<key>NSHumanReadableCopyright</key>
+	<string></string>
+</dict>
+</plist>
