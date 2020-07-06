@@ -13,7 +13,7 @@ import SDGText
 import SDGPersistence
 import SDGLocalization
 
-import SDGKeyboardDesign
+@testable import SDGKeyboardDesign
 
 import XCTest
 
@@ -37,22 +37,7 @@ final class RegressionTests: TestCase {
       script: .none,
       targetedLanguage: nil
     )
-    let bundle = KeyboardLayoutBundle(
-      name: UserFacing<StrictString, TestLocalization>({ _ in "Limit Test" }),
-      layouts: [keyboard],
-      copyright: UserFacing<StrictString, TestLocalization>({ _ in "" }),
-      bundleIdentifier: "ca.solideogloria.SDGKeyboardDesign.Limit"
-    )
-    let specification = testSpecificationDirectory().appendingPathComponent("Limit Test")
-    try bundle.generate(in: specification)
-
-    let xmlFile =
-      specification
-      .appendingPathComponent("Limit Test.bundle")
-      .appendingPathComponent("Contents")
-      .appendingPathComponent("Resources")
-      .appendingPathComponent("Limit Test.keylayout")
-    let xml = try XMLDocument(contentsOf: xmlFile, options: [.documentValidate])
+    let xml = keyboard.keyLayoutXML()
     print(xml)
   }
 }
