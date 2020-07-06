@@ -555,7 +555,7 @@
     </keyMapSet>
     <actions>
         <action id="_31">
-            <when state="none" next="1"/>
+            <when state="none" next="_31"/>
         </action>
     </actions>
     <terminators>

@@ -316,7 +316,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
         let next = keyLayoutWhen()
         action.addChild(next)
         next.addAttribute(name: "state", value: "none")
-        next.addAttribute(name: "next", value: String(dead))
+        next.addAttribute(name: "next", value: String(mangle(action: dead)))
       }
 
       for base in deadKeyAndSymbolMappings.keys.sorted() {
