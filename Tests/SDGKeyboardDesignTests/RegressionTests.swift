@@ -9,6 +9,7 @@
  Soli Deo gloria.
  */
 
+import SDGMathematics
 import SDGText
 import SDGPersistence
 import SDGLocalization
@@ -27,7 +28,7 @@ final class RegressionTests: TestCase {
 
     // Without handling of overflow, this keyboard would have too many dead key states, and macOS would refuse to load it.
     var deadKeyLabels: [StrictString: StrictString] = [:]
-    let numberOfStates = 1
+    let numberOfStates: Int = 2 ↑ 0
     for integer in 1...numberOfStates {
       deadKeyLabels[integer.inDigits()] = integer.inRomanNumerals()
     }
