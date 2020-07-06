@@ -538,11 +538,13 @@ add_library("SDGKeyboardDesignTests"
   "../../../Tests/SDGKeyboardDesignTests/InternalTests.swift"
   "../../../Tests/SDGKeyboardDesignTests/RegressionTests.swift"
   "../../../Tests/SDGKeyboardDesignTests/TestKeyboardLayout.swift"
+  "../../../Tests/SDGKeyboardDesignTests/XMLElement.swift"
 )
 set_target_properties("SDGKeyboardDesignTests" PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_Swift_MODULE_DIRECTORY})
 target_compile_options("SDGKeyboardDesignTests" PRIVATE -enable-testing)
 target_link_libraries("SDGKeyboardDesignTests" PRIVATE
   "SDGKeyboardDesign"
+  "SDGLogic"
   "SDGText"
   "SDGPersistence"
   "SDGLocalization"

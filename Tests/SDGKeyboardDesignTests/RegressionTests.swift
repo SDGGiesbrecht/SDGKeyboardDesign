@@ -27,7 +27,8 @@ final class RegressionTests: TestCase {
 
     // Without handling of overflow, this keyboard would have too many dead key states, and macOS would refuse to load it.
     var deadKeyLabels: [StrictString: StrictString] = [:]
-    for integer in 1...1 {
+    let numberOfStates = 1
+    for integer in 1...numberOfStates {
       deadKeyLabels[integer.inDigits()] = integer.inRomanNumerals()
     }
     let keyboard = KeyboardLayout(
@@ -46,8 +47,7 @@ final class RegressionTests: TestCase {
     compare(String(source), against: specification, overwriteSpecificationInsteadOfFailing: false)
 
     let xml = keyboard.keyLayoutXML()
-    let keyboardElement = xml.children?.first(where: { $0.name == "keyboard" })
-    XCTAssertNotNil(keyboardElement)
-    print(keyboardElement)
+    let states = xml.rootElement()!.recursiveStates
+    XCTAssertEqual(states.count, numberOfStates)
   }
 }
