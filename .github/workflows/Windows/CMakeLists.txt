@@ -543,6 +543,7 @@ target_compile_options("SDGKeyboardDesignTests" PRIVATE -enable-testing)
 target_link_libraries("SDGKeyboardDesignTests" PRIVATE
   "SDGKeyboardDesign"
   "SDGText"
+  "SDGPersistence"
   "SDGLocalization"
   "SDGXCTestUtilities"
   "SDGPersistenceTestUtilities"

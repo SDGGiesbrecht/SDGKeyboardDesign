@@ -316,7 +316,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
         let next = keyLayoutWhen()
         action.addChild(next)
         next.addAttribute(name: "state", value: "none")
-        next.addAttribute(name: "next", value: String(dead))
+        next.addAttribute(name: "next", value: String(mangle(action: dead)))
       }
 
       for base in deadKeyAndSymbolMappings.keys.sorted() {
@@ -405,6 +405,8 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     }
 
     /// Generates a key layout file.
+    ///
+    /// For information about this file, see  Apple’s [Technical Note 2056](https://developer.apple.com/library/archive/technotes/tn2056/_index.html).
     public func keyLayoutFile() -> StrictString {
       let xml = keyLayoutXML()
       let data = xml.xmlData(options: [.nodePrettyPrint, .nodeCompactEmptyElement])
