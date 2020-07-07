@@ -317,8 +317,6 @@ let package = Package(
       name: "SDGKeyboardDesignTests",
       dependencies: [
         "SDGKeyboardDesign",
-        .product(name: "SDGLogic", package: "SDGCornerstone"),
-        .product(name: "SDGMathematics", package: "SDGCornerstone"),
         .product(name: "SDGText", package: "SDGCornerstone"),
         .product(name: "SDGPersistence", package: "SDGCornerstone"),
         .product(name: "SDGLocalization", package: "SDGCornerstone"),
