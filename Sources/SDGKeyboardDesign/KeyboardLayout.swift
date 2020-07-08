@@ -407,6 +407,8 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     /// Generates a key layout file.
     ///
     /// For information about this file, see  Apple’s [Technical Note 2056](https://developer.apple.com/library/archive/technotes/tn2056/_index.html).
+    ///
+    /// If macOS refuses to load the file, it can be debugged using the `klcompiler` tool in the [Apple Font Tool Suite](https://developer.apple.com/fonts/).
     public func keyLayoutFile() -> StrictString {
       let xml = keyLayoutXML()
       let data = xml.xmlData(options: [.nodePrettyPrint, .nodeCompactEmptyElement])
