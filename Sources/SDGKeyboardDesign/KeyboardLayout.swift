@@ -462,6 +462,11 @@ public struct KeyboardLayout<L> where L: InputLocalization {
         string = string.replacingOccurrences(of: "&#13;", with: "&#x000D;")
       #endif
 
+      // The macOS XML parser has an intermittent bug involving non‐BMP scalars.
+      string.scalars.mutateMatches(for: ConditionalPattern({ $0.value ≥ 0x10000 })) { match in
+        return "&#x\(match.contents.first!.hexadecimalCode);".scalars
+      }
+
       // macOS fails to parse 2‐spaced indentation.
       string.scalars.replaceMatches(for: "  ".scalars, with: "    ".scalars)
 

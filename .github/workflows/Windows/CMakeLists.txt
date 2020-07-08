@@ -536,6 +536,7 @@ target_link_libraries("SDGKeyboardDesignDocumentationExampleTests" PRIVATE
 add_library("SDGKeyboardDesignTests"
   "../../../Tests/SDGKeyboardDesignTests/APITests.swift"
   "../../../Tests/SDGKeyboardDesignTests/InternalTests.swift"
+  "../../../Tests/SDGKeyboardDesignTests/RegressionTests.swift"
   "../../../Tests/SDGKeyboardDesignTests/TestKeyboardLayout.swift"
 )
 set_target_properties("SDGKeyboardDesignTests" PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_Swift_MODULE_DIRECTORY})

@@ -79,7 +79,7 @@ public enum Symbol {
 
     var symbolsShort: [StrictString: StrictString] = [:]
     for (name, symbol) in symbolsFull {
-      var commonLength = 0
+      var commonLength = 1  // Keep at least one character from the name.
       for (otherName, otherSymbol) in symbolsFull {
         if symbol ≠ otherSymbol,
           name ≠ otherName
@@ -109,15 +109,14 @@ public enum Symbol {
         fork[already] = result
         mappings[new] = fork
       }
-
     }
 
     return mappings
   }
 
-  internal static func states(from mapping: [StrictString: [StrictString: StrictString]])
-    -> [StrictString]
-  {
+  internal static func states(
+    from mapping: [StrictString: [StrictString: StrictString]]
+  ) -> [StrictString] {
     var states: Set<StrictString> = []
     for (_, submapping) in mapping {
       for (state, _) in submapping {
