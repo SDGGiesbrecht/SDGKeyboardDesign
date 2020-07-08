@@ -79,7 +79,7 @@ public enum Symbol {
 
     var symbolsShort: [StrictString: StrictString] = [:]
     for (name, symbol) in symbolsFull {
-      var commonLength = 1 // Keep at least one character from the name.
+      var commonLength = 1  // Keep at least one character from the name.
       for (otherName, otherSymbol) in symbolsFull {
         if symbol ≠ otherSymbol,
           name ≠ otherName

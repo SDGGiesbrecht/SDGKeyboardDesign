@@ -33,7 +33,7 @@ final class RegressionTests: TestCase {
           .leftLittleHome: "C",
           .leftRingHome: "a",
           .leftMiddleHome: "n",
-          .leftIndexHome: "d"
+          .leftIndexHome: "d",
         ]
       ],
       deadKeyLabels: [:],
