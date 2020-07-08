@@ -580,10 +580,10 @@
             <when state="none" output=" "/>
             <when state="_C2_A4Affrikate" output="͜"/>
             <when state="_C2_A4Bild" next="_C2_A4Bild_20"/>
-            <when state="_C2_A4El" output="🇸🇻"/>
+            <when state="_C2_A4El" output="&#x1F1F8;&#x1F1FB;"/>
             <when state="_C2_A4Philippine" output="₱"/>
             <when state="_C2_A4Saint" next="_C2_A4Saint_20"/>
-            <when state="_C2_A4San" output="🇸🇲"/>
+            <when state="_C2_A4San" output="&#x1F1F8;&#x1F1F2;"/>
             <when state="_C2_A4Sankt" next="_C2_A4Sankt_20"/>
             <when state="_C2_A4South" next="_C2_A4South_20"/>
             <when state="_C2_A4United" next="_C2_A4United_20"/>
@@ -794,9 +794,9 @@
             <when state="none" output="A"/>
             <when state="EnglishSingleQuote" output="’"/>
             <when state="_C2_A4" next="_C2_A4A"/>
-            <when state="_C2_A4South_20" output="🇿🇦"/>
-            <when state="_C2_A4United_20" output="🇦🇪"/>
-            <when state="_C2_A4Vereinigte_20" output="🇦🇪"/>
+            <when state="_C2_A4South_20" output="&#x1F1FF;&#x1F1E6;"/>
+            <when state="_C2_A4United_20" output="&#x1F1E6;&#x1F1EA;"/>
+            <when state="_C2_A4Vereinigte_20" output="&#x1F1E6;&#x1F1EA;"/>
             <when state="_C2_A4alveolarer_20" output="ɹ"/>
             <when state="_C2_A4labiodentaler_20" output="ʋ"/>
             <when state="_C2_A4labiovelarer_20" output="w"/>
@@ -810,9 +810,9 @@
             <when state="EnglishHyphenMinus" output="•"/>
             <when state="Hook" output="Ɓ"/>
             <when state="_C2_A4" next="_C2_A4B"/>
-            <when state="_C2_A4China_E2_80_90" output="🇨🇳"/>
-            <when state="_C2_A4Congo_E2_80_90" output="🇨🇬"/>
-            <when state="_C2_A4Kongo_E2_80_90" output="🇨🇬"/>
+            <when state="_C2_A4China_E2_80_90" output="&#x1F1E8;&#x1F1F3;"/>
+            <when state="_C2_A4Congo_E2_80_90" output="&#x1F1E8;&#x1F1EC;"/>
+            <when state="_C2_A4Kongo_E2_80_90" output="&#x1F1E8;&#x1F1EC;"/>
         </action>
         <action id="C">
             <when state="none" output="C"/>
@@ -890,12 +890,12 @@
             <when state="none" output="K"/>
             <when state="Hook" output="Ƙ"/>
             <when state="_C2_A4" next="_C2_A4K"/>
-            <when state="_C2_A4Congo_E2_80_90" output="🇨🇩"/>
-            <when state="_C2_A4Kongo_E2_80_90" output="🇨🇩"/>
-            <when state="_C2_A4Saint_20" output="🇰🇳"/>
-            <when state="_C2_A4Sankt_20" output="🇰🇳"/>
-            <when state="_C2_A4South_20" output="🇰🇷"/>
-            <when state="_C2_A4United_20" output="🇬🇧"/>
+            <when state="_C2_A4Congo_E2_80_90" output="&#x1F1E8;&#x1F1E9;"/>
+            <when state="_C2_A4Kongo_E2_80_90" output="&#x1F1E8;&#x1F1E9;"/>
+            <when state="_C2_A4Saint_20" output="&#x1F1F0;&#x1F1F3;"/>
+            <when state="_C2_A4Sankt_20" output="&#x1F1F0;&#x1F1F3;"/>
+            <when state="_C2_A4South_20" output="&#x1F1F0;&#x1F1F7;"/>
+            <when state="_C2_A4United_20" output="&#x1F1EC;&#x1F1E7;"/>
             <when state="_C2_A4alveolarer_20" output="ǃ"/>
             <when state="_C2_A4dentaler_20" output="ǀ"/>
             <when state="_C2_A4lateraler_20alveolarer_20" output="ǁ"/>
@@ -906,8 +906,8 @@
             <when state="EnglishSingleQuote" output="‘"/>
             <when state="Stroke" output="Ł"/>
             <when state="_C2_A4" next="_C2_A4L"/>
-            <when state="_C2_A4Saint_20" output="🇱🇨"/>
-            <when state="_C2_A4Sankt_20" output="🇱🇨"/>
+            <when state="_C2_A4Saint_20" output="&#x1F1F1;&#x1F1E8;"/>
+            <when state="_C2_A4Sankt_20" output="&#x1F1F1;&#x1F1E8;"/>
         </action>
         <action id="M">
             <when state="none" output="M"/>
@@ -936,7 +936,7 @@
         <action id="P">
             <when state="none" output="P"/>
             <when state="_C2_A4" next="_C2_A4P"/>
-            <when state="_C2_A4China_E2_80_90" output="🇨🇳"/>
+            <when state="_C2_A4China_E2_80_90" output="&#x1F1E8;&#x1F1F3;"/>
             <when state="_C2_A4glottaler_20" output="ʔ"/>
             <when state="_C2_A4stimmhafter_20alveolarer_20" output="d"/>
             <when state="_C2_A4stimmhafter_20bilabialer_20" output="b"/>
@@ -953,7 +953,7 @@
         </action>
         <action id="Q">
             <when state="none" output="Q"/>
-            <when state="_C2_A4" output="🇶🇦"/>
+            <when state="_C2_A4" output="&#x1F1F6;&#x1F1E6;"/>
         </action>
         <action id="R">
             <when state="none" output="R"/>
@@ -966,15 +966,15 @@
             <when state="none" output="S"/>
             <when state="EnglishDoubleQuote" output="′′"/>
             <when state="_C2_A4" next="_C2_A4S"/>
-            <when state="_C2_A4South_20" output="🇸🇸"/>
-            <when state="_C2_A4United_20" output="🇺🇸"/>
-            <when state="_C2_A4Vereinigte_20" output="🇺🇸"/>
+            <when state="_C2_A4South_20" output="&#x1F1F8;&#x1F1F8;"/>
+            <when state="_C2_A4United_20" output="&#x1F1FA;&#x1F1F8;"/>
+            <when state="_C2_A4Vereinigte_20" output="&#x1F1FA;&#x1F1F8;"/>
         </action>
         <action id="T">
             <when state="none" output="T"/>
             <when state="Stroke" output="Ŧ"/>
             <when state="_C2_A4" next="_C2_A4T"/>
-            <when state="_C2_A4China_E2_80_90" output="🇹🇼"/>
+            <when state="_C2_A4China_E2_80_90" output="&#x1F1F9;&#x1F1FC;"/>
             <when state="_C2_A4alveolarer_20" output="ɾ"/>
             <when state="_C2_A4echte_20" output="⊊"/>
             <when state="_C2_A4hoher_20" output="˦"/>
@@ -989,8 +989,8 @@
             <when state="none" output="V"/>
             <when state="Hook" output="Ʋ"/>
             <when state="_C2_A4" next="_C2_A4V"/>
-            <when state="_C2_A4Saint_20" output="🇻🇨"/>
-            <when state="_C2_A4Sankt_20" output="🇻🇨"/>
+            <when state="_C2_A4Saint_20" output="&#x1F1FB;&#x1F1E8;"/>
+            <when state="_C2_A4Sankt_20" output="&#x1F1FB;&#x1F1E8;"/>
             <when state="_C2_A4alveolarer_20" output="r"/>
             <when state="_C2_A4bilabialer_20" output="ʙ"/>
             <when state="_C2_A4fast_20offener_20" output="æ"/>
@@ -1030,50 +1030,50 @@
             <when state="EnglishSingleQuote" output="’"/>
             <when state="_C2_A4" next="_C2_A4a"/>
             <when state="_C2_A4Affrik" next="_C2_A4Affrika"/>
-            <when state="_C2_A4Austr" output="🇦🇺"/>
+            <when state="_C2_A4Austr" output="&#x1F1E6;&#x1F1FA;"/>
             <when state="_C2_A4B" next="_C2_A4Ba"/>
-            <when state="_C2_A4Bah" output="🇧🇸"/>
-            <when state="_C2_A4Bel" output="🇧🇾"/>
+            <when state="_C2_A4Bah" output="&#x1F1E7;&#x1F1F8;"/>
+            <when state="_C2_A4Bel" output="&#x1F1E7;&#x1F1FE;"/>
             <when state="_C2_A4Bild_20" next="_C2_A4Bild_20a"/>
-            <when state="_C2_A4Br" output="🇧🇷"/>
+            <when state="_C2_A4Br" output="&#x1F1E7;&#x1F1F7;"/>
             <when state="_C2_A4C" next="_C2_A4Ca"/>
-            <when state="_C2_A4Can" output="🇨🇦"/>
-            <when state="_C2_A4Ch" output="🇹🇩"/>
+            <when state="_C2_A4Can" output="&#x1F1E8;&#x1F1E6;"/>
+            <when state="_C2_A4Ch" output="&#x1F1F9;&#x1F1E9;"/>
             <when state="_C2_A4Chin" next="_C2_A4China"/>
-            <when state="_C2_A4D" output="🇩🇰"/>
+            <when state="_C2_A4D" output="&#x1F1E9;&#x1F1F0;"/>
             <when state="_C2_A4Dominic" next="_C2_A4Dominica"/>
-            <when state="_C2_A4E" output="🇹🇱"/>
+            <when state="_C2_A4E" output="&#x1F1F9;&#x1F1F1;"/>
             <when state="_C2_A4G" next="_C2_A4Ga"/>
             <when state="_C2_A4Gr" next="_C2_A4Gra"/>
             <when state="_C2_A4Gu" next="_C2_A4Gua"/>
             <when state="_C2_A4Guine" next="_C2_A4Guinea"/>
             <when state="_C2_A4H" next="_C2_A4Ha"/>
-            <when state="_C2_A4Ir" output="🇮🇶"/>
+            <when state="_C2_A4Ir" output="&#x1F1EE;&#x1F1F6;"/>
             <when state="_C2_A4J" next="_C2_A4Ja"/>
             <when state="_C2_A4K" next="_C2_A4Ka"/>
             <when state="_C2_A4Kan" next="_C2_A4Kana"/>
-            <when state="_C2_A4Kanad" output="🇨🇦"/>
+            <when state="_C2_A4Kanad" output="&#x1F1E8;&#x1F1E6;"/>
             <when state="_C2_A4L" next="_C2_A4La"/>
             <when state="_C2_A4Li" output="‿"/>
-            <when state="_C2_A4Lib" output="🇱🇧"/>
+            <when state="_C2_A4Lib" output="&#x1F1F1;&#x1F1E7;"/>
             <when state="_C2_A4M" next="_C2_A4Ma"/>
             <when state="_C2_A4Mal" next="_C2_A4Mala"/>
-            <when state="_C2_A4Maurit" output="🇲🇷"/>
+            <when state="_C2_A4Maurit" output="&#x1F1F2;&#x1F1F7;"/>
             <when state="_C2_A4Mexic" output="$"/>
             <when state="_C2_A4N" next="_C2_A4Na"/>
             <when state="_C2_A4P" next="_C2_A4Pa"/>
-            <when state="_C2_A4Ru" output="🇷🇼"/>
+            <when state="_C2_A4Ru" output="&#x1F1F7;&#x1F1FC;"/>
             <when state="_C2_A4S" next="_C2_A4Sa"/>
-            <when state="_C2_A4Sw" output="🇸🇿"/>
-            <when state="_C2_A4Su_CC_88d" output="🇿🇦"/>
+            <when state="_C2_A4Sw" output="&#x1F1F8;&#x1F1FF;"/>
+            <when state="_C2_A4Su_CC_88d" output="&#x1F1FF;&#x1F1E6;"/>
             <when state="_C2_A4T" next="_C2_A4Ta"/>
             <when state="_C2_A4Tr" output="☹"/>
-            <when state="_C2_A4Tsch" output="🇹🇩"/>
+            <when state="_C2_A4Tsch" output="&#x1F1F9;&#x1F1E9;"/>
             <when state="_C2_A4Urugu" next="_C2_A4Urugua"/>
             <when state="_C2_A4Uruguay" output="$"/>
             <when state="_C2_A4V" next="_C2_A4Va"/>
             <when state="_C2_A4W" output="⌥"/>
-            <when state="_C2_A4Z" output="🇿🇲"/>
+            <when state="_C2_A4Z" output="&#x1F1FF;&#x1F1F2;"/>
             <when state="_C2_A4adv" next="_C2_A4adva"/>
             <when state="_C2_A4affric" next="_C2_A4affrica"/>
             <when state="_C2_A4alveol" next="_C2_A4alveola"/>
@@ -1279,14 +1279,14 @@
             <when state="_C2_A4" next="_C2_A4b"/>
             <when state="_C2_A4A" output="′"/>
             <when state="_C2_A4Bild_20a" output="⇟"/>
-            <when state="_C2_A4Ga" output="🇬🇦"/>
-            <when state="_C2_A4Ku" output="🇨🇺"/>
-            <when state="_C2_A4Le" output="🇱🇧"/>
+            <when state="_C2_A4Ga" output="&#x1F1EC;&#x1F1E6;"/>
+            <when state="_C2_A4Ku" output="&#x1F1E8;&#x1F1FA;"/>
+            <when state="_C2_A4Le" output="&#x1F1F1;&#x1F1E7;"/>
             <when state="_C2_A4Li" next="_C2_A4Lib"/>
             <when state="_C2_A4Ne" output="ˌ"/>
             <when state="_C2_A4O" output="⊇"/>
             <when state="_C2_A4Ru" output="₽"/>
-            <when state="_C2_A4Sam" output="🇿🇲"/>
+            <when state="_C2_A4Sam" output="&#x1F1FF;&#x1F1F2;"/>
             <when state="_C2_A4Ta" output="⇤"/>
             <when state="_C2_A4Wei" output="♀"/>
             <when state="_C2_A4battue_20la" output="ⱱ"/>
@@ -1349,11 +1349,11 @@
             <when state="_C2_A4" next="_C2_A4c"/>
             <when state="_C2_A4Bru" output="⁄"/>
             <when state="_C2_A4Domini" next="_C2_A4Dominic"/>
-            <when state="_C2_A4E" output="🇪🇨"/>
+            <when state="_C2_A4E" output="&#x1F1EA;&#x1F1E8;"/>
             <when state="_C2_A4Kreuz" output="✗"/>
             <when state="_C2_A4Mexi" next="_C2_A4Mexic"/>
-            <when state="_C2_A4Mi" output="🇫🇲"/>
-            <when state="_C2_A4Ni" output="🇳🇮"/>
+            <when state="_C2_A4Mi" output="&#x1F1EB;&#x1F1F2;"/>
+            <when state="_C2_A4Ni" output="&#x1F1F3;&#x1F1EE;"/>
             <when state="_C2_A4Ru_CC_88" next="_C2_A4Ru_CC_88c"/>
             <when state="_C2_A4S" next="_C2_A4Sc"/>
             <when state="_C2_A4Ts" next="_C2_A4Tsc"/>
@@ -1420,20 +1420,20 @@
             <when state="Hook" output="ɗ"/>
             <when state="Stroke" output="đ"/>
             <when state="_C2_A4" next="_C2_A4d"/>
-            <when state="_C2_A4An" output="🇦🇩"/>
+            <when state="_C2_A4An" output="&#x1F1E6;&#x1F1E9;"/>
             <when state="_C2_A4Bil" next="_C2_A4Bild"/>
             <when state="_C2_A4Can" output="cd"/>
             <when state="_C2_A4Ce" output="₵"/>
-            <when state="_C2_A4Fi" output="🇫🇯"/>
+            <when state="_C2_A4Fi" output="&#x1F1EB;&#x1F1EF;"/>
             <when state="_C2_A4Gra" output="°"/>
             <when state="_C2_A4In" next="_C2_A4Ind"/>
             <when state="_C2_A4Kana" next="_C2_A4Kanad"/>
-            <when state="_C2_A4Ma" output="🇲🇬"/>
-            <when state="_C2_A4Mol" output="🇲🇩"/>
+            <when state="_C2_A4Ma" output="&#x1F1F2;&#x1F1EC;"/>
+            <when state="_C2_A4Mol" output="&#x1F1F2;&#x1F1E9;"/>
             <when state="_C2_A4Nor" next="_C2_A4Nord"/>
             <when state="_C2_A4Pro" output="∏"/>
-            <when state="_C2_A4Schwe" output="🇸🇪"/>
-            <when state="_C2_A4Su" output="🇸🇩"/>
+            <when state="_C2_A4Schwe" output="&#x1F1F8;&#x1F1EA;"/>
+            <when state="_C2_A4Su" output="&#x1F1F8;&#x1F1E9;"/>
             <when state="_C2_A4Su_CC_88" next="_C2_A4Su_CC_88d"/>
             <when state="_C2_A4Unite" next="_C2_A4United"/>
             <when state="_C2_A4a" next="_C2_A4ad"/>
@@ -1494,22 +1494,22 @@
             <when state="_C2_A4D" next="_C2_A4De"/>
             <when state="_C2_A4El" output="∈"/>
             <when state="_C2_A4F" next="_C2_A4Fe"/>
-            <when state="_C2_A4G" output="🇩🇪"/>
+            <when state="_C2_A4G" output="&#x1F1E9;&#x1F1EA;"/>
             <when state="_C2_A4Gr" next="_C2_A4Gre"/>
-            <when state="_C2_A4Gre" output="🇬🇷"/>
+            <when state="_C2_A4Gre" output="&#x1F1EC;&#x1F1F7;"/>
             <when state="_C2_A4Guin" next="_C2_A4Guine"/>
             <when state="_C2_A4H" next="_C2_A4He"/>
-            <when state="_C2_A4Ir" output="🇮🇪"/>
-            <when state="_C2_A4J" output="🇾🇪"/>
+            <when state="_C2_A4Ir" output="&#x1F1EE;&#x1F1EA;"/>
+            <when state="_C2_A4J" output="&#x1F1FE;&#x1F1EA;"/>
             <when state="_C2_A4K" next="_C2_A4Ke"/>
             <when state="_C2_A4Kr" next="_C2_A4Kre"/>
             <when state="_C2_A4L" next="_C2_A4Le"/>
-            <when state="_C2_A4Li" output="🇱🇮"/>
-            <when state="_C2_A4Lib" output="🇱🇷"/>
+            <when state="_C2_A4Li" output="&#x1F1F1;&#x1F1EE;"/>
+            <when state="_C2_A4Lib" output="&#x1F1F1;&#x1F1F7;"/>
             <when state="_C2_A4M" next="_C2_A4Me"/>
-            <when state="_C2_A4Maur" output="🇲🇷"/>
+            <when state="_C2_A4Maur" output="&#x1F1F2;&#x1F1F7;"/>
             <when state="_C2_A4N" next="_C2_A4Ne"/>
-            <when state="_C2_A4Ni" output="🇳🇱"/>
+            <when state="_C2_A4Ni" output="&#x1F1F3;&#x1F1F1;"/>
             <when state="_C2_A4Nig" next="_C2_A4Nige"/>
             <when state="_C2_A4Nord" output="↑"/>
             <when state="_C2_A4Ost" output="→"/>
@@ -1518,11 +1518,11 @@
             <when state="_C2_A4S" next="_C2_A4Se"/>
             <when state="_C2_A4Sch" output="₪"/>
             <when state="_C2_A4Schw" next="_C2_A4Schwe"/>
-            <when state="_C2_A4Si" output="🇸🇱"/>
-            <when state="_C2_A4Sw" output="🇸🇪"/>
+            <when state="_C2_A4Si" output="&#x1F1F8;&#x1F1F1;"/>
+            <when state="_C2_A4Sw" output="&#x1F1F8;&#x1F1EA;"/>
             <when state="_C2_A4Su_CC_88d" output="↓"/>
             <when state="_C2_A4T" next="_C2_A4Te"/>
-            <when state="_C2_A4Tsch" output="🇨🇿"/>
+            <when state="_C2_A4Tsch" output="&#x1F1E8;&#x1F1FF;"/>
             <when state="_C2_A4Unit" next="_C2_A4Unite"/>
             <when state="_C2_A4V" next="_C2_A4Ve"/>
             <when state="_C2_A4Ver" next="_C2_A4Vere"/>
@@ -1820,7 +1820,7 @@
             <when state="_C2_A4Au" output="•"/>
             <when state="_C2_A4Be" output="⌘"/>
             <when state="_C2_A4Di" output="∖"/>
-            <when state="_C2_A4El" output="🇨🇮"/>
+            <when state="_C2_A4El" output="&#x1F1E8;&#x1F1EE;"/>
             <when state="_C2_A4P" output="£"/>
             <when state="_C2_A4Ru_CC_88ck" output="⏎"/>
             <when state="_C2_A4a" next="_C2_A4af"/>
@@ -1879,17 +1879,17 @@
         <action id="g">
             <when state="none" output="g"/>
             <when state="_C2_A4" next="_C2_A4g"/>
-            <when state="_C2_A4An" output="🇦🇴"/>
-            <when state="_C2_A4Bel" output="🇧🇪"/>
+            <when state="_C2_A4An" output="&#x1F1E6;&#x1F1F4;"/>
+            <when state="_C2_A4Bel" output="&#x1F1E7;&#x1F1EA;"/>
             <when state="_C2_A4Con" next="_C2_A4Cong"/>
-            <when state="_C2_A4E" output="🇪🇬"/>
-            <when state="_C2_A4Kir" output="🇰🇬"/>
+            <when state="_C2_A4E" output="&#x1F1EA;&#x1F1EC;"/>
+            <when state="_C2_A4Kir" output="&#x1F1F0;&#x1F1EC;"/>
             <when state="_C2_A4Kon" next="_C2_A4Kong"/>
             <when state="_C2_A4Me" output="M"/>
             <when state="_C2_A4Ni" next="_C2_A4Nig"/>
-            <when state="_C2_A4To" output="🇹🇬"/>
-            <when state="_C2_A4U" output="🇺🇬"/>
-            <when state="_C2_A4Un" output="🇭🇺"/>
+            <when state="_C2_A4To" output="&#x1F1F9;&#x1F1EC;"/>
+            <when state="_C2_A4U" output="&#x1F1FA;&#x1F1EC;"/>
+            <when state="_C2_A4Un" output="&#x1F1ED;&#x1F1FA;"/>
             <when state="_C2_A4Uru" next="_C2_A4Urug"/>
             <when state="_C2_A4Vereini" next="_C2_A4Vereinig"/>
             <when state="_C2_A4an" output="̝"/>
@@ -1919,7 +1919,7 @@
             <when state="_C2_A4ungerundeter_20halb" next="_C2_A4ungerundeter_20halbg"/>
             <when state="_C2_A4voiced_20" output="ɦ"/>
             <when state="_C2_A4voiceless_20" output="h"/>
-            <when state="_C2_A4A_CC_88" output="🇪🇬"/>
+            <when state="_C2_A4A_CC_88" output="&#x1F1EA;&#x1F1EC;"/>
             <when state="_C2_A4e_CC_81" output="="/>
         </action>
         <action id="h">
@@ -1929,11 +1929,11 @@
             <when state="_C2_A4" next="_C2_A4h"/>
             <when state="_C2_A4Ba" next="_C2_A4Bah"/>
             <when state="_C2_A4C" next="_C2_A4Ch"/>
-            <when state="_C2_A4G" output="🇬🇭"/>
+            <when state="_C2_A4G" output="&#x1F1EC;&#x1F1ED;"/>
             <when state="_C2_A4P" next="_C2_A4Ph"/>
             <when state="_C2_A4Sc" next="_C2_A4Sch"/>
             <when state="_C2_A4Sout" next="_C2_A4South"/>
-            <when state="_C2_A4T" output="🇹🇭"/>
+            <when state="_C2_A4T" output="&#x1F1F9;&#x1F1ED;"/>
             <when state="_C2_A4Tsc" next="_C2_A4Tsch"/>
             <when state="_C2_A4Ur" output="©"/>
             <when state="_C2_A4be" output="̤"/>
@@ -1978,9 +1978,9 @@
             <when state="Stroke" output="ɨ"/>
             <when state="_C2_A4" next="_C2_A4i"/>
             <when state="_C2_A4Affr" next="_C2_A4Affri"/>
-            <when state="_C2_A4Austr" output="🇦🇹"/>
+            <when state="_C2_A4Austr" output="&#x1F1E6;&#x1F1F9;"/>
             <when state="_C2_A4B" next="_C2_A4Bi"/>
-            <when state="_C2_A4Bel" output="🇧🇿"/>
+            <when state="_C2_A4Bel" output="&#x1F1E7;&#x1F1FF;"/>
             <when state="_C2_A4Ch" next="_C2_A4Chi"/>
             <when state="_C2_A4D" next="_C2_A4Di"/>
             <when state="_C2_A4Dom" next="_C2_A4Domi"/>
@@ -1988,38 +1988,38 @@
             <when state="_C2_A4E" output="⌤"/>
             <when state="_C2_A4F" next="_C2_A4Fi"/>
             <when state="_C2_A4G" output="G"/>
-            <when state="_C2_A4Gr" output="🇬🇷"/>
+            <when state="_C2_A4Gr" output="&#x1F1EC;&#x1F1F7;"/>
             <when state="_C2_A4Gu" next="_C2_A4Gui"/>
-            <when state="_C2_A4Ha" output="🇭🇹"/>
-            <when state="_C2_A4Ind" output="🇮🇳"/>
+            <when state="_C2_A4Ha" output="&#x1F1ED;&#x1F1F9;"/>
+            <when state="_C2_A4Ind" output="&#x1F1EE;&#x1F1F3;"/>
             <when state="_C2_A4K" next="_C2_A4Ki"/>
             <when state="_C2_A4Kanad" output="¢"/>
-            <when state="_C2_A4Kir" output="🇰🇮"/>
+            <when state="_C2_A4Kir" output="&#x1F1F0;&#x1F1EE;"/>
             <when state="_C2_A4L" next="_C2_A4Li"/>
             <when state="_C2_A4M" next="_C2_A4Mi"/>
-            <when state="_C2_A4Mal" output="🇲🇱"/>
+            <when state="_C2_A4Mal" output="&#x1F1F2;&#x1F1F1;"/>
             <when state="_C2_A4Maur" next="_C2_A4Mauri"/>
-            <when state="_C2_A4Maurit" output="🇲🇺"/>
+            <when state="_C2_A4Maurit" output="&#x1F1F2;&#x1F1FA;"/>
             <when state="_C2_A4Mex" next="_C2_A4Mexi"/>
             <when state="_C2_A4N" next="_C2_A4Ni"/>
             <when state="_C2_A4Na" output="₦"/>
-            <when state="_C2_A4Niger" output="🇳🇬"/>
+            <when state="_C2_A4Niger" output="&#x1F1F3;&#x1F1EC;"/>
             <when state="_C2_A4P" next="_C2_A4Pi"/>
             <when state="_C2_A4Ph" next="_C2_A4Phi"/>
             <when state="_C2_A4Phil" next="_C2_A4Phili"/>
             <when state="_C2_A4Philipp" next="_C2_A4Philippi"/>
             <when state="_C2_A4S" next="_C2_A4Si"/>
             <when state="_C2_A4Sa" next="_C2_A4Sai"/>
-            <when state="_C2_A4Schwe" output="🇨🇭"/>
-            <when state="_C2_A4Sw" output="🇨🇭"/>
+            <when state="_C2_A4Schwe" output="&#x1F1E8;&#x1F1ED;"/>
+            <when state="_C2_A4Sw" output="&#x1F1E8;&#x1F1ED;"/>
             <when state="_C2_A4Te" output="⊆"/>
-            <when state="_C2_A4Tr" output="🇹🇹"/>
+            <when state="_C2_A4Tr" output="&#x1F1F9;&#x1F1F9;"/>
             <when state="_C2_A4Un" next="_C2_A4Uni"/>
-            <when state="_C2_A4V" output="🇻🇳"/>
+            <when state="_C2_A4V" output="&#x1F1FB;&#x1F1F3;"/>
             <when state="_C2_A4Vere" next="_C2_A4Verei"/>
             <when state="_C2_A4Verein" next="_C2_A4Vereini"/>
             <when state="_C2_A4We" next="_C2_A4Wei"/>
-            <when state="_C2_A4Z" output="🇿🇼"/>
+            <when state="_C2_A4Z" output="&#x1F1FF;&#x1F1FC;"/>
             <when state="_C2_A4Zent" output="c"/>
             <when state="_C2_A4affr" next="_C2_A4affri"/>
             <when state="_C2_A4alveolar_20" output="ɗ"/>
@@ -2135,8 +2135,8 @@
         </action>
         <action id="j">
             <when state="none" output="j"/>
-            <when state="_C2_A4D" output="🇩🇯"/>
-            <when state="_C2_A4Fi" output="🇫🇯"/>
+            <when state="_C2_A4D" output="&#x1F1E9;&#x1F1EF;"/>
+            <when state="_C2_A4Fi" output="&#x1F1EB;&#x1F1EF;"/>
             <when state="_C2_A4Kon" output="∧"/>
             <when state="_C2_A4con" output="∧"/>
             <when state="_C2_A4e" next="_C2_A4ej"/>
@@ -2149,20 +2149,20 @@
             <when state="Hook" output="ƙ"/>
             <when state="_C2_A4" next="_C2_A4k"/>
             <when state="_C2_A4Affri" next="_C2_A4Affrik"/>
-            <when state="_C2_A4Bur" output="🇧🇫"/>
+            <when state="_C2_A4Bur" output="&#x1F1E7;&#x1F1EB;"/>
             <when state="_C2_A4De" output="da"/>
-            <when state="_C2_A4Domini" output="🇩🇴"/>
+            <when state="_C2_A4Domini" output="&#x1F1E9;&#x1F1F4;"/>
             <when state="_C2_A4He" output="h"/>
-            <when state="_C2_A4Mexi" output="🇲🇽"/>
+            <when state="_C2_A4Mexi" output="&#x1F1F2;&#x1F1FD;"/>
             <when state="_C2_A4Mi" next="_C2_A4Mik"/>
-            <when state="_C2_A4Nord" output="🇰🇵"/>
-            <when state="_C2_A4Pa" output="🇵🇰"/>
+            <when state="_C2_A4Nord" output="&#x1F1F0;&#x1F1F5;"/>
+            <when state="_C2_A4Pa" output="&#x1F1F5;&#x1F1F0;"/>
             <when state="_C2_A4Pi" next="_C2_A4Pik"/>
             <when state="_C2_A4Ru_CC_88c" next="_C2_A4Ru_CC_88ck"/>
             <when state="_C2_A4San" next="_C2_A4Sank"/>
             <when state="_C2_A4Se" output="s"/>
-            <when state="_C2_A4Su_CC_88d" output="🇰🇷"/>
-            <when state="_C2_A4U" output="🇺🇦"/>
+            <when state="_C2_A4Su_CC_88d" output="&#x1F1F0;&#x1F1F7;"/>
+            <when state="_C2_A4U" output="&#x1F1FA;&#x1F1E6;"/>
             <when state="_C2_A4Yo" output="y"/>
             <when state="_C2_A4asteris" output="*"/>
             <when state="_C2_A4close_20bac" next="_C2_A4close_20back"/>
@@ -2178,29 +2178,29 @@
             <when state="EnglishSingleQuote" output="‘"/>
             <when state="Stroke" output="ł"/>
             <when state="_C2_A4" next="_C2_A4l"/>
-            <when state="_C2_A4A" output="🇩🇿"/>
+            <when state="_C2_A4A" output="&#x1F1E9;&#x1F1FF;"/>
             <when state="_C2_A4Be" next="_C2_A4Bel"/>
             <when state="_C2_A4Bi" next="_C2_A4Bil"/>
-            <when state="_C2_A4Bo" output="🇧🇴"/>
-            <when state="_C2_A4Chi" output="🇨🇱"/>
+            <when state="_C2_A4Bo" output="&#x1F1E7;&#x1F1F4;"/>
+            <when state="_C2_A4Chi" output="&#x1F1E8;&#x1F1F1;"/>
             <when state="_C2_A4Co" next="_C2_A4Col"/>
             <when state="_C2_A4Do" output="$"/>
             <when state="_C2_A4E" next="_C2_A4El"/>
-            <when state="_C2_A4Ir" output="🇮🇪"/>
+            <when state="_C2_A4Ir" output="&#x1F1EE;&#x1F1EA;"/>
             <when state="_C2_A4Ke" output="K"/>
             <when state="_C2_A4Ki" output="h"/>
-            <when state="_C2_A4Ko" output="🇨🇴"/>
+            <when state="_C2_A4Ko" output="&#x1F1E8;&#x1F1F4;"/>
             <when state="_C2_A4Ma" next="_C2_A4Mal"/>
             <when state="_C2_A4Mi" output="m"/>
             <when state="_C2_A4Mo" next="_C2_A4Mol"/>
             <when state="_C2_A4P" output="◌"/>
-            <when state="_C2_A4Pa" output="🇵🇼"/>
+            <when state="_C2_A4Pa" output="&#x1F1F5;&#x1F1FC;"/>
             <when state="_C2_A4Phi" next="_C2_A4Phil"/>
-            <when state="_C2_A4Po" output="🇵🇱"/>
-            <when state="_C2_A4S" output="🇸🇰"/>
-            <when state="_C2_A4Sa" output="🇸🇧"/>
+            <when state="_C2_A4Po" output="&#x1F1F5;&#x1F1F1;"/>
+            <when state="_C2_A4S" output="&#x1F1F8;&#x1F1F0;"/>
+            <when state="_C2_A4Sa" output="&#x1F1F8;&#x1F1E7;"/>
             <when state="_C2_A4Si" output="."/>
-            <when state="_C2_A4So" output="🇸🇧"/>
+            <when state="_C2_A4So" output="&#x1F1F8;&#x1F1E7;"/>
             <when state="_C2_A4a" next="_C2_A4al"/>
             <when state="_C2_A4alveo" next="_C2_A4alveol"/>
             <when state="_C2_A4alveolar_20" next="_C2_A4alveolar_20l"/>
@@ -2367,26 +2367,26 @@
             <when state="EnglishSingleQuote" output="′"/>
             <when state="_C2_A4" next="_C2_A4m"/>
             <when state="_C2_A4A" next="_C2_A4Am"/>
-            <when state="_C2_A4Ca" output="🇨🇲"/>
-            <when state="_C2_A4Co" output="🇰🇲"/>
-            <when state="_C2_A4Colo" output="🇨🇴"/>
+            <when state="_C2_A4Ca" output="&#x1F1E8;&#x1F1F2;"/>
+            <when state="_C2_A4Co" output="&#x1F1F0;&#x1F1F2;"/>
+            <when state="_C2_A4Colo" output="&#x1F1E8;&#x1F1F4;"/>
             <when state="_C2_A4Do" next="_C2_A4Dom"/>
             <when state="_C2_A4Fe" output="f"/>
-            <when state="_C2_A4Ga" output="🇬🇲"/>
+            <when state="_C2_A4Ga" output="&#x1F1EC;&#x1F1F2;"/>
             <when state="_C2_A4Gra" output="g"/>
-            <when state="_C2_A4Ja" output="🇯🇲"/>
-            <when state="_C2_A4Ka" output="🇨🇲"/>
-            <when state="_C2_A4Ko" output="🇰🇲"/>
-            <when state="_C2_A4Na" output="🇳🇦"/>
-            <when state="_C2_A4O" output="🇴🇲"/>
+            <when state="_C2_A4Ja" output="&#x1F1EF;&#x1F1F2;"/>
+            <when state="_C2_A4Ka" output="&#x1F1E8;&#x1F1F2;"/>
+            <when state="_C2_A4Ko" output="&#x1F1F0;&#x1F1F2;"/>
+            <when state="_C2_A4Na" output="&#x1F1F3;&#x1F1E6;"/>
+            <when state="_C2_A4O" output="&#x1F1F4;&#x1F1F2;"/>
             <when state="_C2_A4Pro" output="‰"/>
-            <when state="_C2_A4Ru" output="🇷🇴"/>
+            <when state="_C2_A4Ru" output="&#x1F1F7;&#x1F1F4;"/>
             <when state="_C2_A4Sa" next="_C2_A4Sam"/>
-            <when state="_C2_A4Si" output="🇿🇼"/>
-            <when state="_C2_A4So" output="🇸🇴"/>
+            <when state="_C2_A4Si" output="&#x1F1FF;&#x1F1FC;"/>
+            <when state="_C2_A4So" output="&#x1F1F8;&#x1F1F4;"/>
             <when state="_C2_A4Su" output="∑"/>
             <when state="_C2_A4U" output="⇧"/>
-            <when state="_C2_A4Ye" output="🇾🇪"/>
+            <when state="_C2_A4Ye" output="&#x1F1FE;&#x1F1EA;"/>
             <when state="_C2_A4a" output="A"/>
             <when state="_C2_A4asteris" output="⁂"/>
             <when state="_C2_A4close_E2_80_90" next="_C2_A4close_E2_80_90m"/>
@@ -2425,43 +2425,43 @@
             <when state="Hook" output="ɲ"/>
             <when state="_C2_A4" next="_C2_A4n"/>
             <when state="_C2_A4A" next="_C2_A4An"/>
-            <when state="_C2_A4Be" output="🇧🇯"/>
-            <when state="_C2_A4Bru" output="🇧🇳"/>
+            <when state="_C2_A4Be" output="&#x1F1E7;&#x1F1EF;"/>
+            <when state="_C2_A4Bru" output="&#x1F1E7;&#x1F1F3;"/>
             <when state="_C2_A4Ca" next="_C2_A4Can"/>
             <when state="_C2_A4Ce" next="_C2_A4Cen"/>
             <when state="_C2_A4Chi" next="_C2_A4Chin"/>
             <when state="_C2_A4Co" next="_C2_A4Con"/>
-            <when state="_C2_A4De" output="🇩🇰"/>
+            <when state="_C2_A4De" output="&#x1F1E9;&#x1F1F0;"/>
             <when state="_C2_A4Domi" next="_C2_A4Domin"/>
-            <when state="_C2_A4Dominica" output="🇩🇴"/>
+            <when state="_C2_A4Dominica" output="&#x1F1E9;&#x1F1F4;"/>
             <when state="_C2_A4E" output="⌦"/>
-            <when state="_C2_A4Fi" output="🇫🇮"/>
-            <when state="_C2_A4Gre" output="🇬🇩"/>
+            <when state="_C2_A4Fi" output="&#x1F1EB;&#x1F1EE;"/>
+            <when state="_C2_A4Gre" output="&#x1F1EC;&#x1F1E9;"/>
             <when state="_C2_A4Gui" next="_C2_A4Guin"/>
             <when state="_C2_A4I" next="_C2_A4In"/>
             <when state="_C2_A4Ka" next="_C2_A4Kan"/>
-            <when state="_C2_A4Ke" output="🇰🇪"/>
+            <when state="_C2_A4Ke" output="&#x1F1F0;&#x1F1EA;"/>
             <when state="_C2_A4Ko" next="_C2_A4Kon"/>
             <when state="_C2_A4Ma" output="₼"/>
             <when state="_C2_A4Mi" output="′"/>
-            <when state="_C2_A4Mikro" output="🇫🇲"/>
-            <when state="_C2_A4Mo" output="🇲🇨"/>
+            <when state="_C2_A4Mikro" output="&#x1F1EB;&#x1F1F2;"/>
+            <when state="_C2_A4Mo" output="&#x1F1F2;&#x1F1E8;"/>
             <when state="_C2_A4Na" output="n"/>
-            <when state="_C2_A4Pa" output="🇵🇦"/>
+            <when state="_C2_A4Pa" output="&#x1F1F5;&#x1F1E6;"/>
             <when state="_C2_A4Philippi" next="_C2_A4Philippin"/>
-            <when state="_C2_A4Philippine" output="🇵🇭"/>
+            <when state="_C2_A4Philippine" output="&#x1F1F5;&#x1F1ED;"/>
             <when state="_C2_A4Sa" next="_C2_A4San"/>
             <when state="_C2_A4Sai" next="_C2_A4Sain"/>
             <when state="_C2_A4Sch" output="∩"/>
-            <when state="_C2_A4Se" output="🇸🇳"/>
-            <when state="_C2_A4Si" output="🇸🇬"/>
-            <when state="_C2_A4Ta" output="🇹🇿"/>
+            <when state="_C2_A4Se" output="&#x1F1F8;&#x1F1F3;"/>
+            <when state="_C2_A4Si" output="&#x1F1F8;&#x1F1EC;"/>
+            <when state="_C2_A4Ta" output="&#x1F1F9;&#x1F1FF;"/>
             <when state="_C2_A4Te" output="₸"/>
-            <when state="_C2_A4To" output="🇹🇴"/>
-            <when state="_C2_A4Tu" output="🇹🇳"/>
+            <when state="_C2_A4To" output="&#x1F1F9;&#x1F1F4;"/>
+            <when state="_C2_A4Tu" output="&#x1F1F9;&#x1F1F3;"/>
             <when state="_C2_A4U" next="_C2_A4Un"/>
-            <when state="_C2_A4Va" output="🇻🇺"/>
-            <when state="_C2_A4Ve" output="🇻🇪"/>
+            <when state="_C2_A4Va" output="&#x1F1FB;&#x1F1FA;"/>
+            <when state="_C2_A4Ve" output="&#x1F1FB;&#x1F1EA;"/>
             <when state="_C2_A4Verei" next="_C2_A4Verein"/>
             <when state="_C2_A4Ye" output="¥"/>
             <when state="_C2_A4Ze" next="_C2_A4Zen"/>
@@ -2581,24 +2581,24 @@
             <when state="_C2_A4Col" next="_C2_A4Colo"/>
             <when state="_C2_A4Cong" next="_C2_A4Congo"/>
             <when state="_C2_A4D" next="_C2_A4Do"/>
-            <when state="_C2_A4H" output="🇭🇳"/>
-            <when state="_C2_A4Ind" output="🇮🇩"/>
-            <when state="_C2_A4J" output="🇯🇴"/>
+            <when state="_C2_A4H" output="&#x1F1ED;&#x1F1F3;"/>
+            <when state="_C2_A4Ind" output="&#x1F1EE;&#x1F1E9;"/>
+            <when state="_C2_A4J" output="&#x1F1EF;&#x1F1F4;"/>
             <when state="_C2_A4K" next="_C2_A4Ko"/>
             <when state="_C2_A4Kong" next="_C2_A4Kongo"/>
-            <when state="_C2_A4Kr" output="🇭🇷"/>
+            <when state="_C2_A4Kr" output="&#x1F1ED;&#x1F1F7;"/>
             <when state="_C2_A4M" next="_C2_A4Mo"/>
-            <when state="_C2_A4Mar" output="🇲🇦"/>
-            <when state="_C2_A4Mexic" output="🇲🇽"/>
+            <when state="_C2_A4Mar" output="&#x1F1F2;&#x1F1E6;"/>
+            <when state="_C2_A4Mexic" output="&#x1F1F2;&#x1F1FD;"/>
             <when state="_C2_A4Mikr" next="_C2_A4Mikro"/>
             <when state="_C2_A4N" next="_C2_A4No"/>
             <when state="_C2_A4Nord" output="↗"/>
             <when state="_C2_A4P" next="_C2_A4Po"/>
             <when state="_C2_A4Pik" output="p"/>
             <when state="_C2_A4Pr" next="_C2_A4Pro"/>
-            <when state="_C2_A4R" output="🇷🇴"/>
+            <when state="_C2_A4R" output="&#x1F1F7;&#x1F1F4;"/>
             <when state="_C2_A4S" next="_C2_A4So"/>
-            <when state="_C2_A4Sam" output="🇼🇸"/>
+            <when state="_C2_A4Sam" output="&#x1F1FC;&#x1F1F8;"/>
             <when state="_C2_A4Su_CC_88d" output="↘"/>
             <when state="_C2_A4T" next="_C2_A4To"/>
             <when state="_C2_A4W" output="₩"/>
@@ -2712,15 +2712,15 @@
             <when state="none" output="p"/>
             <when state="_C2_A4" next="_C2_A4p"/>
             <when state="_C2_A4Am" output="A"/>
-            <when state="_C2_A4Ca" output="🇨🇻"/>
-            <when state="_C2_A4Ja" output="🇯🇵"/>
-            <when state="_C2_A4Ka" output="🇨🇻"/>
+            <when state="_C2_A4Ca" output="&#x1F1E8;&#x1F1FB;"/>
+            <when state="_C2_A4Ja" output="&#x1F1EF;&#x1F1F5;"/>
+            <when state="_C2_A4Ka" output="&#x1F1E8;&#x1F1FB;"/>
             <when state="_C2_A4Ki" output="₭"/>
-            <when state="_C2_A4Pa" output="🇵🇬"/>
+            <when state="_C2_A4Pa" output="&#x1F1F5;&#x1F1EC;"/>
             <when state="_C2_A4Phili" next="_C2_A4Philip"/>
             <when state="_C2_A4Philip" next="_C2_A4Philipp"/>
             <when state="_C2_A4Ru" output="₹"/>
-            <when state="_C2_A4S" output="🇪🇸"/>
+            <when state="_C2_A4S" output="&#x1F1EA;&#x1F1F8;"/>
             <when state="_C2_A4Ze" output="z"/>
             <when state="_C2_A4a" next="_C2_A4ap"/>
             <when state="_C2_A4accent_20" output="ˈ"/>
@@ -2784,13 +2784,13 @@
         </action>
         <action id="q">
             <when state="none" output="q"/>
-            <when state="_C2_A4E" output="🇬🇶"/>
+            <when state="_C2_A4E" output="&#x1F1EC;&#x1F1F6;"/>
             <when state="_C2_A4affri" next="_C2_A4affriq"/>
             <when state="_C2_A4e" output="="/>
             <when state="_C2_A4mar" next="_C2_A4marq"/>
             <when state="_C2_A4pi" output="♠"/>
             <when state="_C2_A4pres" output="≈"/>
-            <when state="_C2_A4A_CC_88" output="🇬🇶"/>
+            <when state="_C2_A4A_CC_88" output="&#x1F1EC;&#x1F1F6;"/>
         </action>
         <action id="r">
             <when state="none" output="r"/>
@@ -2798,16 +2798,16 @@
             <when state="EnglishHyphenMinus" output="–"/>
             <when state="EnglishSingleQuote" output="’"/>
             <when state="_C2_A4" next="_C2_A4r"/>
-            <when state="_C2_A4A" output="🇦🇷"/>
+            <when state="_C2_A4A" output="&#x1F1E6;&#x1F1F7;"/>
             <when state="_C2_A4Aff" next="_C2_A4Affr"/>
             <when state="_C2_A4Aust" next="_C2_A4Austr"/>
             <when state="_C2_A4B" next="_C2_A4Br"/>
-            <when state="_C2_A4Ba" output="🇧🇧"/>
-            <when state="_C2_A4Bah" output="🇧🇭"/>
+            <when state="_C2_A4Ba" output="&#x1F1E7;&#x1F1E7;"/>
+            <when state="_C2_A4Bah" output="&#x1F1E7;&#x1F1ED;"/>
             <when state="_C2_A4Bu" next="_C2_A4Bur"/>
-            <when state="_C2_A4C" output="🇭🇷"/>
-            <when state="_C2_A4Cent" output="🇨🇫"/>
-            <when state="_C2_A4F" output="🇫🇷"/>
+            <when state="_C2_A4C" output="&#x1F1ED;&#x1F1F7;"/>
+            <when state="_C2_A4Cent" output="&#x1F1E8;&#x1F1EB;"/>
+            <when state="_C2_A4F" output="&#x1F1EB;&#x1F1F7;"/>
             <when state="_C2_A4G" next="_C2_A4Gr"/>
             <when state="_C2_A4Gua" output="₲"/>
             <when state="_C2_A4H" output="₴"/>
@@ -2821,21 +2821,21 @@
             <when state="_C2_A4Ma" next="_C2_A4Mar"/>
             <when state="_C2_A4Mau" next="_C2_A4Maur"/>
             <when state="_C2_A4Mik" next="_C2_A4Mikr"/>
-            <when state="_C2_A4Mo" output="🇲🇦"/>
+            <when state="_C2_A4Mo" output="&#x1F1F2;&#x1F1E6;"/>
             <when state="_C2_A4Nige" next="_C2_A4Niger"/>
             <when state="_C2_A4No" next="_C2_A4Nor"/>
             <when state="_C2_A4P" next="_C2_A4Pr"/>
-            <when state="_C2_A4Pa" output="🇵🇾"/>
-            <when state="_C2_A4Pe" output="🇵🇪"/>
-            <when state="_C2_A4Po" output="🇵🇹"/>
-            <when state="_C2_A4S" output="🇱🇰"/>
-            <when state="_C2_A4Su" output="🇸🇷"/>
+            <when state="_C2_A4Pa" output="&#x1F1F5;&#x1F1FE;"/>
+            <when state="_C2_A4Pe" output="&#x1F1F5;&#x1F1EA;"/>
+            <when state="_C2_A4Po" output="&#x1F1F5;&#x1F1F9;"/>
+            <when state="_C2_A4S" output="&#x1F1F1;&#x1F1F0;"/>
+            <when state="_C2_A4Su" output="&#x1F1F8;&#x1F1F7;"/>
             <when state="_C2_A4T" next="_C2_A4Tr"/>
             <when state="_C2_A4Te" output="T"/>
-            <when state="_C2_A4Tu" output="🇹🇷"/>
+            <when state="_C2_A4Tu" output="&#x1F1F9;&#x1F1F7;"/>
             <when state="_C2_A4U" next="_C2_A4Ur"/>
             <when state="_C2_A4Ve" next="_C2_A4Ver"/>
-            <when state="_C2_A4Zent" output="🇨🇫"/>
+            <when state="_C2_A4Zent" output="&#x1F1E8;&#x1F1EB;"/>
             <when state="_C2_A4aff" next="_C2_A4affr"/>
             <when state="_C2_A4alveola" next="_C2_A4alveolar"/>
             <when state="_C2_A4alveolar_20late" next="_C2_A4alveolar_20later"/>
@@ -3046,22 +3046,22 @@
             <when state="_C2_A4" next="_C2_A4s"/>
             <when state="_C2_A4A" output="⁂"/>
             <when state="_C2_A4Au" next="_C2_A4Aus"/>
-            <when state="_C2_A4Co" output="🇨🇷"/>
-            <when state="_C2_A4D" output="🇩🇯"/>
+            <when state="_C2_A4Co" output="&#x1F1E8;&#x1F1F7;"/>
+            <when state="_C2_A4D" output="&#x1F1E9;&#x1F1EF;"/>
             <when state="_C2_A4Di" output="∨"/>
             <when state="_C2_A4E" output="⎋"/>
             <when state="_C2_A4Fe" output="⇪"/>
-            <when state="_C2_A4I" output="🇮🇱"/>
-            <when state="_C2_A4Ka" output="🇰🇿"/>
-            <when state="_C2_A4Le" output="🇱🇸"/>
-            <when state="_C2_A4Mar" output="🇲🇭"/>
-            <when state="_C2_A4Mo" output="🇲🇿"/>
+            <when state="_C2_A4I" output="&#x1F1EE;&#x1F1F1;"/>
+            <when state="_C2_A4Ka" output="&#x1F1F0;&#x1F1FF;"/>
+            <when state="_C2_A4Le" output="&#x1F1F1;&#x1F1F8;"/>
+            <when state="_C2_A4Mar" output="&#x1F1F2;&#x1F1ED;"/>
+            <when state="_C2_A4Mo" output="&#x1F1F2;&#x1F1FF;"/>
             <when state="_C2_A4O" next="_C2_A4Os"/>
-            <when state="_C2_A4Philippine" output="🇵🇭"/>
-            <when state="_C2_A4Ru" output="🇷🇺"/>
-            <when state="_C2_A4Su_CC_88d" output="🇸🇸"/>
+            <when state="_C2_A4Philippine" output="&#x1F1F5;&#x1F1ED;"/>
+            <when state="_C2_A4Ru" output="&#x1F1F7;&#x1F1FA;"/>
+            <when state="_C2_A4Su_CC_88d" output="&#x1F1F8;&#x1F1F8;"/>
             <when state="_C2_A4T" next="_C2_A4Ts"/>
-            <when state="_C2_A4Vereinigte" output="🇬🇧"/>
+            <when state="_C2_A4Vereinigte" output="&#x1F1EC;&#x1F1E7;"/>
             <when state="_C2_A4We" output="←"/>
             <when state="_C2_A4a" next="_C2_A4as"/>
             <when state="_C2_A4accent_20" output="ˌ"/>
@@ -3169,22 +3169,22 @@
             <when state="_C2_A4" next="_C2_A4t"/>
             <when state="_C2_A4A" output="a"/>
             <when state="_C2_A4Affrika" next="_C2_A4Affrikat"/>
-            <when state="_C2_A4An" output="🇦🇬"/>
+            <when state="_C2_A4An" output="&#x1F1E6;&#x1F1EC;"/>
             <when state="_C2_A4Aus" next="_C2_A4Aust"/>
-            <when state="_C2_A4Bo" output="🇧🇼"/>
+            <when state="_C2_A4Bo" output="&#x1F1E7;&#x1F1FC;"/>
             <when state="_C2_A4Cen" next="_C2_A4Cent"/>
-            <when state="_C2_A4E" output="🇪🇹"/>
-            <when state="_C2_A4Gua" output="🇬🇹"/>
-            <when state="_C2_A4I" output="🇮🇹"/>
+            <when state="_C2_A4E" output="&#x1F1EA;&#x1F1F9;"/>
+            <when state="_C2_A4Gua" output="&#x1F1EC;&#x1F1F9;"/>
+            <when state="_C2_A4I" output="&#x1F1EE;&#x1F1F9;"/>
             <when state="_C2_A4In" output="∫"/>
-            <when state="_C2_A4Ka" output="🇶🇦"/>
-            <when state="_C2_A4Mal" output="🇲🇹"/>
+            <when state="_C2_A4Ka" output="&#x1F1F6;&#x1F1E6;"/>
+            <when state="_C2_A4Mal" output="&#x1F1F2;&#x1F1F9;"/>
             <when state="_C2_A4Mauri" next="_C2_A4Maurit"/>
             <when state="_C2_A4Me" output="m"/>
-            <when state="_C2_A4Ne" output="🇳🇱"/>
-            <when state="_C2_A4Nor" output="🇰🇵"/>
+            <when state="_C2_A4Ne" output="&#x1F1F3;&#x1F1F1;"/>
+            <when state="_C2_A4Nor" output="&#x1F1F0;&#x1F1F5;"/>
             <when state="_C2_A4Os" next="_C2_A4Ost"/>
-            <when state="_C2_A4Ost" output="🇹🇱"/>
+            <when state="_C2_A4Ost" output="&#x1F1F9;&#x1F1F1;"/>
             <when state="_C2_A4Pe" output="P"/>
             <when state="_C2_A4Ru_CC_88ck" output="⌫"/>
             <when state="_C2_A4S" output="⌃"/>
@@ -3192,7 +3192,7 @@
             <when state="_C2_A4Sank" next="_C2_A4Sankt"/>
             <when state="_C2_A4Sou" next="_C2_A4Sout"/>
             <when state="_C2_A4Uni" next="_C2_A4Unit"/>
-            <when state="_C2_A4Va" output="🇻🇦"/>
+            <when state="_C2_A4Va" output="&#x1F1FB;&#x1F1E6;"/>
             <when state="_C2_A4Vereinig" next="_C2_A4Vereinigt"/>
             <when state="_C2_A4Yo" output="Y"/>
             <when state="_C2_A4Ze" output="Z"/>
@@ -3316,7 +3316,7 @@
             <when state="_C2_A4wei" next="_C2_A4weit"/>
             <when state="_C2_A4yo" output="Y"/>
             <when state="_C2_A4ze" output="Z"/>
-            <when state="_C2_A4A_CC_88" output="🇪🇹"/>
+            <when state="_C2_A4A_CC_88" output="&#x1F1EA;&#x1F1F9;"/>
         </action>
         <action id="u">
             <when state="none" output="u"/>
@@ -3326,22 +3326,22 @@
             <when state="_C2_A4B" next="_C2_A4Bu"/>
             <when state="_C2_A4Bild_20a" output="⇞"/>
             <when state="_C2_A4Br" next="_C2_A4Bru"/>
-            <when state="_C2_A4Bur" output="🇧🇮"/>
-            <when state="_C2_A4C" output="🇨🇺"/>
-            <when state="_C2_A4De" output="🇩🇪"/>
+            <when state="_C2_A4Bur" output="&#x1F1E7;&#x1F1EE;"/>
+            <when state="_C2_A4C" output="&#x1F1E8;&#x1F1FA;"/>
+            <when state="_C2_A4De" output="&#x1F1E9;&#x1F1EA;"/>
             <when state="_C2_A4E" output="€"/>
             <when state="_C2_A4G" next="_C2_A4Gu"/>
-            <when state="_C2_A4H" output="🇭🇺"/>
+            <when state="_C2_A4H" output="&#x1F1ED;&#x1F1FA;"/>
             <when state="_C2_A4Ha" output="ˈ"/>
             <when state="_C2_A4K" next="_C2_A4Ku"/>
             <when state="_C2_A4Kre" next="_C2_A4Kreu"/>
-            <when state="_C2_A4L" output="🇱🇺"/>
+            <when state="_C2_A4L" output="&#x1F1F1;&#x1F1FA;"/>
             <when state="_C2_A4Ma" next="_C2_A4Mau"/>
-            <when state="_C2_A4Na" output="🇳🇷"/>
-            <when state="_C2_A4Ne" output="🇳🇿"/>
+            <when state="_C2_A4Na" output="&#x1F1F3;&#x1F1F7;"/>
+            <when state="_C2_A4Ne" output="&#x1F1F3;&#x1F1FF;"/>
             <when state="_C2_A4R" next="_C2_A4Ru"/>
             <when state="_C2_A4S" next="_C2_A4Su"/>
-            <when state="_C2_A4Sa" output="🇸🇦"/>
+            <when state="_C2_A4Sa" output="&#x1F1F8;&#x1F1E6;"/>
             <when state="_C2_A4So" next="_C2_A4Sou"/>
             <when state="_C2_A4T" next="_C2_A4Tu"/>
             <when state="_C2_A4Ur" next="_C2_A4Uru"/>
@@ -3437,8 +3437,8 @@
             <when state="none" output="v"/>
             <when state="Hook" output="ʋ"/>
             <when state="_C2_A4" next="_C2_A4v"/>
-            <when state="_C2_A4I" output="🇨🇮"/>
-            <when state="_C2_A4Tu" output="🇹🇻"/>
+            <when state="_C2_A4I" output="&#x1F1E8;&#x1F1EE;"/>
+            <when state="_C2_A4Tu" output="&#x1F1F9;&#x1F1FB;"/>
             <when state="_C2_A4ad" next="_C2_A4adv"/>
             <when state="_C2_A4al" next="_C2_A4alv"/>
             <when state="_C2_A4clic_20al" next="_C2_A4clic_20alv"/>
@@ -3505,12 +3505,12 @@
         <action id="w">
             <when state="none" output="w"/>
             <when state="_C2_A4" next="_C2_A4w"/>
-            <when state="_C2_A4Ku" output="🇰🇼"/>
-            <when state="_C2_A4Mala" output="🇲🇼"/>
-            <when state="_C2_A4Ne" output="🇳🇿"/>
-            <when state="_C2_A4Nor" output="🇳🇴"/>
+            <when state="_C2_A4Ku" output="&#x1F1F0;&#x1F1FC;"/>
+            <when state="_C2_A4Mala" output="&#x1F1F2;&#x1F1FC;"/>
+            <when state="_C2_A4Ne" output="&#x1F1F3;&#x1F1FF;"/>
+            <when state="_C2_A4Nor" output="&#x1F1F3;&#x1F1F4;"/>
             <when state="_C2_A4Nord" output="↖"/>
-            <when state="_C2_A4R" output="🇷🇼"/>
+            <when state="_C2_A4R" output="&#x1F1F7;&#x1F1FC;"/>
             <when state="_C2_A4S" next="_C2_A4Sw"/>
             <when state="_C2_A4Sch" next="_C2_A4Schw"/>
             <when state="_C2_A4Su_CC_88d" output="↙"/>
@@ -3539,15 +3539,15 @@
             <when state="none" output="y"/>
             <when state="Hook" output="ƴ"/>
             <when state="_C2_A4" next="_C2_A4y"/>
-            <when state="_C2_A4C" output="🇨🇾"/>
-            <when state="_C2_A4Gu" output="🇬🇾"/>
-            <when state="_C2_A4K" output="🇰🇬"/>
-            <when state="_C2_A4Lib" output="🇱🇾"/>
-            <when state="_C2_A4Mala" output="🇲🇾"/>
-            <when state="_C2_A4S" output="🇸🇾"/>
-            <when state="_C2_A4Se" output="🇸🇨"/>
+            <when state="_C2_A4C" output="&#x1F1E8;&#x1F1FE;"/>
+            <when state="_C2_A4Gu" output="&#x1F1EC;&#x1F1FE;"/>
+            <when state="_C2_A4K" output="&#x1F1F0;&#x1F1EC;"/>
+            <when state="_C2_A4Lib" output="&#x1F1F1;&#x1F1FE;"/>
+            <when state="_C2_A4Mala" output="&#x1F1F2;&#x1F1FE;"/>
+            <when state="_C2_A4S" output="&#x1F1F8;&#x1F1FE;"/>
+            <when state="_C2_A4Se" output="&#x1F1F8;&#x1F1E8;"/>
             <when state="_C2_A4Urugua" next="_C2_A4Uruguay"/>
-            <when state="_C2_A4Z" output="🇨🇾"/>
+            <when state="_C2_A4Z" output="&#x1F1E8;&#x1F1FE;"/>
             <when state="_C2_A4fricative_20phar" next="_C2_A4fricative_20phary"/>
             <when state="_C2_A4s" next="_C2_A4sy"/>
             <when state="_C2_A4vo" next="_C2_A4voy"/>
@@ -3555,11 +3555,11 @@
         <action id="z">
             <when state="none" output="z"/>
             <when state="_C2_A4" next="_C2_A4z"/>
-            <when state="_C2_A4C" output="🇨🇿"/>
+            <when state="_C2_A4C" output="&#x1F1E8;&#x1F1FF;"/>
             <when state="_C2_A4De" output="d"/>
-            <when state="_C2_A4Ka" output="🇰🇿"/>
+            <when state="_C2_A4Ka" output="&#x1F1F0;&#x1F1FF;"/>
             <when state="_C2_A4Kreu" next="_C2_A4Kreuz"/>
-            <when state="_C2_A4Mo" output="🇲🇿"/>
+            <when state="_C2_A4Mo" output="&#x1F1F2;&#x1F1FF;"/>
             <when state="_C2_A4Pro" output="%"/>
             <when state="_C2_A4velari" next="_C2_A4velariz"/>
         </action>
@@ -3568,14 +3568,14 @@
             <when state="_C2_A4" output="ꜜ"/>
             <when state="_C2_A4Affrikate" output="͡"/>
             <when state="_C2_A4Cent" output="c"/>
-            <when state="_C2_A4Dominica" output="🇩🇲"/>
-            <when state="_C2_A4Guinea" output="🇬🇳"/>
+            <when state="_C2_A4Dominica" output="&#x1F1E9;&#x1F1F2;"/>
+            <when state="_C2_A4Guinea" output="&#x1F1EC;&#x1F1F3;"/>
             <when state="_C2_A4Kreuz" output="♣"/>
             <when state="_C2_A4Mikro" output="μ"/>
             <when state="_C2_A4Mol" output="mol"/>
-            <when state="_C2_A4Niger" output="🇳🇪"/>
+            <when state="_C2_A4Niger" output="&#x1F1F3;&#x1F1EA;"/>
             <when state="_C2_A4Pik" output="♠"/>
-            <when state="_C2_A4Uruguay" output="🇺🇾"/>
+            <when state="_C2_A4Uruguay" output="&#x1F1FA;&#x1F1FE;"/>
             <when state="_C2_A4advanced" output="̟"/>
             <when state="_C2_A4affricate" output="͡"/>
             <when state="_C2_A4affrique_CC_81e" output="͡"/>
@@ -3624,7 +3624,7 @@
         </action>
         <action id="_C3_9F">
             <when state="none" output="ß"/>
-            <when state="_C2_A4Wei" output="🇧🇾"/>
+            <when state="_C2_A4Wei" output="&#x1F1E7;&#x1F1FE;"/>
             <when state="_C2_A4gro_CC_88" next="_C2_A4gro_CC_88_C3_9F"/>
         </action>
         <action id="_C4_90">
@@ -3689,7 +3689,7 @@
         </action>
         <action id="_CC_83">
             <when state="none" output="̃"/>
-            <when state="_C2_A4Sa" output="🇸🇹"/>
+            <when state="_C2_A4Sa" output="&#x1F1F8;&#x1F1F9;"/>
         </action>
         <action id="_CC_88">
             <when state="none" output="̈"/>
@@ -3697,11 +3697,11 @@
             <when state="_C2_A4Ha" output="✓"/>
             <when state="_C2_A4La" output="☺"/>
             <when state="_C2_A4Ma" output="♂"/>
-            <when state="_C2_A4O" output="🇦🇹"/>
+            <when state="_C2_A4O" output="&#x1F1E6;&#x1F1F9;"/>
             <when state="_C2_A4Ru" next="_C2_A4Ru_CC_88"/>
             <when state="_C2_A4Su" next="_C2_A4Su_CC_88"/>
             <when state="_C2_A4To" output="₮"/>
-            <when state="_C2_A4Tu" output="🇹🇷"/>
+            <when state="_C2_A4Tu" output="&#x1F1F9;&#x1F1F7;"/>
             <when state="_C2_A4gro" next="_C2_A4gro_CC_88"/>
             <when state="_C2_A4to" output="₮"/>
             <when state="_C2_A4u" output="||"/>
@@ -3768,7 +3768,7 @@
             <when state="none" output="‐"/>
             <when state="_C2_A4China" next="_C2_A4China_E2_80_90"/>
             <when state="_C2_A4Congo" next="_C2_A4Congo_E2_80_90"/>
-            <when state="_C2_A4Guinea" output="🇬🇼"/>
+            <when state="_C2_A4Guinea" output="&#x1F1EC;&#x1F1FC;"/>
             <when state="_C2_A4Kongo" next="_C2_A4Kongo_E2_80_90"/>
             <when state="_C2_A4close" next="_C2_A4close_E2_80_90"/>
             <when state="_C2_A4extra" next="_C2_A4extra_E2_80_90"/>
