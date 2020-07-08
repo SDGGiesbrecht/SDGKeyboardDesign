@@ -44,7 +44,10 @@ final class RegressionTests: TestCase {
       targetedLanguage: nil
     )
     let xml = keyboard.keyLayoutFile()
-    XCTAssert(xml.contains("&#x1"))
+
+    // Make sure it wasn’t just optimized away.
+    XCTAssert(xml.contains("&#x1F1E8;&#x1F1E6;"))
+
     XCTAssert(xml.allSatisfy({ $0.value < 0x10000 }))
   }
 }
