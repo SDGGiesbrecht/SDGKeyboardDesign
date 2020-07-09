@@ -119,7 +119,9 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     return layerLayouts
   }
 
-  func symbolsSpellable(by layers: [Layer: [Key: StrictString]]) -> [StrictString: StrictString] {
+  private func symbolsSpellable(
+    by layers: [Layer: [Key: StrictString]]
+  ) -> [StrictString: StrictString] {
     let available = Set(layers.lazy.flatMap({ $0.value.lazy.map({ $0.value }) }))
     var result = symbols
     for key in Array(symbols.keys) where ¬key.allSatisfy({ "\($0)" ∈ available }) {
