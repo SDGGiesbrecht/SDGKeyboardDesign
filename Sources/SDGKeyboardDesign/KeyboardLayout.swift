@@ -90,9 +90,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
 
   // MARK: - Resolution
 
-  private func layerArrangements(
-    deadKeyAndSymbolMappings: [StrictString: [StrictString: StrictString]]
-  ) -> [Layer: [Key: StrictString]] {
+  private func layerArrangements() -> [Layer: [Key: StrictString]] {
     var layerLayouts: [Layer: [Key: StrictString]] = [:]
     for layer in Layer.allCases {
 
@@ -119,6 +117,15 @@ public struct KeyboardLayout<L> where L: InputLocalization {
       layerLayouts[layer] = result
     }
     return layerLayouts
+  }
+
+  func symbolsSpellable(by layers: [Layer: [Key: StrictString]]) -> [StrictString: StrictString] {
+    let available = Set(layers.lazy.flatMap({ $0.value.lazy.map({ $0.value }) }))
+    var result = symbols
+    for key in Array(symbols.keys) where ¬key.allSatisfy({ "\($0)" ∈ available }) {
+      result[key] = nil
+    }
+    return result
   }
 
   // MARK: - Key Layout File
@@ -278,13 +285,13 @@ public struct KeyboardLayout<L> where L: InputLocalization {
 
     private func keyLayoutKeyMapSet(
       _ identifier: String,
+      layerLayouts: [Layer: [Key: StrictString]],
       deadKeyAndSymbolMappings: [StrictString: [StrictString: StrictString]]
     ) -> XMLElement {
 
       let theKeyMapSet = XMLElement(name: "keyMapSet")
       theKeyMapSet.addAttribute(name: "id", value: identifier)
 
-      let layerLayouts = layerArrangements(deadKeyAndSymbolMappings: deadKeyAndSymbolMappings)
       for layer in layerLayouts.keys.sorted() {
         let arrangement = layerLayouts[layer]!
         let layout = keyLayoutKeyMap(
@@ -372,7 +379,8 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     }
 
     private func keyLayoutKeyboard() -> XMLElement {
-      let symbolMapping = Symbol.mapping(from: symbols)
+      let layerLayouts = layerArrangements()
+      let symbolMapping = Symbol.mapping(from: symbolsSpellable(by: layerLayouts))
       let deadKeyAndSymbolMappings = DeadKey.assimilate(
         symbols: symbolMapping,
         intoDeadKeys: deadKeyMappings
@@ -387,6 +395,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
       keyboard.addChild(
         keyLayoutKeyMapSet(
           keyLayoutANSIMapSet,
+          layerLayouts: layerLayouts,
           deadKeyAndSymbolMappings: deadKeyAndSymbolMappings
         )
       )
