@@ -467,9 +467,6 @@ public struct KeyboardLayout<L> where L: InputLocalization {
         return "&#x\(match.contents.first!.hexadecimalCode);".scalars
       }
 
-      // macOS fails to parse 2‐spaced indentation.
-      string.scalars.replaceMatches(for: "  ".scalars, with: "    ".scalars)
-
       return StrictString(string)
     }
   #endif
