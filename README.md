@@ -9,7 +9,7 @@
  Soli Deo gloria.
  -->
 
-macOS • Windows • Web • Linux • tvOS • iOS • Android • watchOS
+macOS • Windows • Web • CentOS • Ubuntu • tvOS • iOS • Android • Amazon Linux • watchOS
 
 [Documentation](https://sdggiesbrecht.github.io/SDGKeyboardDesign/%F0%9F%87%A8%F0%9F%87%A6EN)
 

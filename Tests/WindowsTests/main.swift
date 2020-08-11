@@ -1,5 +1,5 @@
 /*
- WindowsMain.swift
+ main.swift
 
  This source file is part of the SDGKeyboardDesign open source project.
  https://sdggiesbrecht.github.io/SDGKeyboardDesign
