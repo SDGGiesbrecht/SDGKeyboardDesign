@@ -336,6 +336,11 @@ let package = Package(
   ]
 )
 
+if ProcessInfo.processInfo.environment["TARGETING_WATCHOS"] == "true" {
+  // #workaround(xcodebuild -version 12, Test targets don’t work on watchOS.) @exempt(from: unicode)
+  package.targets.removeAll(where: { $0.isTest })
+}
+
 // Windows Tests (Generated automatically by Workspace.)
 import Foundation
 if ProcessInfo.processInfo.environment["TARGETING_WINDOWS"] == "true" {
