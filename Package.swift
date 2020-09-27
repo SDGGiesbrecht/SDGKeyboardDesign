@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.3
 
 /*
  Package.swift
@@ -267,12 +267,12 @@ let package = Package(
     .library(name: "SDGKeyboardDesign", targets: ["SDGKeyboardDesign"])
   ],
   dependencies: [
-    .package(url: "https://github.com/SDGGiesbrecht/SDGCornerstone", from: Version(5, 4, 1)),
+    .package(url: "https://github.com/SDGGiesbrecht/SDGCornerstone", from: Version(6, 0, 0)),
     .package(
       url: "https://github.com/SDGGiesbrecht/SDGInterface",
-      .upToNextMinor(from: Version(0, 8, 0))
+      .upToNextMinor(from: Version(0, 9, 0))
     ),
-    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 3, 1)),
+    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 4, 1)),
   ],
   targets: [
 
