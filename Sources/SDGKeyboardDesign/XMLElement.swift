@@ -9,7 +9,7 @@
  Soli Deo gloria.
  */
 
-// #workaround(Swift 5.2.4, Web lacks Foundation.)
+// #workaround(Swift 5.3, Web lacks Foundation.)
 #if !os(WASI)
   import Foundation
   #if canImport(FoundationXML)
