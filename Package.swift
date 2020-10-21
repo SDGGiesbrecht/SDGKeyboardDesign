@@ -67,7 +67,7 @@ import PackageDescription
 ///     }
 ///   }),
 ///   // This URL points to a local “.icns” file to use as the icon.
-///   icon: URL(fileURLWithPath: #file)  // Starts at this file.
+///   icon: URL(fileURLWithPath: #filePath)  // Starts at this file.
 ///     .deletingLastPathComponent()  // Backs out to the directory.
 ///     .deletingLastPathComponent()  // Backs out another directory.
 ///     .appendingPathComponent("Test Specifications")  // Enters a directory.
