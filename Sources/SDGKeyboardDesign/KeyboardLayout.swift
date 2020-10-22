@@ -9,7 +9,7 @@
  Soli Deo gloria.
  */
 
-// #workaround(Swift 5.2.4, Web lacks Foundation.)
+// #workaround(Swift 5.3, Web lacks Foundation.)
 #if !os(WASI)
   import Foundation
   #if canImport(FoundationXML)
@@ -31,7 +31,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
 
   // MARK: - Initialization
 
-  // #workaround(Swift 5.2.4, Web lacks Foundation.)
+  // #workaround(Swift 5.3, Web lacks Foundation.)
   #if !os(WASI)
     /// Creates a keyboard layout description.
     ///
@@ -75,7 +75,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
   private let script: OSXScriptCode
   private let targetedLanguage: L?
   internal let name: UserFacing<StrictString, L>
-  // #workaround(Swift 5.2.4, Web lacks Foundation.)
+  // #workaround(Swift 5.3, Web lacks Foundation.)
   #if !os(WASI)
     internal let icon: URL?
   #endif
@@ -132,7 +132,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
 
   // MARK: - Key Layout File
 
-  // #workaround(Swift 5.2.4, Web lacks Foundation.)
+  // #workaround(Swift 5.3, Web lacks Foundation.)
   #if !os(WASI)
     private func keyLayoutDTD() -> XMLDTD {
       let dtd = XMLDTD()
@@ -153,7 +153,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     return keyLayoutANSIMapSet
   }
 
-  // #workaround(Swift 5.2.4, Web lacks Foundation.)
+  // #workaround(Swift 5.3, Web lacks Foundation.)
   #if !os(WASI)
     private func keyLayoutLayout(range: ClosedRange<Int>, mapSet: String) -> XMLElement {
       let theLayout = XMLElement(name: "layout")
