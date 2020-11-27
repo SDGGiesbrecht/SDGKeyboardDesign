@@ -112,6 +112,7 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
     return result
   }
 
+  #if !os(WASI)  // #workaround(Swift 5.3.1, Web lacks data(fromPropertyList:format:options:).)
     /// Returns the information property list of the macOS keyboard layout bundle.
     public func macOSKeyboardLayoutBundleInfoPlist() -> StrictString {
       let encoded = try! PropertyListSerialization.data(
@@ -121,6 +122,7 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
       )
       return try! StrictString(file: encoded, origin: nil)
     }
+  #endif
 
   /// Returns the information property list strings file for the macOS keyboard layout bundle.
   ///
