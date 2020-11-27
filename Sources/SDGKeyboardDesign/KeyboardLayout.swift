@@ -9,13 +9,10 @@
  Soli Deo gloria.
  */
 
-// #workaround(Swift 5.3, Web lacks Foundation.)
-#if !os(WASI)
   import Foundation
   #if canImport(FoundationXML)
     import FoundationXML
   #endif
-#endif
 
 import SDGLogic
 import SDGMathematics
@@ -31,8 +28,6 @@ public struct KeyboardLayout<L> where L: InputLocalization {
 
   // MARK: - Initialization
 
-  // #workaround(Swift 5.3, Web lacks Foundation.)
-  #if !os(WASI)
     /// Creates a keyboard layout description.
     ///
     /// - Parameters:
@@ -67,7 +62,6 @@ public struct KeyboardLayout<L> where L: InputLocalization {
       self.script = script
       self.targetedLanguage = targetedLanguage
     }
-  #endif
 
   // MARK: - Properties
 
@@ -75,10 +69,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
   private let script: OSXScriptCode
   private let targetedLanguage: L?
   internal let name: UserFacing<StrictString, L>
-  // #workaround(Swift 5.3, Web lacks Foundation.)
-  #if !os(WASI)
     internal let icon: URL?
-  #endif
   private let layers: [Layer: [Key: StrictString]]
   private let deadKeyLabels: [StrictString: StrictString]
   private let deadKeyMappings: [StrictString: [StrictString: StrictString]]
@@ -132,8 +123,6 @@ public struct KeyboardLayout<L> where L: InputLocalization {
 
   // MARK: - Key Layout File
 
-  // #workaround(Swift 5.3, Web lacks Foundation.)
-  #if !os(WASI)
     private func keyLayoutDTD() -> XMLDTD {
       let dtd = XMLDTD()
       dtd.name = "keyboard"
@@ -141,7 +130,6 @@ public struct KeyboardLayout<L> where L: InputLocalization {
       dtd.systemID = "file://localhost/System/Library/DTDs/KeyboardLayout.dtd"
       return dtd
     }
-  #endif
 
   private var keyLayoutModifierMapIdentifier: String {
     return "modifierMap"
@@ -153,8 +141,6 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     return keyLayoutANSIMapSet
   }
 
-  // #workaround(Swift 5.3, Web lacks Foundation.)
-  #if !os(WASI)
     private func keyLayoutLayout(range: ClosedRange<Int>, mapSet: String) -> XMLElement {
       let theLayout = XMLElement(name: "layout")
       theLayout.addAttribute(name: "first", value: "\(range.lowerBound)")
@@ -480,7 +466,6 @@ public struct KeyboardLayout<L> where L: InputLocalization {
 
       return StrictString(string)
     }
-  #endif
 
   // MARK: - macOS Keyboard Layout Bundle
 
