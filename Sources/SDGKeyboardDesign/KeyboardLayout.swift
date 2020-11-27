@@ -10,9 +10,11 @@
  */
 
   import Foundation
+#if !os(WASI)  // #workaround(Swift 5.3.1, Web lacks CFXMLInterace.)
   #if canImport(FoundationXML)
     import FoundationXML
   #endif
+#endif
 
 import SDGLogic
 import SDGMathematics
