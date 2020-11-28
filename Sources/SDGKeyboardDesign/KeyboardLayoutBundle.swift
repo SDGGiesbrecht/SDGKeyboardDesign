@@ -9,7 +9,7 @@
  Soli Deo gloria.
  */
 
-  import Foundation
+import Foundation
 
 import SDGLogic
 import SDGCollections

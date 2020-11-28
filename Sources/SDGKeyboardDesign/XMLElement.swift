@@ -9,19 +9,19 @@
  Soli Deo gloria.
  */
 
-  import Foundation
+import Foundation
 #if !os(WASI)  // #workaround(Swift 5.3.1, Web lacks CFXMLInterace.)
   #if canImport(FoundationXML)
     import FoundationXML
   #endif
 #endif
 
-  import SDGKeyboardDesignXMLShims
+import SDGKeyboardDesignXMLShims
 
-  extension XMLElement {
+extension XMLElement {
 
-    internal func addAttribute(name: String, value: String) {
-      let attribute = XMLNode.attribute(withName: name, stringValue: value) as! XMLNode
-      addAttribute(attribute)
-    }
+  internal func addAttribute(name: String, value: String) {
+    let attribute = XMLNode.attribute(withName: name, stringValue: value) as! XMLNode
+    addAttribute(attribute)
   }
+}
