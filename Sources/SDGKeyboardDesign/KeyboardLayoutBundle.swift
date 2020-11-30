@@ -9,10 +9,7 @@
  Soli Deo gloria.
  */
 
-// #workaround(Swift 5.3, Web lacks Foundation.)
-#if !os(WASI)
-  import Foundation
-#endif
+import Foundation
 
 import SDGLogic
 import SDGCollections
@@ -62,7 +59,7 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
 
   // MARK: - Generation
 
-  // #workaround(Swift 5.3, Web lacks Foundation.)
+  // #workaround(Swift 5.3.1, Web lacks FileManager.)
   #if !os(WASI)
     /// Exports a macOS keyboard layout bundle in the specified directory.
     ///
@@ -115,8 +112,7 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
     return result
   }
 
-  // #workaround(Swift 5.3, Web lacks Foundation.)
-  #if !os(WASI)
+  #if !os(WASI)  // #workaround(Swift 5.3.1, Web lacks data(fromPropertyList:format:options:).)
     /// Returns the information property list of the macOS keyboard layout bundle.
     public func macOSKeyboardLayoutBundleInfoPlist() -> StrictString {
       let encoded = try! PropertyListSerialization.data(

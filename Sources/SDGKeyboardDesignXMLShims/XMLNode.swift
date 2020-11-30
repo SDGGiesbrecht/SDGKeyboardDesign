@@ -9,7 +9,8 @@
  Soli Deo gloria.
  */
 
-#if os(tvOS) || os(iOS) || os(watchOS)
+// #workaround(Swift 5.3.1, Web lacks CFXMLInterace.)
+#if os(WASI) || os(tvOS) || os(iOS) || os(watchOS)
 
   import Foundation
 
