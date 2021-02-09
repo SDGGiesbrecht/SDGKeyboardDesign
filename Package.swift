@@ -336,6 +336,16 @@ let package = Package(
   ]
 )
 
+for target in package.targets {
+  var swiftSettings = target.swiftSettings ?? []
+  defer { target.swiftSettings = swiftSettings }
+  swiftSettings.append(contentsOf: [
+    // Internal‐only:
+    // #workaround(Swift 5.3.3, Web lacks Foundation.NSHomeDirectory().)
+    .define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi]))
+  ])
+}
+
 if ProcessInfo.processInfo.environment["TARGETING_WATCHOS"] == "true" {
   // #workaround(xcodebuild -version 12.1, Test targets don’t work on watchOS.) @exempt(from: unicode)
   package.targets.removeAll(where: { $0.isTest })
