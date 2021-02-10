@@ -281,7 +281,7 @@ let package = Package(
       url: "https://github.com/SDGGiesbrecht/SDGInterface",
       .upToNextMinor(from: Version(0, 9, 0))
     ),
-    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 4, 1)),
+    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 5, 1)),
   ],
   targets: [
 
