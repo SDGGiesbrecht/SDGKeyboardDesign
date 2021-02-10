@@ -4,7 +4,7 @@
  This source file is part of the SDGKeyboardDesign open source project.
  https://sdggiesbrecht.github.io/SDGKeyboardDesign
 
- Copyright ©2019–2020 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
+ Copyright ©2019–2021 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
 
  Soli Deo gloria.
  */
@@ -112,7 +112,7 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
     return result
   }
 
-  #if !os(WASI)  // #workaround(Swift 5.3.1, Web lacks data(fromPropertyList:format:options:).)
+  #if !PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS
     /// Returns the information property list of the macOS keyboard layout bundle.
     public func macOSKeyboardLayoutBundleInfoPlist() -> StrictString {
       let encoded = try! PropertyListSerialization.data(

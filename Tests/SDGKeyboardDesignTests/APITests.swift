@@ -4,7 +4,7 @@
  This source file is part of the SDGKeyboardDesign open source project.
  https://sdggiesbrecht.github.io/SDGKeyboardDesign
 
- Copyright ©2019–2020 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
+ Copyright ©2019–2021 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
 
  Soli Deo gloria.
  */
@@ -39,19 +39,21 @@ final class APITests: TestCase {
   func testKeyboardLayoutBundle() throws {
     let bundle = SDGKeyboardDesignTests.testKeyboardLayoutBundle
 
-    let infoPlist = bundle.macOSKeyboardLayoutBundleInfoPlist()
-    compare(
-      String(infoPlist),
-      against: specificationDirectory.appendingPathComponent("Information Property List.txt"),
-      overwriteSpecificationInsteadOfFailing: false
-    )
+    #if !PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS
+      let infoPlist = bundle.macOSKeyboardLayoutBundleInfoPlist()
+      compare(
+        String(infoPlist),
+        against: specificationDirectory.appendingPathComponent("Information Property List.txt"),
+        overwriteSpecificationInsteadOfFailing: false
+      )
 
-    let unusualBundle = withUnusualIdentifier.macOSKeyboardLayoutBundleInfoPlist()
-    compare(
-      String(unusualBundle),
-      against: specificationDirectory.appendingPathComponent("Unusual Identifier.txt"),
-      overwriteSpecificationInsteadOfFailing: false
-    )
+      let unusualBundle = withUnusualIdentifier.macOSKeyboardLayoutBundleInfoPlist()
+      compare(
+        String(unusualBundle),
+        against: specificationDirectory.appendingPathComponent("Unusual Identifier.txt"),
+        overwriteSpecificationInsteadOfFailing: false
+      )
+    #endif
 
     let strings = bundle.macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(.englishCanada)
     compare(
@@ -62,8 +64,10 @@ final class APITests: TestCase {
       overwriteSpecificationInsteadOfFailing: false
     )
 
-    try FileManager.default.withTemporaryDirectory(appropriateFor: nil) { temporary in
-      try bundle.generate(in: temporary)
-    }
+    #if !PLATFORM_LACKS_FOUNDATION_FILE_MANAGER
+      try FileManager.default.withTemporaryDirectory(appropriateFor: nil) { temporary in
+        try bundle.generate(in: temporary)
+      }
+    #endif
   }
 }

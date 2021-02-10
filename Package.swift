@@ -6,14 +6,14 @@
  This source file is part of the SDGKeyboardDesign open source project.
  https://sdggiesbrecht.github.io/SDGKeyboardDesign
 
- Copyright ©2019–2020 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
+ Copyright ©2019–2021 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
 
  Soli Deo gloria.
  */
 
 import PackageDescription
 
-// #example(2, readMe)
+// #example(2, readMe) #example(3, conditions)
 /// SDGKeyboardDesign provides tools for generating keyboard layouts.
 ///
 /// > [עַתָּה בּוֹא כׇתְבָהּ עַל־לוּחַ אִתָּם וְעַל־סֵפֶר חֻקָּהּ וּתְהִי לְיוֹם אַחֲרוֹן לָעַד עַד־עוֹלָם׃](https://www.biblegateway.com/passage/?search=Isaiah+30&version=WLC;NIV)
@@ -259,6 +259,15 @@ import PackageDescription
 /// // This exports the layout bundle.
 /// try exampleBundle.generate(in: exportURL)
 /// ```
+///
+/// Some platforms lack certain features. The compilation conditions which appear throughout the documentation are defined as follows:
+///
+/// ```swift
+/// .define(
+///   "PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS",
+///   .when(platforms: [.wasi])
+/// ),
+/// ```
 let package = Package(
   name: "SDGKeyboardDesign",
   products: [
@@ -267,12 +276,12 @@ let package = Package(
     .library(name: "SDGKeyboardDesign", targets: ["SDGKeyboardDesign"])
   ],
   dependencies: [
-    .package(url: "https://github.com/SDGGiesbrecht/SDGCornerstone", from: Version(6, 0, 0)),
+    .package(url: "https://github.com/SDGGiesbrecht/SDGCornerstone", from: Version(6, 2, 0)),
     .package(
       url: "https://github.com/SDGGiesbrecht/SDGInterface",
       .upToNextMinor(from: Version(0, 9, 0))
     ),
-    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 4, 1)),
+    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 5, 1)),
   ],
   targets: [
 
@@ -335,6 +344,26 @@ let package = Package(
     ),
   ]
 )
+
+for target in package.targets {
+  var swiftSettings = target.swiftSettings ?? []
+  defer { target.swiftSettings = swiftSettings }
+  swiftSettings.append(contentsOf: [
+    // #workaround(Swift 5.3.3, Web lacks Foundation.PropertyListSerialization.data(fromPropertyList:format:options:).)
+    // @example(conditions)
+    .define(
+      "PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS",
+      .when(platforms: [.wasi])
+    ),
+    // @endExample
+
+    // Internal‐only:
+    // #workaround(Swift 5.3.3, Web lacks Foundation.FileMananger.)
+    .define("PLATFORM_LACKS_FOUNDATION_FILE_MANAGER", .when(platforms: [.wasi])),
+    // #workaround(Swift 5.3.3, Web lacks Foundation.NSHomeDirectory().)
+    .define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi])),
+  ])
+}
 
 if ProcessInfo.processInfo.environment["TARGETING_WATCHOS"] == "true" {
   // #workaround(xcodebuild -version 12.1, Test targets don’t work on watchOS.) @exempt(from: unicode)

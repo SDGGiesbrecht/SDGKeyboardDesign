@@ -4,7 +4,7 @@
  This source file is part of the SDGKeyboardDesign open source project.
  https://sdggiesbrecht.github.io/SDGKeyboardDesign
 
- Copyright ©2019–2020 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
+ Copyright ©2019–2021 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
 
  Soli Deo gloria.
  -->
@@ -259,6 +259,15 @@ let exportURL = URL(fileURLWithPath: NSHomeDirectory())
   .appendingPathComponent("Downloads")
 // This exports the layout bundle.
 try exampleBundle.generate(in: exportURL)
+```
+
+Some platforms lack certain features. The compilation conditions which appear throughout the documentation are defined as follows:
+
+```swift
+.define(
+  "PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS",
+  .when(platforms: [.wasi])
+),
 ```
 
 ## Importing
