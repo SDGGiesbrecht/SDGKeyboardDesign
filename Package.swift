@@ -13,7 +13,7 @@
 
 import PackageDescription
 
-// #example(2, readMe)
+// #example(2, readMe) #example(3, conditions)
 /// SDGKeyboardDesign provides tools for generating keyboard layouts.
 ///
 /// > [עַתָּה בּוֹא כׇתְבָהּ עַל־לוּחַ אִתָּם וְעַל־סֵפֶר חֻקָּהּ וּתְהִי לְיוֹם אַחֲרוֹן לָעַד עַד־עוֹלָם׃](https://www.biblegateway.com/passage/?search=Isaiah+30&version=WLC;NIV)
@@ -259,6 +259,15 @@ import PackageDescription
 /// // This exports the layout bundle.
 /// try exampleBundle.generate(in: exportURL)
 /// ```
+///
+/// Some platforms lack certain features. The compilation conditions which appear throughout the documentation are defined as follows:
+///
+/// ```swift
+/// .define(
+///   "PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS",
+///   .when(platforms: [.wasi])
+/// ),
+/// ```
 let package = Package(
   name: "SDGKeyboardDesign",
   products: [
@@ -340,9 +349,19 @@ for target in package.targets {
   var swiftSettings = target.swiftSettings ?? []
   defer { target.swiftSettings = swiftSettings }
   swiftSettings.append(contentsOf: [
+    // #workaround(Swift 5.3.3, Web lacks Foundation.PropertyListSerialization.data(fromPropertyList:format:options:).)
+    // @example(conditions)
+    .define(
+      "PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS",
+      .when(platforms: [.wasi])
+    ),
+    // @endExample
+
     // Internal‐only:
+    // #workaround(Swift 5.3.3, Web lacks Foundation.FileMananger.)
+    .define("PLATFORM_LACKS_FOUNDATION_FILE_MANAGER", .when(platforms: [.wasi])),
     // #workaround(Swift 5.3.3, Web lacks Foundation.NSHomeDirectory().)
-    .define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi]))
+    .define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi])),
   ])
 }
 
