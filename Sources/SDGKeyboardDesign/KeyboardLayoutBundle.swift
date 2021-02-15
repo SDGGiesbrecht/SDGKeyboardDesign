@@ -59,8 +59,7 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
 
   // MARK: - Generation
 
-  // #workaround(Swift 5.3.1, Web lacks FileManager.)
-  #if !os(WASI)
+  #if !PLATFORM_LACKS_FOUNDATION_FILE_MANAGER
     /// Exports a macOS keyboard layout bundle in the specified directory.
     ///
     /// - Parameters:
