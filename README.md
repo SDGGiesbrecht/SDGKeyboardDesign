@@ -264,6 +264,7 @@ try exampleBundle.generate(in: exportURL)
 Some platforms lack certain features. The compilation conditions which appear throughout the documentation are defined as follows:
 
 ```swift
+.define("PLATFORM_LACKS_FOUNDATION_FILE_MANAGER", .when(platforms: [.wasi])),
 .define(
   "PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS",
   .when(platforms: [.wasi])
