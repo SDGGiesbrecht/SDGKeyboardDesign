@@ -20,15 +20,6 @@
         }
       },
       {
-        "package": "SDGWeb",
-        "repositoryURL": "https://github.com/SDGGiesbrecht/SDGWeb",
-        "state": {
-          "branch": null,
-          "revision": "a9904e27aeeb88a7ad4727ea6536931c9ab56bd0",
-          "version": "5.5.2"
-        }
-      },
-      {
         "package": "swift-numerics",
         "repositoryURL": "https://github.com/apple/swift-numerics",
         "state": {
