@@ -40,37 +40,40 @@ final class APITests: TestCase {
   }
 
   func testKeyboardLayoutBundle() throws {
-    let bundle = SDGKeyboardDesignTests.testKeyboardLayoutBundle
+    // #workaround(Swift 5.3.3, Segmentation fault.)
+    #if !os(Windows)
+      let bundle = SDGKeyboardDesignTests.testKeyboardLayoutBundle
 
-    #if !PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS
-      let infoPlist = bundle.macOSKeyboardLayoutBundleInfoPlist()
+      #if !PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS
+        let infoPlist = bundle.macOSKeyboardLayoutBundleInfoPlist()
+        compare(
+          String(infoPlist),
+          against: specificationDirectory.appendingPathComponent("Information Property List.txt"),
+          overwriteSpecificationInsteadOfFailing: false
+        )
+
+        let unusualBundle = withUnusualIdentifier.macOSKeyboardLayoutBundleInfoPlist()
+        compare(
+          String(unusualBundle),
+          against: specificationDirectory.appendingPathComponent("Unusual Identifier.txt"),
+          overwriteSpecificationInsteadOfFailing: false
+        )
+      #endif
+
+      let strings = bundle.macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(.englishCanada)
       compare(
-        String(infoPlist),
-        against: specificationDirectory.appendingPathComponent("Information Property List.txt"),
+        String(strings),
+        against: specificationDirectory.appendingPathComponent(
+          "Information Property List Strings.txt"
+        ),
         overwriteSpecificationInsteadOfFailing: false
       )
 
-      let unusualBundle = withUnusualIdentifier.macOSKeyboardLayoutBundleInfoPlist()
-      compare(
-        String(unusualBundle),
-        against: specificationDirectory.appendingPathComponent("Unusual Identifier.txt"),
-        overwriteSpecificationInsteadOfFailing: false
-      )
-    #endif
-
-    let strings = bundle.macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(.englishCanada)
-    compare(
-      String(strings),
-      against: specificationDirectory.appendingPathComponent(
-        "Information Property List Strings.txt"
-      ),
-      overwriteSpecificationInsteadOfFailing: false
-    )
-
-    #if !PLATFORM_LACKS_FOUNDATION_FILE_MANAGER
-      try FileManager.default.withTemporaryDirectory(appropriateFor: nil) { temporary in
-        try bundle.generate(in: temporary)
-      }
+      #if !PLATFORM_LACKS_FOUNDATION_FILE_MANAGER
+        try FileManager.default.withTemporaryDirectory(appropriateFor: nil) { temporary in
+          try bundle.generate(in: temporary)
+        }
+      #endif
     #endif
   }
 }
