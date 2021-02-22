@@ -26,14 +26,17 @@ final class APITests: TestCase {
   }
 
   func testKeyboardLayout() throws {
-    let layout = SDGKeyboardDesignTests.testKeyboardLayout
+    // #workaround(Swift 5.3.3, Segmentation fault.)
+    #if !os(Windows)
+      let layout = SDGKeyboardDesignTests.testKeyboardLayout
 
-    let keylayoutFile = layout.keyLayoutFile()
-    compare(
-      String(keylayoutFile),
-      against: specificationDirectory.appendingPathComponent("Key Layout.txt"),
-      overwriteSpecificationInsteadOfFailing: false
-    )
+      let keylayoutFile = layout.keyLayoutFile()
+      compare(
+        String(keylayoutFile),
+        against: specificationDirectory.appendingPathComponent("Key Layout.txt"),
+        overwriteSpecificationInsteadOfFailing: false
+      )
+    #endif
   }
 
   func testKeyboardLayoutBundle() throws {
