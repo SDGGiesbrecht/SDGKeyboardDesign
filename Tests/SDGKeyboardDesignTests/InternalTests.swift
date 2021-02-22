@@ -50,10 +50,13 @@ final class InternalTests: TestCase {
   }
 
   func testLayer() {
-    _ = Layer.noModifiers.index
-    for layer in Layer.allCases {
-      _ = layer.unshifted
-    }
+    // #workaround(Swift 5.3.3, Segmentation fault.)
+    #if !os(Windows)
+      _ = Layer.noModifiers.index
+      for layer in Layer.allCases {
+        _ = layer.unshifted
+      }
+    #endif
   }
 
   func testSymbols() {
