@@ -26,48 +26,54 @@ final class APITests: TestCase {
   }
 
   func testKeyboardLayout() throws {
-    let layout = SDGKeyboardDesignTests.testKeyboardLayout
+    // #workaround(Swift 5.3.3, Segmentation fault.)
+    #if !os(Windows)
+      let layout = SDGKeyboardDesignTests.testKeyboardLayout
 
-    let keylayoutFile = layout.keyLayoutFile()
-    compare(
-      String(keylayoutFile),
-      against: specificationDirectory.appendingPathComponent("Key Layout.txt"),
-      overwriteSpecificationInsteadOfFailing: false
-    )
-  }
-
-  func testKeyboardLayoutBundle() throws {
-    let bundle = SDGKeyboardDesignTests.testKeyboardLayoutBundle
-
-    #if !PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS
-      let infoPlist = bundle.macOSKeyboardLayoutBundleInfoPlist()
+      let keylayoutFile = layout.keyLayoutFile()
       compare(
-        String(infoPlist),
-        against: specificationDirectory.appendingPathComponent("Information Property List.txt"),
-        overwriteSpecificationInsteadOfFailing: false
-      )
-
-      let unusualBundle = withUnusualIdentifier.macOSKeyboardLayoutBundleInfoPlist()
-      compare(
-        String(unusualBundle),
-        against: specificationDirectory.appendingPathComponent("Unusual Identifier.txt"),
+        String(keylayoutFile),
+        against: specificationDirectory.appendingPathComponent("Key Layout.txt"),
         overwriteSpecificationInsteadOfFailing: false
       )
     #endif
+  }
 
-    let strings = bundle.macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(.englishCanada)
-    compare(
-      String(strings),
-      against: specificationDirectory.appendingPathComponent(
-        "Information Property List Strings.txt"
-      ),
-      overwriteSpecificationInsteadOfFailing: false
-    )
+  func testKeyboardLayoutBundle() throws {
+    // #workaround(Swift 5.3.3, Segmentation fault.)
+    #if !os(Windows)
+      let bundle = SDGKeyboardDesignTests.testKeyboardLayoutBundle
 
-    #if !PLATFORM_LACKS_FOUNDATION_FILE_MANAGER
-      try FileManager.default.withTemporaryDirectory(appropriateFor: nil) { temporary in
-        try bundle.generate(in: temporary)
-      }
+      #if !PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS
+        let infoPlist = bundle.macOSKeyboardLayoutBundleInfoPlist()
+        compare(
+          String(infoPlist),
+          against: specificationDirectory.appendingPathComponent("Information Property List.txt"),
+          overwriteSpecificationInsteadOfFailing: false
+        )
+
+        let unusualBundle = withUnusualIdentifier.macOSKeyboardLayoutBundleInfoPlist()
+        compare(
+          String(unusualBundle),
+          against: specificationDirectory.appendingPathComponent("Unusual Identifier.txt"),
+          overwriteSpecificationInsteadOfFailing: false
+        )
+      #endif
+
+      let strings = bundle.macOSKeyboardLayoutBundleLocalizedInfoPlistStrings(.englishCanada)
+      compare(
+        String(strings),
+        against: specificationDirectory.appendingPathComponent(
+          "Information Property List Strings.txt"
+        ),
+        overwriteSpecificationInsteadOfFailing: false
+      )
+
+      #if !PLATFORM_LACKS_FOUNDATION_FILE_MANAGER
+        try FileManager.default.withTemporaryDirectory(appropriateFor: nil) { temporary in
+          try bundle.generate(in: temporary)
+        }
+      #endif
     #endif
   }
 }

@@ -10,20 +10,15 @@
  */
 
 import Foundation
-#if !os(WASI)  // #workaround(Swift 5.3.1, Web lacks CFXMLInterace.)
-  #if canImport(FoundationXML)
-    import FoundationXML
-  #endif
-#endif
 
 import SDGLogic
 import SDGMathematics
 import SDGCollections
 import SDGText
 import SDGLocalization
-import SDGKeyboard
+import SDGXML
 
-import SDGKeyboardDesignXMLShims
+import SDGKeyboard
 
 /// A keyboard layout.
 public struct KeyboardLayout<L> where L: InputLocalization {
@@ -125,111 +120,150 @@ public struct KeyboardLayout<L> where L: InputLocalization {
 
   // MARK: - Key Layout File
 
-  private func keyLayoutDTD() -> XMLDTD {
-    let dtd = XMLDTD()
-    dtd.name = "keyboard"
-    dtd.publicID = nil
-    dtd.systemID = "file://localhost/System/Library/DTDs/KeyboardLayout.dtd"
-    return dtd
+  private func keyLayoutDTD() -> XML.DTD {
+    return .system("file://localhost/System/Library/DTDs/KeyboardLayout.dtd")
   }
 
-  private var keyLayoutModifierMapIdentifier: String {
+  private var keyLayoutModifierMapIdentifier: XML.AttributeValue {
     return "modifierMap"
   }
-  private var keyLayoutANSIMapSet: String {
+  private var keyLayoutANSIMapSet: StrictString {
     return "mapSet"
   }
-  private var keyLayoutJISMapSet: String {
+  private var keyLayoutJISMapSet: StrictString {
     return keyLayoutANSIMapSet
   }
 
-  private func keyLayoutLayout(range: ClosedRange<Int>, mapSet: String) -> XMLElement {
-    let theLayout = XMLElement(name: "layout")
-    theLayout.addAttribute(name: "first", value: "\(range.lowerBound)")
-    theLayout.addAttribute(name: "last", value: "\(range.upperBound)")
-    theLayout.addAttribute(name: "modifiers", value: keyLayoutModifierMapIdentifier)
-    theLayout.addAttribute(name: "mapSet", value: mapSet)
-    return theLayout
+  private func keyLayoutLayout(range: ClosedRange<Int>, mapSet: StrictString) -> XML.Content {
+    return .element(
+      XML.Element(
+        name: "layout",
+        attributes: [
+          "first": XML.AttributeValue(text: range.lowerBound.inUninteruptedDigits()),
+          "last": XML.AttributeValue(text: range.upperBound.inUninteruptedDigits()),
+          "modifiers": keyLayoutModifierMapIdentifier,
+          "mapSet": XML.AttributeValue(text: mapSet),
+        ]
+      )
+    )
   }
 
-  private func keyLayoutLayouts() -> XMLElement {
-    let layouts = XMLElement(name: "layouts")
-    layouts.addChild(keyLayoutLayout(range: 0...17, mapSet: keyLayoutANSIMapSet))
-    layouts.addChild(keyLayoutLayout(range: 18...18, mapSet: keyLayoutJISMapSet))
-    layouts.addChild(keyLayoutLayout(range: 21...23, mapSet: keyLayoutJISMapSet))
-    layouts.addChild(keyLayoutLayout(range: 30...30, mapSet: keyLayoutJISMapSet))
-    layouts.addChild(keyLayoutLayout(range: 33...33, mapSet: keyLayoutJISMapSet))
-    layouts.addChild(keyLayoutLayout(range: 36...36, mapSet: keyLayoutJISMapSet))
-    layouts.addChild(keyLayoutLayout(range: 194...194, mapSet: keyLayoutJISMapSet))
-    layouts.addChild(keyLayoutLayout(range: 197...197, mapSet: keyLayoutJISMapSet))
-    layouts.addChild(keyLayoutLayout(range: 200...201, mapSet: keyLayoutJISMapSet))
-    layouts.addChild(keyLayoutLayout(range: 206...207, mapSet: keyLayoutJISMapSet))
-    return layouts
+  private func keyLayoutLayouts() -> XML.Element {
+    return XML.Element(
+      name: "layouts",
+      content: [
+        .characterData("\n    "),
+        keyLayoutLayout(range: 0...17, mapSet: keyLayoutANSIMapSet),
+        .characterData("\n    "),
+        keyLayoutLayout(range: 18...18, mapSet: keyLayoutJISMapSet),
+        .characterData("\n    "),
+        keyLayoutLayout(range: 21...23, mapSet: keyLayoutJISMapSet),
+        .characterData("\n    "),
+        keyLayoutLayout(range: 30...30, mapSet: keyLayoutJISMapSet),
+        .characterData("\n    "),
+        keyLayoutLayout(range: 33...33, mapSet: keyLayoutJISMapSet),
+        .characterData("\n    "),
+        keyLayoutLayout(range: 36...36, mapSet: keyLayoutJISMapSet),
+        .characterData("\n    "),
+        keyLayoutLayout(range: 194...194, mapSet: keyLayoutJISMapSet),
+        .characterData("\n    "),
+        keyLayoutLayout(range: 197...197, mapSet: keyLayoutJISMapSet),
+        .characterData("\n    "),
+        keyLayoutLayout(range: 200...201, mapSet: keyLayoutJISMapSet),
+        .characterData("\n    "),
+        keyLayoutLayout(range: 206...207, mapSet: keyLayoutJISMapSet),
+        .characterData("\n  "),
+      ]
+    )
   }
 
   private func keyLayoutKeyMapSelect(
     keyMap: Layer,
     keys: String,
     otherKeys: String? = nil
-  ) -> XMLElement {
-    let theKeyMapSelect = XMLElement(name: "keyMapSelect")
-    theKeyMapSelect.addAttribute(name: "mapIndex", value: "\(keyMap.index)")
-
-    let modifierSet = XMLElement(name: "modifier")
-    theKeyMapSelect.addChild(modifierSet)
-    modifierSet.addAttribute(name: "keys", value: keys)
-
+  ) -> XML.Content {
+    var content: [XML.Content] = [
+      .characterData("\n      "),
+      .element(
+        XML.Element(
+          name: "modifier",
+          attributes: ["keys": XML.AttributeValue(text: StrictString(keys))]
+        )
+      ),
+    ]
     if let other = otherKeys {
-      let otherModifiers = XMLElement(name: "modifier")
-      theKeyMapSelect.addChild(otherModifiers)
-      otherModifiers.addAttribute(name: "keys", value: other)
+      content.append(contentsOf: [
+        .characterData("\n      "),
+        .element(
+          XML.Element(
+            name: "modifier",
+            attributes: ["keys": XML.AttributeValue(text: StrictString(other))]
+          )
+        ),
+      ])
     }
-
-    return theKeyMapSelect
-  }
-
-  private func keyLayoutModifierMap() -> XMLElement {
-    let modifierMap = XMLElement(name: "modifierMap")
-    modifierMap.addAttribute(name: "id", value: keyLayoutModifierMapIdentifier)
-    modifierMap.addAttribute(name: "defaultIndex", value: "\(Layer.command.index)")
-
-    modifierMap.addChild(keyLayoutKeyMapSelect(keyMap: .noModifiers, keys: ""))
-    modifierMap.addChild(keyLayoutKeyMapSelect(keyMap: .shift, keys: "anyShift"))
-    modifierMap.addChild(keyLayoutKeyMapSelect(keyMap: .option, keys: "anyOption"))
-    modifierMap.addChild(keyLayoutKeyMapSelect(keyMap: .shiftOption, keys: "anyOption anyShift"))
-    modifierMap.addChild(keyLayoutKeyMapSelect(keyMap: .capsLock, keys: "caps"))
-    modifierMap.addChild(keyLayoutKeyMapSelect(keyMap: .capsLockShift, keys: "caps anyShift"))
-    modifierMap.addChild(keyLayoutKeyMapSelect(keyMap: .capsLockOption, keys: "caps anyOption"))
-    modifierMap.addChild(
-      keyLayoutKeyMapSelect(keyMap: .capsLockShiftOption, keys: "caps anyOption anyShift")
-    )
-    modifierMap.addChild(
-      keyLayoutKeyMapSelect(
-        keyMap: .command,
-        keys: "command anyControl? anyOption? caps?",
-        otherKeys: "anyControl anyOption? caps?"
+    content.append(.characterData("\n    "))
+    return .element(
+      XML.Element(
+        name: "keyMapSelect",
+        attributes: ["mapIndex": XML.AttributeValue(text: StrictString(keyMap.index))],
+        content: content
       )
     )
-    modifierMap.addChild(
-      keyLayoutKeyMapSelect(
-        keyMap: .shiftCommand,
-        keys: "command anyControl? anyOption? caps? anyShift",
-        otherKeys: "anyControl anyOption? caps? anyShift"
-      )
+  }
+
+  private func keyLayoutModifierMap() -> XML.Element {
+    return XML.Element(
+      name: "modifierMap",
+      attributes: [
+        "id": keyLayoutModifierMapIdentifier,
+        "defaultIndex": XML.AttributeValue(text: Layer.command.index),
+      ],
+      content: [
+        .characterData("\n    "),
+        keyLayoutKeyMapSelect(keyMap: .noModifiers, keys: ""),
+        .characterData("\n    "),
+        keyLayoutKeyMapSelect(keyMap: .shift, keys: "anyShift"),
+        .characterData("\n    "),
+        keyLayoutKeyMapSelect(keyMap: .option, keys: "anyOption"),
+        .characterData("\n    "),
+        keyLayoutKeyMapSelect(keyMap: .shiftOption, keys: "anyOption anyShift"),
+        .characterData("\n    "),
+        keyLayoutKeyMapSelect(keyMap: .capsLock, keys: "caps"),
+        .characterData("\n    "),
+        keyLayoutKeyMapSelect(keyMap: .capsLockShift, keys: "caps anyShift"),
+        .characterData("\n    "),
+        keyLayoutKeyMapSelect(keyMap: .capsLockOption, keys: "caps anyOption"),
+        .characterData("\n    "),
+        keyLayoutKeyMapSelect(keyMap: .capsLockShiftOption, keys: "caps anyOption anyShift"),
+        .characterData("\n    "),
+        keyLayoutKeyMapSelect(
+          keyMap: .command,
+          keys: "command anyControl? anyOption? caps?",
+          otherKeys: "anyControl anyOption? caps?"
+        ),
+        .characterData("\n    "),
+        keyLayoutKeyMapSelect(
+          keyMap: .shiftCommand,
+          keys: "command anyControl? anyOption? caps? anyShift",
+          otherKeys: "anyControl anyOption? caps? anyShift"
+        ),
+        .characterData("\n  "),
+      ]
     )
-    return modifierMap
   }
 
-  private func keyLayoutKey(_ key: Key) -> XMLElement {
-    let theKey = XMLElement(name: "key")
-    theKey.addAttribute(name: "code", value: "\(key.coreGraphicsCode)")
-    return theKey
+  private func keyLayoutKey(_ key: Key) -> XML.Element {
+    return XML.Element(
+      name: "key",
+      attributes: ["code": XML.AttributeValue(text: key.coreGraphicsCode.inUninteruptedDigits())]
+    )
   }
 
-  private func keyLayoutOutputKey(_ virtualKey: Key, output: StrictString) -> XMLElement {
-    let theKey = keyLayoutKey(virtualKey)
-    theKey.addAttribute(name: "output", value: String(output))
-    return theKey
+  private func keyLayoutOutputKey(_ virtualKey: Key, output: StrictString) -> XML.Content {
+    var theKey = keyLayoutKey(virtualKey)
+    theKey.attributes["output"] = XML.AttributeValue(text: output)
+    return .element(theKey)
   }
 
   private func mangle(action string: StrictString) -> StrictString {
@@ -244,131 +278,177 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     return encoded
   }
 
-  private func keyLayoutActionKey(_ virtualKey: Key, action: StrictString) -> XMLElement {
-    let theKey = keyLayoutKey(virtualKey)
-    theKey.addAttribute(name: "action", value: String(mangle(action: action)))
-    return theKey
+  private func keyLayoutActionKey(_ virtualKey: Key, action: StrictString) -> XML.Content {
+    var theKey = keyLayoutKey(virtualKey)
+    theKey.attributes["action"] = XML.AttributeValue(text: mangle(action: action))
+    return .element(theKey)
   }
 
   private func keyLayoutKeyMap(
     layer: Layer,
     arrangement: [Key: StrictString],
     deadKeyAndSymbolMappings: [StrictString: [StrictString: StrictString]]
-  ) -> XMLElement {
-
-    let theKeyMap = XMLElement(name: "keyMap")
-    theKeyMap.addAttribute(name: "index", value: "\(layer.index)")
-
+  ) -> XML.Element {
+    var content: [XML.Content] = []
+    content.reserveCapacity(arrangement.count)
     for virtualKey in arrangement.keys.sorted() {
+      content.append(.characterData("\n      "))
       let output = arrangement[virtualKey]!
       if let _ = deadKeyLabels[output] {
-        theKeyMap.addChild(keyLayoutActionKey(virtualKey, action: output))
+        content.append(keyLayoutActionKey(virtualKey, action: output))
       } else if let _ = deadKeyAndSymbolMappings[output] {
-        theKeyMap.addChild(keyLayoutActionKey(virtualKey, action: output))
+        content.append(keyLayoutActionKey(virtualKey, action: output))
       } else {
-        theKeyMap.addChild(keyLayoutOutputKey(virtualKey, output: output))
+        content.append(keyLayoutOutputKey(virtualKey, output: output))
       }
     }
-
-    return theKeyMap
+    content.append(.characterData("\n    "))
+    return XML.Element(
+      name: "keyMap",
+      attributes: ["index": XML.AttributeValue(text: layer.index)],
+      content: content
+    )
   }
 
   private func keyLayoutKeyMapSet(
-    _ identifier: String,
+    _ identifier: StrictString,
     layerLayouts: [Layer: [Key: StrictString]],
     deadKeyAndSymbolMappings: [StrictString: [StrictString: StrictString]]
-  ) -> XMLElement {
-
-    let theKeyMapSet = XMLElement(name: "keyMapSet")
-    theKeyMapSet.addAttribute(name: "id", value: identifier)
-
+  ) -> XML.Element {
+    var content: [XML.Content] = []
+    content.reserveCapacity(layerLayouts.count)
     for layer in layerLayouts.keys.sorted() {
+      content.append(.characterData("\n    "))
       let arrangement = layerLayouts[layer]!
       let layout = keyLayoutKeyMap(
         layer: layer,
         arrangement: arrangement,
         deadKeyAndSymbolMappings: deadKeyAndSymbolMappings
       )
-      theKeyMapSet.addChild(layout)
+      content.append(.element(layout))
     }
-
-    return theKeyMapSet
+    content.append(.characterData("\n  "))
+    return XML.Element(
+      name: "keyMapSet",
+      attributes: ["id": XML.AttributeValue(text: identifier)],
+      content: content
+    )
   }
 
-  private func keyLayoutWhen() -> XMLElement {
-    return XMLElement(name: "when")
+  private func keyLayoutWhen() -> XML.Element {
+    return XML.Element(name: "when")
   }
 
   private func keyLayoutActions(
     deadKeyAndSymbolMappings: [StrictString: [StrictString: StrictString]]
-  ) -> XMLElement {
+  ) -> XML.Element {
+    var content: [XML.Content] = []
 
-    let actions = XMLElement(name: "actions")
-
+    content.reserveCapacity(deadKeyLabels.count)
     for dead in deadKeyLabels.keys.sorted() {
-      let action = XMLElement(name: "action")
-      actions.addChild(action)
-      action.addAttribute(name: "id", value: String(mangle(action: dead)))
-
-      let next = keyLayoutWhen()
-      action.addChild(next)
-      next.addAttribute(name: "state", value: "none")
-      next.addAttribute(name: "next", value: String(mangle(action: dead)))
+      var next = keyLayoutWhen()
+      next.attributes["state"] = "none"
+      next.attributes["next"] = XML.AttributeValue(text: mangle(action: dead))
+      content.append(contentsOf: [
+        .characterData("\n    "),
+        .element(
+          XML.Element(
+            name: "action",
+            attributes: ["id": XML.AttributeValue(text: mangle(action: dead))],
+            content: [
+              .characterData("\n      "),
+              .element(next),
+              .characterData("\n    "),
+            ]
+          )
+        ),
+      ])
     }
 
+    content.reserveCapacity(content.count + deadKeyAndSymbolMappings.count × 2)
     for base in deadKeyAndSymbolMappings.keys.sorted() {
       let mapping = deadKeyAndSymbolMappings[base]!
-      let action = XMLElement(name: "action")
-      actions.addChild(action)
-      action.addAttribute(name: "id", value: String(mangle(action: base)))
+      var actionContent: [XML.Content] = []
+      actionContent.reserveCapacity(mapping.count + 1)
 
-      let normal = keyLayoutWhen()
-      action.addChild(normal)
-      normal.addAttribute(name: "state", value: "none")
+      var normal = keyLayoutWhen()
+      normal.attributes["state"] = "none"
       if base == "¤" {
-        normal.addAttribute(name: "next", value: String(mangle(action: base)))
+        normal.attributes["next"] = XML.AttributeValue(text: mangle(action: base))
       } else {
-        normal.addAttribute(name: "output", value: String(base))
+        normal.attributes["output"] = XML.AttributeValue(text: base)
       }
+      actionContent.append(contentsOf: [
+        .characterData("\n      "),
+        .element(normal),
+      ])
 
       for state in mapping.keys.sorted() {
         let result = mapping[state]!
-        let rule = keyLayoutWhen()
-        action.addChild(rule)
-        rule.addAttribute(name: "state", value: String(mangle(action: state)))
+        var rule = keyLayoutWhen()
+        rule.attributes["state"] = XML.AttributeValue(text: mangle(action: state))
         if result.hasPrefix("¤".unicodeScalars) {
-          rule.addAttribute(name: "next", value: String(mangle(action: result)))
+          rule.attributes["next"] = XML.AttributeValue(text: mangle(action: result))
           // Pending Symbol state
         } else {
           // Output
-          rule.addAttribute(name: "output", value: String(result))
+          rule.attributes["output"] = XML.AttributeValue(text: result)
         }
+        actionContent.append(contentsOf: [
+          .characterData("\n      "),
+          .element(rule),
+        ])
       }
+
+      actionContent.append(.characterData("\n    "))
+
+      content.append(contentsOf: [
+        .characterData("\n    "),
+        .element(
+          XML.Element(
+            name: "action",
+            attributes: ["id": XML.AttributeValue(text: mangle(action: base))],
+            content: actionContent
+          )
+        ),
+      ])
     }
-    return actions
+    content.append(.characterData("\n  "))
+
+    return XML.Element(name: "actions", content: content)
   }
 
   private func keyLayoutTerminators(
     symbolMapping: [StrictString: [StrictString: StrictString]]
-  ) -> XMLElement {
-    let terminators = XMLElement(name: "terminators")
+  ) -> XML.Element {
+    var content: [XML.Content] = []
+    content.reserveCapacity(deadKeyLabels.count)
     for dead in deadKeyLabels.keys.sorted() {
       let terminator = deadKeyLabels[dead]!
-      let rule = keyLayoutWhen()
-      rule.addAttribute(name: "state", value: String(mangle(action: dead)))
-      rule.addAttribute(name: "output", value: String(terminator))
-      terminators.addChild(rule)
+      var rule = keyLayoutWhen()
+      rule.attributes["state"] = XML.AttributeValue(text: mangle(action: dead))
+      rule.attributes["output"] = XML.AttributeValue(text: terminator)
+      content.append(contentsOf: [
+        .characterData("\n    "),
+        .element(rule),
+      ])
     }
+    let states = Symbol.states(from: symbolMapping)
+    content.reserveCapacity(content.count + states.count)
     for state in Symbol.states(from: symbolMapping) {
-      let rule = keyLayoutWhen()
-      rule.addAttribute(name: "state", value: String(mangle(action: state)))
-      rule.addAttribute(name: "output", value: String(state))
-      terminators.addChild(rule)
+      var rule = keyLayoutWhen()
+      rule.attributes["state"] = XML.AttributeValue(text: mangle(action: state))
+      rule.attributes["output"] = XML.AttributeValue(text: state)
+      content.append(contentsOf: [
+        .characterData("\n    "),
+        .element(rule),
+      ])
     }
-    return terminators
+    content.append(.characterData("\n  "))
+    return XML.Element(name: "terminators", content: content)
   }
 
-  private func keyLayoutKeyboard() -> XMLElement {
+  private func keyLayoutKeyboard() -> XML.Element {
     let layerLayouts = layerArrangements()
     let symbolMapping = Symbol.mapping(from: symbolsSpellable(by: layerLayouts))
     let deadKeyAndSymbolMappings = DeadKey.assimilate(
@@ -376,31 +456,37 @@ public struct KeyboardLayout<L> where L: InputLocalization {
       intoDeadKeys: deadKeyMappings
     )
 
-    let keyboard = XMLElement(name: "keyboard")
-    keyboard.addAttribute(name: "group", value: script.rawValue)
-    keyboard.addAttribute(name: "id", value: "\(uniqueIdentifier)")
-    keyboard.addAttribute(name: "name", value: String(unlocalizedName))
-    keyboard.addChild(keyLayoutLayouts())
-    keyboard.addChild(keyLayoutModifierMap())
-    keyboard.addChild(
-      keyLayoutKeyMapSet(
-        keyLayoutANSIMapSet,
-        layerLayouts: layerLayouts,
-        deadKeyAndSymbolMappings: deadKeyAndSymbolMappings
-      )
+    return XML.Element(
+      name: "keyboard",
+      attributes: [
+        "group": XML.AttributeValue(text: StrictString(script.rawValue)),
+        "id": XML.AttributeValue(text: uniqueIdentifier.inUninteruptedDigits()),
+        "name": XML.AttributeValue(text: unlocalizedName),
+      ],
+      content: [
+        .characterData("\n  "),
+        .element(keyLayoutLayouts()),
+        .characterData("\n  "),
+        .element(keyLayoutModifierMap()),
+        .characterData("\n  "),
+        .element(
+          keyLayoutKeyMapSet(
+            keyLayoutANSIMapSet,
+            layerLayouts: layerLayouts,
+            deadKeyAndSymbolMappings: deadKeyAndSymbolMappings
+          )
+        ),
+        .characterData("\n  "),
+        .element(keyLayoutActions(deadKeyAndSymbolMappings: deadKeyAndSymbolMappings)),
+        .characterData("\n  "),
+        .element(keyLayoutTerminators(symbolMapping: symbolMapping)),
+        .characterData("\n"),
+      ]
     )
-    keyboard.addChild(keyLayoutActions(deadKeyAndSymbolMappings: deadKeyAndSymbolMappings))
-    keyboard.addChild(keyLayoutTerminators(symbolMapping: symbolMapping))
-    return keyboard
   }
 
-  internal func keyLayoutXML() -> XMLDocument {
-    let document = XMLDocument(rootElement: keyLayoutKeyboard())
-    document.version = "1.0"
-    document.characterEncoding = "UTF\u{2D}8"
-    document.isStandalone = false
-    document.dtd = keyLayoutDTD()
-    return document
+  private func keyLayoutXML() -> XML.Document {
+    return XML.Document(dtd: keyLayoutDTD(), rootElement: keyLayoutKeyboard())
   }
 
   /// Generates a key layout file.
@@ -410,56 +496,28 @@ public struct KeyboardLayout<L> where L: InputLocalization {
   /// If macOS refuses to load the file, it can be debugged using the `klcompiler` tool in the [Apple Font Tool Suite](https://developer.apple.com/fonts/).
   public func keyLayoutFile() -> StrictString {
     let xml = keyLayoutXML()
-    let data = xml.xmlData(options: [.nodePrettyPrint, .nodeCompactEmptyElement])
+    var string = xml.source()
 
-    var string = String(data: data, encoding: .utf8)!
-    string = string.replacingOccurrences(of: "\u{22}\u{1}\u{22}", with: "\u{22}&#x0001;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{3}\u{22}", with: "\u{22}&#x0003;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{4}\u{22}", with: "\u{22}&#x0004;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{5}\u{22}", with: "\u{22}&#x0005;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{8}\u{22}", with: "\u{22}&#x0008;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{9}\u{22}", with: "\u{22}&#x0009;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{B}\u{22}", with: "\u{22}&#x000B;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{C}\u{22}", with: "\u{22}&#x000C;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{D}\u{22}", with: "\u{22}&#x000D;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{10}\u{22}", with: "\u{22}&#x0010;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{1B}\u{22}", with: "\u{22}&#x001B;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{1C}\u{22}", with: "\u{22}&#x001C;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{1D}\u{22}", with: "\u{22}&#x001D;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{1E}\u{22}", with: "\u{22}&#x001E;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{1F}\u{22}", with: "\u{22}&#x001F;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{27}\u{22}", with: "\u{22}&#x0027;\u{22}")
-    string = string.replacingOccurrences(of: "\u{22}\u{7F}\u{22}", with: "\u{22}&#x007F;\u{22}")
-    string = string.replacingOccurrences(of: "&quot;", with: "&#x0022;")
-    string = string.replacingOccurrences(of: "&amp;", with: "&#x0026;")
-    string = string.replacingOccurrences(of: "&lt;", with: "&#x003C;")
-    string = string.replacingOccurrences(of: "&gt;", with: "&#x003E;")
+    // #workaround(SDGCornerstone 7.1.0, The wrong quotes are escaped.)
+    string.replaceMatches(for: "\u{22}\u{22}\u{22}", with: "\u{22}&#x0022;\u{22}")
 
-    // Eliminate platform differences
-    #if os(macOS)
-      string.scalars.mutateMatches(
-        for: "\n".scalars + RepetitionPattern(" ".scalars)
-      ) { (match: PatternMatch<String.ScalarView>) -> String.ScalarView in
-        let spaces = match.contents.dropFirst()
-        let newSpaces = String(
-          repeating: " ",
-          count: spaces.count.dividedAccordingToEuclid(by: 2)
-        )
-        return "\n\(newSpaces)".scalars
-      }
-      string.scalars.replaceMatches(for: "\n\n".scalars, with: "\n".scalars)
-      if string.scalars.last ≠ "\n" {
-        string.scalars.append("\n")
-      }
-    #else
-      string.scalars.replaceMatches(
-        for: "encoding=\u{22}utf\u{2D}8\u{22}".scalars,
-        with: "encoding=\u{22}UTF\u{2D}8\u{22}".scalars
-      )
-      string.scalars.replaceMatches(for: " standalone=\u{22}no\u{22}".scalars, with: "".scalars)
-      string = string.replacingOccurrences(of: "&#9;", with: "&#x0009;")
-      string = string.replacingOccurrences(of: "&#13;", with: "&#x000D;")
-    #endif
+    string.replaceMatches(for: "\u{1}".scalars, with: "&#x0001;".scalars)
+    string.replaceMatches(for: "\u{3}".scalars, with: "&#x0003;".scalars)
+    string.replaceMatches(for: "\u{4}".scalars, with: "&#x0004;".scalars)
+    string.replaceMatches(for: "\u{5}".scalars, with: "&#x0005;".scalars)
+    string.replaceMatches(for: "\u{8}".scalars, with: "&#x0008;".scalars)
+    string.replaceMatches(for: "\u{9}".scalars, with: "&#x0009;".scalars)
+    string.replaceMatches(for: "\u{B}".scalars, with: "&#x000B;".scalars)
+    string.replaceMatches(for: "\u{C}".scalars, with: "&#x000C;".scalars)
+    string.replaceMatches(for: "\u{D}".scalars, with: "&#x000D;".scalars)
+    string.replaceMatches(for: "\u{10}".scalars, with: "&#x0010;".scalars)
+    string.replaceMatches(for: "\u{1B}".scalars, with: "&#x001B;".scalars)
+    string.replaceMatches(for: "\u{1C}".scalars, with: "&#x001C;".scalars)
+    string.replaceMatches(for: "\u{1D}".scalars, with: "&#x001D;".scalars)
+    string.replaceMatches(for: "\u{1E}".scalars, with: "&#x001E;".scalars)
+    string.replaceMatches(for: "\u{1F}".scalars, with: "&#x001F;".scalars)
+    string.replaceMatches(for: "\u{27}".scalars, with: "&#x0027;".scalars)
+    string.replaceMatches(for: "\u{7F}".scalars, with: "&#x007F;".scalars)
 
     // The macOS XML parser has an intermittent bug involving non‐BMP scalars.
     string.scalars.mutateMatches(for: ConditionalPattern({ $0.value ≥ 0x10000 })) { match in

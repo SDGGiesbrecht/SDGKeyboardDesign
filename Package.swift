@@ -282,7 +282,6 @@ let package = Package(
       url: "https://github.com/SDGGiesbrecht/SDGInterface",
       .upToNextMinor(from: Version(0, 10, 0))
     ),
-    .package(url: "https://github.com/SDGGiesbrecht/SDGWeb", from: Version(5, 5, 2)),
   ],
   targets: [
 
@@ -293,7 +292,6 @@ let package = Package(
     .target(
       name: "SDGKeyboardDesign",
       dependencies: [
-        "SDGKeyboardDesignXMLShims",
         "SDGKeyboardDesignLocalizations",
         .product(name: "SDGLogic", package: "SDGCornerstone"),
         .product(name: "SDGMathematics", package: "SDGCornerstone"),
@@ -301,6 +299,7 @@ let package = Package(
         .product(name: "SDGText", package: "SDGCornerstone"),
         .product(name: "SDGPersistence", package: "SDGCornerstone"),
         .product(name: "SDGLocalization", package: "SDGCornerstone"),
+        .product(name: "SDGXML", package: "SDGCornerstone"),
         .product(name: "SDGKeyboard", package: "SDGInterface"),
       ]
     ),
@@ -313,13 +312,6 @@ let package = Package(
         .product(name: "SDGLocalization", package: "SDGCornerstone")
       ]
     ),
-    .target(
-      name: "SDGKeyboardDesignXMLShims",
-      dependencies: [
-        .product(name: "SDGLogic", package: "SDGCornerstone"),
-        .product(name: "SDGHTML", package: "SDGWeb"),
-      ]
-    ),
 
     // Tests
 
@@ -327,6 +319,7 @@ let package = Package(
       name: "SDGKeyboardDesignTests",
       dependencies: [
         "SDGKeyboardDesign",
+        .product(name: "SDGCollections", package: "SDGCornerstone"),
         .product(name: "SDGText", package: "SDGCornerstone"),
         .product(name: "SDGPersistence", package: "SDGCornerstone"),
         .product(name: "SDGLocalization", package: "SDGCornerstone"),

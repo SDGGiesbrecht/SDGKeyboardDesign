@@ -11,6 +11,7 @@
 
 import SDGMathematics
 import SDGCollections
+import SDGText
 
 /// A layer (alternate state) on the keyboard.
 public enum Layer: OrderedEnumeration {
@@ -39,9 +40,9 @@ public enum Layer: OrderedEnumeration {
   // MARK: - Properties
 
   private static let indexMapping = BijectiveMapping(Layer.allCases.indexMapping)
-  internal var index: String {
+  internal var index: StrictString {
     let result: Int = Layer.indexMapping[self]!
-    return "\(result)"
+    return result.inUninteruptedDigits()
   }
 
   internal var unshifted: Layer? {
