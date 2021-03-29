@@ -25,26 +25,29 @@ final class RegressionTests: TestCase {
   func testNegativeIdentifierUsesASCIIMinus() {
     // Untracked.
 
-    let keyboard = KeyboardLayout(
-      name: UserFacing<StrictString, TestLocalization>({ _ in "Negative Identifier" }),
-      icon: nil,
-      layers: [
-        .noModifiers: [
-          .leftLittleHome: "a",
-          .leftRingHome: "b",
-          .leftMiddleHome: "c",
-        ]
-      ],
-      deadKeyLabels: [:],
-      deadKeyMappings: [:],
-      symbols: [:],
-      uniqueIdentifier: −1,
-      script: .none,
-      targetedLanguage: nil
-    )
-    let xml = keyboard.keyLayoutFile()
+    // #workaround(Swift 5.3.4, Segmentation fault.)
+    #if !os(Windows)
+      let keyboard = KeyboardLayout(
+        name: UserFacing<StrictString, TestLocalization>({ _ in "Negative Identifier" }),
+        icon: nil,
+        layers: [
+          .noModifiers: [
+            .leftLittleHome: "a",
+            .leftRingHome: "b",
+            .leftMiddleHome: "c",
+          ]
+        ],
+        deadKeyLabels: [:],
+        deadKeyMappings: [:],
+        symbols: [:],
+        uniqueIdentifier: −1,
+        script: .none,
+        targetedLanguage: nil
+      )
+      let xml = keyboard.keyLayoutFile()
 
-    XCTAssert(xml.allSatisfy({ $0.value < 0x2212 }))
+      XCTAssert(xml.allSatisfy({ $0.value < 0x2212 }))
+    #endif
   }
 
   func testNonBMPCharactersEscaped() {
