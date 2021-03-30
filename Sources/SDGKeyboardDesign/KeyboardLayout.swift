@@ -34,7 +34,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
   ///     - deadKeyLabels: Optional. A dictionary that maps each dead key identifier to a label for the dead key. It is recommended to use `DeadKey.defaultLabels` as a starting point instead of an empty dictionary.
   ///     - deadKeyMappings: Optional. A dictionary where the keys are the output of basic keys, and the values are a each a dictionary that maps dead key identifiers to the modified output of the basic key. It is recommended to use `DeadKey.defaultMappings` as a starting point instead of an empty dictionary.
   ///     - symbols: A dictionary that maps spelled‐out descriptions to the symbol they should produce. It is recommended to use `Symbol.defaultDictionary` as a starting point instead of an empty dictionary.
-  ///     - uniqueIdentifier: A unique identifier.
+  ///     - uniqueIdentifier: A unique identifier. macOS requires certain scripts to have positive or negative identifiers, but this initializer will automatically flip the sign as necessary.
   ///     - script: A code for a script to use for applications that do not support Unicode.
   ///     - targetedLanguage: The *sole* targeted language, if there is only one.
   public init(
@@ -55,7 +55,14 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     self.deadKeyLabels = deadKeyLabels
     self.deadKeyMappings = deadKeyMappings
     self.symbols = symbols
-    self.uniqueIdentifier = uniqueIdentifier
+
+    let absoluteIdentifier = |uniqueIdentifier|
+    if script == .none {
+      self.uniqueIdentifier = −absoluteIdentifier
+    } else {
+      self.uniqueIdentifier = absoluteIdentifier
+    }
+
     self.script = script
     self.targetedLanguage = targetedLanguage
   }

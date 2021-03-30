@@ -45,7 +45,8 @@ extension SDGKeyboardDesignTests.InternalTests {
 extension SDGKeyboardDesignTests.RegressionTests {
   static let windowsTests: [XCTestCaseEntry] = [
     testCase([
-      ("testNonBMPCharactersEscaped", testNonBMPCharactersEscaped)
+      ("testNegativeIdentifierUsesASCIIMinus", testNegativeIdentifierUsesASCIIMinus),
+      ("testNonBMPCharactersEscaped", testNonBMPCharactersEscaped),
     ])
   ]
 }

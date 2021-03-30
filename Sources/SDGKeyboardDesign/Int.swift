@@ -15,6 +15,8 @@ import SDGLocalization
 extension Int {
 
   internal func inUninteruptedDigits() -> StrictString {
-    return inDigits(thousandsSeparator: " ").replacingMatches(for: " ".scalars, with: "".scalars)
+    return inDigits(thousandsSeparator: " ")
+      .replacingMatches(for: " ".scalars, with: "".scalars)
+      .replacingMatches(for: "−".scalars, with: "\u{2D}".scalars)
   }
 }
