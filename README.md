@@ -284,7 +284,7 @@ let package = Package(
     .package(
       name: "SDGKeyboardDesign",
       url: "https://github.com/SDGGiesbrecht/SDGKeyboardDesign",
-      from: Version(1, 4, 3)
+      from: Version(1, 4, 4)
     ),
   ],
   targets: [
