@@ -359,9 +359,3 @@ for target in package.targets {
     .define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi])),
   ])
 }
-
-import Foundation
-if ProcessInfo.processInfo.environment["TARGETING_WATCHOS"] == "true" {
-  // #workaround(xcodebuild -version 12.4, Test targets don’t work on watchOS.) @exempt(from: unicode)
-  package.targets.removeAll(where: { $0.isTest })
-}
