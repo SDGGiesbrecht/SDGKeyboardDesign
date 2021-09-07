@@ -357,5 +357,7 @@ for target in package.targets {
     // Internal‐only:
     // #workaround(Swift 5.3.3, Web lacks Foundation.NSHomeDirectory().)
     .define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi])),
+    // #workaround(SDGCornerstone 7.2.4, Web lacks TestCase.)
+    .define("PLATFORM_LACKS_SDG_CORNERSTONE_TEST_CASE", .when(platforms: [.watchOS])),
   ])
 }
