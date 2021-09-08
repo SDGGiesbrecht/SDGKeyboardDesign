@@ -348,10 +348,10 @@ for target in package.targets {
     // #workaround(Swift 5.4.2, Web lacks Foundation.PropertyListSerialization.data(fromPropertyList:format:options:).)
     // @example(conditions)
     .define("PLATFORM_LACKS_FOUNDATION_FILE_MANAGER", .when(platforms: [.wasi])),
-    /*.define(
+    .define(
       "PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS",
       .when(platforms: [.wasi])
-    ),*/
+    ),
     // @endExample
 
     // Internal‐only:
