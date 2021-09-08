@@ -344,18 +344,18 @@ for target in package.targets {
   var swiftSettings = target.swiftSettings ?? []
   defer { target.swiftSettings = swiftSettings }
   swiftSettings.append(contentsOf: [
-    // #workaround(Swift 5.3.3, Web lacks Foundation.FileMananger.)
-    // #workaround(Swift 5.3.3, Web lacks Foundation.PropertyListSerialization.data(fromPropertyList:format:options:).)
+    // #workaround(Swift 5.4.2, Web lacks Foundation.FileMananger.)
+    // #warning(Swift 5.3.3, Web lacks Foundation.PropertyListSerialization.data(fromPropertyList:format:options:).)
     // @example(conditions)
     .define("PLATFORM_LACKS_FOUNDATION_FILE_MANAGER", .when(platforms: [.wasi])),
-    .define(
+    /*.define(
       "PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS",
       .when(platforms: [.wasi])
-    ),
+    ),*/
     // @endExample
 
     // Internal‐only:
-    // #workaround(Swift 5.3.3, Web lacks Foundation.NSHomeDirectory().)
+    // #workaround(Swift 5.4.2, Web lacks Foundation.NSHomeDirectory().)
     .define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi])),
     // #workaround(SDGCornerstone 7.2.4, Web lacks TestCase.)
     .define("PLATFORM_LACKS_SDG_CORNERSTONE_TEST_CASE", .when(platforms: [.watchOS])),
