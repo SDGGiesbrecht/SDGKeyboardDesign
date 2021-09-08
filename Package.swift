@@ -345,7 +345,7 @@ for target in package.targets {
   defer { target.swiftSettings = swiftSettings }
   swiftSettings.append(contentsOf: [
     // #workaround(Swift 5.4.2, Web lacks Foundation.FileMananger.)
-    // #warning(Swift 5.3.3, Web lacks Foundation.PropertyListSerialization.data(fromPropertyList:format:options:).)
+    // #workaround(Swift 5.4.2, Web lacks Foundation.PropertyListSerialization.data(fromPropertyList:format:options:).)
     // @example(conditions)
     .define("PLATFORM_LACKS_FOUNDATION_FILE_MANAGER", .when(platforms: [.wasi])),
     /*.define(
