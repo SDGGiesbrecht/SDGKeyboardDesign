@@ -505,9 +505,6 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     let xml = keyLayoutXML()
     var string = xml.source()
 
-    // #workaround(SDGCornerstone 7.1.0, The wrong quotes are escaped.)
-    string.replaceMatches(for: "\u{22}\u{22}\u{22}", with: "\u{22}&#x0022;\u{22}")
-
     string.replaceMatches(for: "\u{1}".scalars, with: "&#x0001;".scalars)
     string.replaceMatches(for: "\u{3}".scalars, with: "&#x0003;".scalars)
     string.replaceMatches(for: "\u{4}".scalars, with: "&#x0004;".scalars)
