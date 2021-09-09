@@ -26,8 +26,6 @@ import SDGXCTestUtilities
 final class InternalTests: TestCase {
 
   func testKeyLayoutFile() throws {
-    // #workaround(Swift 5.3.3, Segmentation fault.)
-    #if !os(Windows)
       var xml = testKeyboardLayout.keyLayoutFile()
       // These trip bugs in Foundation’s XML parser.
       xml.replaceMatches(for: "&#x0001;", with: "_")
@@ -46,17 +44,13 @@ final class InternalTests: TestCase {
       #if os(macOS)  // Only macOS actually has the DTD.
         try XMLDocument(data: xml.file).validate()
       #endif
-    #endif
   }
 
   func testLayer() {
-    // #workaround(Swift 5.3.3, Segmentation fault.)
-    #if !os(Windows)
       _ = Layer.noModifiers.index
       for layer in Layer.allCases {
         _ = layer.unshifted
       }
-    #endif
   }
 
   func testSymbols() {

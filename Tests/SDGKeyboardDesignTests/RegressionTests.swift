@@ -53,8 +53,6 @@ final class RegressionTests: TestCase {
   func testNonBMPCharactersEscaped() {
     // Untracked.
 
-    // #workaround(Swift 5.3.3, Segmentation fault.)
-    #if !os(Windows)
       let keyboard = KeyboardLayout(
         name: UserFacing<StrictString, TestLocalization>({ _ in "Non‐BMP Characters" }),
         icon: nil,
@@ -80,6 +78,5 @@ final class RegressionTests: TestCase {
       XCTAssert(xml.contains("&#x1F1E8;&#x1F1E6;"))
 
       XCTAssert(xml.allSatisfy({ $0.value < 0x10000 }))
-    #endif
   }
 }
