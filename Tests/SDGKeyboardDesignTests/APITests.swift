@@ -26,6 +26,7 @@ final class APITests: TestCase {
   }
 
   func testKeyboardLayout() throws {
+    #if !PLATFORM_SUFFERS_SEGMENTATION_FAULTS
       let layout = SDGKeyboardDesignTests.testKeyboardLayout
 
       let keylayoutFile = layout.keyLayoutFile()
@@ -34,9 +35,11 @@ final class APITests: TestCase {
         against: specificationDirectory.appendingPathComponent("Key Layout.txt"),
         overwriteSpecificationInsteadOfFailing: false
       )
+    #endif
   }
 
   func testKeyboardLayoutBundle() throws {
+    #if !PLATFORM_SUFFERS_SEGMENTATION_FAULTS
       let bundle = SDGKeyboardDesignTests.testKeyboardLayoutBundle
 
       #if !PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS
@@ -69,5 +72,6 @@ final class APITests: TestCase {
           try bundle.generate(in: temporary)
         }
       #endif
+    #endif
   }
 }
