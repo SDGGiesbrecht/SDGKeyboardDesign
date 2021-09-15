@@ -26,8 +26,7 @@ final class APITests: TestCase {
   }
 
   func testKeyboardLayout() throws {
-    // #workaround(Swift 5.3.3, Segmentation fault.)
-    #if !os(Windows)
+    #if !PLATFORM_SUFFERS_SEGMENTATION_FAULTS
       let layout = SDGKeyboardDesignTests.testKeyboardLayout
 
       let keylayoutFile = layout.keyLayoutFile()
@@ -40,8 +39,7 @@ final class APITests: TestCase {
   }
 
   func testKeyboardLayoutBundle() throws {
-    // #workaround(Swift 5.3.3, Segmentation fault.)
-    #if !os(Windows)
+    #if !PLATFORM_SUFFERS_SEGMENTATION_FAULTS
       let bundle = SDGKeyboardDesignTests.testKeyboardLayoutBundle
 
       #if !PLATFORM_LACKS_FOUNDATION_PROPERTY_LIST_SERIALIZATION_DATA_FROM_PROPERTY_LIST_FORMAT_OPTIONS

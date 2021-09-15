@@ -53,8 +53,7 @@ final class RegressionTests: TestCase {
   func testNonBMPCharactersEscaped() {
     // Untracked.
 
-    // #workaround(Swift 5.3.3, Segmentation fault.)
-    #if !os(Windows)
+    #if !PLATFORM_SUFFERS_SEGMENTATION_FAULTS
       let keyboard = KeyboardLayout(
         name: UserFacing<StrictString, TestLocalization>({ _ in "Non‐BMP Characters" }),
         icon: nil,

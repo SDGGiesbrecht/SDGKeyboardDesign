@@ -26,8 +26,7 @@ import SDGXCTestUtilities
 final class InternalTests: TestCase {
 
   func testKeyLayoutFile() throws {
-    // #workaround(Swift 5.3.3, Segmentation fault.)
-    #if !os(Windows)
+    #if !PLATFORM_SUFFERS_SEGMENTATION_FAULTS
       var xml = testKeyboardLayout.keyLayoutFile()
       // These trip bugs in Foundation’s XML parser.
       xml.replaceMatches(for: "&#x0001;", with: "_")
@@ -50,8 +49,7 @@ final class InternalTests: TestCase {
   }
 
   func testLayer() {
-    // #workaround(Swift 5.3.3, Segmentation fault.)
-    #if !os(Windows)
+    #if !PLATFORM_SUFFERS_SEGMENTATION_FAULTS
       _ = Layer.noModifiers.index
       for layer in Layer.allCases {
         _ = layer.unshifted
