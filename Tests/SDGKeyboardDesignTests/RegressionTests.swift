@@ -25,8 +25,7 @@ final class RegressionTests: TestCase {
   func testNegativeIdentifierUsesASCIIMinus() {
     // Untracked.
 
-    // #workaround(Swift 5.3.4, Segmentation fault.)
-    #if !os(Windows)
+    #if !PLATFORM_SUFFERS_SEGMENTATION_FAULTS
       let keyboard = KeyboardLayout(
         name: UserFacing<StrictString, TestLocalization>({ _ in "Negative Identifier" }),
         icon: nil,
