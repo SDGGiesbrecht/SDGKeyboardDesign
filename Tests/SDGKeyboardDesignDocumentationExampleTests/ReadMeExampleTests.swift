@@ -19,9 +19,6 @@ import XCTest
 
 import SDGXCTestUtilities
 
-#if PLATFORM_LACKS_SDG_CORNERSTONE_TEST_CASE
-  typealias TestCase = XCTestCase
-#endif
 final class ReadMeExampleTests: TestCase {
 
   func testReadMeExample() throws {
