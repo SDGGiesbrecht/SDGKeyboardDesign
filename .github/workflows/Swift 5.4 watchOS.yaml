@@ -51,4 +51,4 @@ jobs:
       run: |
         set -x
         export TARGETING_WATCHOS=true
-        xcodebuild test -destination 'name=Apple Watch Series 6 - 40mm' -scheme SDGKeyboardDesign-Package
+        xcodebuild test -destination 'name=Apple Watch Series 6 - 40mm' -scheme SDGKeyboardDesign

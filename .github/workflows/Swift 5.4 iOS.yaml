@@ -51,4 +51,4 @@ jobs:
       run: |
         set -x
         export TARGETING_IOS=true
-        xcodebuild test -destination 'name=iPhone 12' -scheme SDGKeyboardDesign-Package
+        xcodebuild test -destination 'name=iPhone 12' -scheme SDGKeyboardDesign
