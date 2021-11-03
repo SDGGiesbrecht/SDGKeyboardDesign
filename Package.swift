@@ -277,10 +277,10 @@ let package = Package(
     .library(name: "SDGKeyboardDesign", targets: ["SDGKeyboardDesign"])
   ],
   dependencies: [
-    .package(url: "https://github.com/SDGGiesbrecht/SDGCornerstone", from: Version(7, 2, 5)),
+    .package(url: "https://github.com/SDGGiesbrecht/SDGCornerstone", from: Version(8, 0, 0)),
     .package(
       url: "https://github.com/SDGGiesbrecht/SDGInterface",
-      .upToNextMinor(from: Version(0, 13, 0))
+      .upToNextMinor(from: Version(0, 13, 1))
     ),
   ],
   targets: [
