@@ -344,8 +344,8 @@ for target in package.targets {
   var swiftSettings = target.swiftSettings ?? []
   defer { target.swiftSettings = swiftSettings }
   swiftSettings.append(contentsOf: [
-    // #workaround(Swift 5.4.2, Web lacks Foundation.FileMananger.)
-    // #workaround(Swift 5.4.2, Web lacks Foundation.PropertyListSerialization.data(fromPropertyList:format:options:).)
+    // #workaround(Swift 5.5.1, Web lacks Foundation.FileMananger.)
+    // #workaround(Swift 5.5.1, Web lacks Foundation.PropertyListSerialization.data(fromPropertyList:format:options:).)
     // @example(conditions)
     .define("PLATFORM_LACKS_FOUNDATION_FILE_MANAGER", .when(platforms: [.wasi])),
     .define(
@@ -355,9 +355,9 @@ for target in package.targets {
     // @endExample
 
     // Internal‐only:
-    // #workaround(Swift 5.4.2, Web lacks Foundation.NSHomeDirectory().)
+    // #workaround(Swift 5.5.1, Web lacks Foundation.NSHomeDirectory().)
     .define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi])),
-    // #workaround(SDGCornerstone 7.2.4, Windows suffers unexplained segmentation faults.)
+    // #workaround(SDGCornerstone 8.0.1, Windows suffers unexplained segmentation faults.)
     .define("PLATFORM_SUFFERS_SEGMENTATION_FAULTS", .when(platforms: [.windows])),
   ])
 }
