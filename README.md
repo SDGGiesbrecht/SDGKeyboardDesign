@@ -4,12 +4,12 @@
  This source file is part of the SDGKeyboardDesign open source project.
  https://sdggiesbrecht.github.io/SDGKeyboardDesign
 
- Copyright ©2019–2021 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
+ Copyright ©2019–2022 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
 
  Soli Deo gloria.
  -->
 
-macOS • Windows • Web • CentOS • Ubuntu • tvOS • iOS • Android • Amazon Linux • watchOS
+macOS • Windows • Web • Ubuntu • tvOS • iOS • Android • Amazon Linux • watchOS
 
 [Documentation](https://sdggiesbrecht.github.io/SDGKeyboardDesign/%F0%9F%87%A8%F0%9F%87%A6EN)
 
