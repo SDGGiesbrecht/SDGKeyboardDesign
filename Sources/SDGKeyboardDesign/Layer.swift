@@ -14,7 +14,7 @@ import SDGCollections
 import SDGText
 
 /// A layer (alternate state) on the keyboard.
-public enum Layer: OrderedEnumeration {
+public enum Layer: Comparable, OrderedEnumeration {
 
   /// No modifiers
   case noModifiers
