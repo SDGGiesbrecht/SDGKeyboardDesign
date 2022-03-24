@@ -63,6 +63,11 @@ public enum Layer: Comparable, OrderedEnumeration {
   }
 
   // #workaround(Redundant, but for _ComparableUnlessBrokenByPlatform.)
+  /// See `Comparable`.
+  ///
+  /// - Parameters:
+  ///   - lhs: See `Comparable`.
+  ///   - rhs: See `Comparable`.
   public static func < (lhs: Self, rhs: Self) -> Bool {
     return indexMapping[lhs]! < indexMapping[rhs]!
   }
