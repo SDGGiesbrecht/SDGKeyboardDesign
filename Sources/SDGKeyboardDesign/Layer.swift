@@ -62,7 +62,7 @@ public enum Layer: Comparable, OrderedEnumeration {
     }
   }
 
-  // #warning(Redundant, but for _ComparableUnlessBrokenByPlatform.)
+  // #workaround(Redundant, but for _ComparableUnlessBrokenByPlatform.)
   public static func < (lhs: Self, rhs: Self) -> Bool {
     return indexMapping[lhs]! < indexMapping[rhs]!
   }
