@@ -14,7 +14,7 @@ import SDGCollections
 import SDGText
 
 /// A layer (alternate state) on the keyboard.
-public enum Layer: OrderedEnumeration {
+public enum Layer: Comparable, OrderedEnumeration {
 
   /// No modifiers
   case noModifiers
@@ -60,5 +60,15 @@ public enum Layer: OrderedEnumeration {
     case .shiftCommand:
       return .command
     }
+  }
+
+  // #workaround(Redundant, but for _ComparableUnlessBrokenByPlatform.)
+  /// See `Comparable`.
+  ///
+  /// - Parameters:
+  ///   - lhs: See `Comparable`.
+  ///   - rhs: See `Comparable`.
+  public static func < (lhs: Self, rhs: Self) -> Bool {
+    return indexMapping[lhs]! < indexMapping[rhs]!
   }
 }
