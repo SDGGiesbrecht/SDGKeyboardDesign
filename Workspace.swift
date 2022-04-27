@@ -64,5 +64,3 @@ configuration.documentation.api.ignoredDependencies = [
   "Swift",
   "XCTest",
 ]
-
-configuration.supportedPlatforms.remove(.centOS)
