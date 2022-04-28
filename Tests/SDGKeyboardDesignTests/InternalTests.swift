@@ -23,35 +23,31 @@ import SDGXCTestUtilities
 final class InternalTests: TestCase {
 
   func testKeyLayoutFile() throws {
-    #if !PLATFORM_SUFFERS_SEGMENTATION_FAULTS
-      var xml = testKeyboardLayout.keyLayoutFile()
-      // These trip bugs in Foundation’s XML parser.
-      xml.replaceMatches(for: "&#x0001;", with: "_")
-      xml.replaceMatches(for: "&#x0003;", with: "_")
-      xml.replaceMatches(for: "&#x0004;", with: "_")
-      xml.replaceMatches(for: "&#x0005;", with: "_")
-      xml.replaceMatches(for: "&#x0008;", with: "_")
-      xml.replaceMatches(for: "&#x000B;", with: "_")
-      xml.replaceMatches(for: "&#x000C;", with: "_")
-      xml.replaceMatches(for: "&#x0010;", with: "_")
-      xml.replaceMatches(for: "&#x001B;", with: "_")
-      xml.replaceMatches(for: "&#x001C;", with: "_")
-      xml.replaceMatches(for: "&#x001D;", with: "_")
-      xml.replaceMatches(for: "&#x001E;", with: "_")
-      xml.replaceMatches(for: "&#x001F;", with: "_")
-      #if os(macOS)  // Only macOS actually has the DTD.
-        try XMLDocument(data: xml.file).validate()
-      #endif
+    var xml = testKeyboardLayout.keyLayoutFile()
+    // These trip bugs in Foundation’s XML parser.
+    xml.replaceMatches(for: "&#x0001;", with: "_")
+    xml.replaceMatches(for: "&#x0003;", with: "_")
+    xml.replaceMatches(for: "&#x0004;", with: "_")
+    xml.replaceMatches(for: "&#x0005;", with: "_")
+    xml.replaceMatches(for: "&#x0008;", with: "_")
+    xml.replaceMatches(for: "&#x000B;", with: "_")
+    xml.replaceMatches(for: "&#x000C;", with: "_")
+    xml.replaceMatches(for: "&#x0010;", with: "_")
+    xml.replaceMatches(for: "&#x001B;", with: "_")
+    xml.replaceMatches(for: "&#x001C;", with: "_")
+    xml.replaceMatches(for: "&#x001D;", with: "_")
+    xml.replaceMatches(for: "&#x001E;", with: "_")
+    xml.replaceMatches(for: "&#x001F;", with: "_")
+    #if os(macOS)  // Only macOS actually has the DTD.
+      try XMLDocument(data: xml.file).validate()
     #endif
   }
 
   func testLayer() {
-    #if !PLATFORM_SUFFERS_SEGMENTATION_FAULTS
-      _ = Layer.noModifiers.index
-      for layer in Layer.allCases {
-        _ = layer.unshifted
-      }
-    #endif
+    _ = Layer.noModifiers.index
+    for layer in Layer.allCases {
+      _ = layer.unshifted
+    }
   }
 
   func testSymbols() {

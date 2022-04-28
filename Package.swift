@@ -357,7 +357,5 @@ for target in package.targets {
     // Internal‐only:
     // #workaround(Swift 5.6, Web lacks Foundation.NSHomeDirectory().)
     .define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi])),
-    // #warning(SDGCornerstone 8.0.1, Windows suffers unexplained segmentation faults.)
-    //.define("PLATFORM_SUFFERS_SEGMENTATION_FAULTS", .when(platforms: [.windows])),
   ])
 }
