@@ -62,7 +62,7 @@ public enum Layer: Comparable, OrderedEnumeration {
     }
   }
 
-  // #workaround(Redundant, but for _ComparableUnlessBrokenByPlatform.)
+  // #workaround(SDGCornerstone 9.0.0, Redundant, but for _ComparableUnlessBrokenByPlatform.)
   /// See `Comparable`.
   ///
   /// - Parameters:
