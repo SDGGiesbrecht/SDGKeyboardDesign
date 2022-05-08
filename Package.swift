@@ -280,7 +280,7 @@ let package = Package(
     .package(url: "https://github.com/SDGGiesbrecht/SDGCornerstone", from: Version(9, 0, 0)),
     .package(
       url: "https://github.com/SDGGiesbrecht/SDGInterface",
-      .upToNextMinor(from: Version(0, 14, 0))
+      .upToNextMinor(from: Version(0, 15, 0))
     ),
   ],
   targets: [
