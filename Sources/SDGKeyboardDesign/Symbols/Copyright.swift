@@ -21,6 +21,8 @@ extension Symbol {
           return SymbolData(symbol: "©", names: ["Urheberrecht"])
         case .françaisFrance:
           return SymbolData(symbol: "©", names: ["droit d’auteur"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "©", names: ["πνευματική ιδιοκτησία"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -31,6 +33,8 @@ extension Symbol {
           return SymbolData(symbol: "℗", names: ["phonographische Rechte"])
         case .françaisFrance:
           return SymbolData(symbol: "℗", names: ["droit d’auteur phonographique"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "℗", names: ["πνευματική ιδιοκτησία ηχογράφησης"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -41,6 +45,8 @@ extension Symbol {
           return SymbolData(symbol: "®", names: ["registrierte Marke"])
         case .françaisFrance:
           return SymbolData(symbol: "®", names: ["marque déposée"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "®", names: ["καταχωρισμένο εμπορικό σήμα"])
         }
       }),
     ]
