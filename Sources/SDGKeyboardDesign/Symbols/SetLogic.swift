@@ -117,7 +117,7 @@ extension Symbol {
           return SymbolData(symbol: "⊊", names: ["echte Teilmenge"])
         case .françaisFrance:
           return SymbolData(symbol: "⊊", names: ["sous‐ensemble propre"])
-        case .françaisFrance:
+        case .ελληνικάΕλλάδα:
           return SymbolData(symbol: "⊊", names: ["γνήσιο υποσύνολο"])
         }
       }),
@@ -129,7 +129,7 @@ extension Symbol {
           return SymbolData(symbol: "⊋", names: ["echte Obermenge"])
         case .françaisFrance:
           return SymbolData(symbol: "⊋", names: ["sur‐ensemble propre"])
-        case .françaisFrance:
+        case .ελληνικάΕλλάδα:
           return SymbolData(symbol: "⊊", names: ["γνήσιο υπερσύνολο"])
         }
       }),
