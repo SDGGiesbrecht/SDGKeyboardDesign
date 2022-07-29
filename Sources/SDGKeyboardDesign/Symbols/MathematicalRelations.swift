@@ -33,7 +33,7 @@ extension Symbol {
           return SymbolData(symbol: "≈", names: ["ungefähr gleich"])
         case .françaisFrance:
           return SymbolData(symbol: "≈", names: ["presque égal"])
-        case .françaisFrance:
+        case .ελληνικάΕλλάδα:
           return SymbolData(symbol: "≈", names: ["περίπου ίσον"])
         }
       }),
@@ -81,7 +81,7 @@ extension Symbol {
           return SymbolData(symbol: "≥", names: ["größer als oder gleich"])
         case .françaisFrance:
           return SymbolData(symbol: "≥", names: ["supérieur ou égal"])
-        case .françaisFrance:
+        case .ελληνικάΕλλάδα:
           return SymbolData(symbol: "≥", names: ["μεγαλύτερο ή ίσον"])
         }
       }),
