@@ -202,7 +202,7 @@ extension Symbol {
         case .françaisFrance:
           return SymbolData(symbol: "$", names: ["peso mexicain", "pesos mexicains"])
         case .ελληνικάΕλλάδα:
-          return SymbolData(symbol: "$", names: ["μεξικάνικο πέσο"])
+          return SymbolData(symbol: "$", names: ["μεξικανικό πέσο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -238,7 +238,7 @@ extension Symbol {
         case .françaisFrance:
           return SymbolData(symbol: "₱", names: ["peso philippin", "pesos philippins"])
         case .ελληνικάΕλλάδα:
-          return SymbolData(symbol: "₱", names: ["πέσο φιλιππίνων", "pesos philippins"])
+          return SymbolData(symbol: "₱", names: ["πέσο φιλιππίνων"])
         }
       }),
       LocalizedSymbol({ localization in
