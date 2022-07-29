@@ -21,6 +21,8 @@ extension Symbol {
           return SymbolData(symbol: "✓", names: ["Häkchen"])
         case .françaisFrance:
           return SymbolData(symbol: "✓", names: ["coche"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "✓", names: ["ελέγχος"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -31,6 +33,8 @@ extension Symbol {
           return SymbolData(symbol: "✗", names: ["Kreuzchen"])
         case .françaisFrance:
           return SymbolData(symbol: "✗", names: ["croix"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "✗", names: ["σταυρός"])
         }
       }),
     ]
