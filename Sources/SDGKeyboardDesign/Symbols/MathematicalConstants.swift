@@ -21,6 +21,8 @@ extension Symbol {
           return SymbolData(symbol: "∞", names: ["unendlich"])
         case .françaisFrance:
           return SymbolData(symbol: "∞", names: ["infini"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "∞", names: ["άπειρο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -31,6 +33,8 @@ extension Symbol {
           return SymbolData(symbol: "∅", names: ["leere Menge"])
         case .françaisFrance:
           return SymbolData(symbol: "∅", names: ["ensemble vide"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "∅", names: ["κενό σύνολο"])
         }
       }),
     ]
