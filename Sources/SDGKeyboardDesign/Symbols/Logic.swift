@@ -21,6 +21,8 @@ extension Symbol {
           return SymbolData(symbol: "¬", names: ["nicht"])
         case .françaisFrance:
           return SymbolData(symbol: "¬", names: ["non"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "¬", names: ["όχι"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -31,6 +33,8 @@ extension Symbol {
           return SymbolData(symbol: "∧", names: ["Konjunktion"])
         case .françaisFrance:
           return SymbolData(symbol: "∧", names: ["conjonction"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "∧", names: ["σύζευξη"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -41,6 +45,8 @@ extension Symbol {
           return SymbolData(symbol: "∨", names: ["Disjunktion"])
         case .françaisFrance:
           return SymbolData(symbol: "∨", names: ["disjonction"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "∨", names: ["διάζευξη"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -51,6 +57,8 @@ extension Symbol {
           return SymbolData(symbol: "∴", names: ["folglich"])
         case .françaisFrance:
           return SymbolData(symbol: "∴", names: ["par conséquent"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "∴", names: ["επομένως"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -61,6 +69,8 @@ extension Symbol {
           return SymbolData(symbol: "∵", names: ["weil"])
         case .françaisFrance:
           return SymbolData(symbol: "∵", names: ["parce que"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "∵", names: ["επειδή"])
         }
       }),
     ]
