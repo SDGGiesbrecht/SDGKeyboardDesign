@@ -21,6 +21,8 @@ extension Symbol {
           return SymbolData(symbol: "♡", names: ["Herz"])
         case .françaisFrance:
           return SymbolData(symbol: "♡", names: ["cœurs"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "♡", names: ["κούπες"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -31,6 +33,8 @@ extension Symbol {
           return SymbolData(symbol: "♠", names: ["Pik"])
         case .françaisFrance:
           return SymbolData(symbol: "♠", names: ["piques"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "♠", names: ["μπαστούνια"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -41,6 +45,8 @@ extension Symbol {
           return SymbolData(symbol: "♢", names: ["Karo"])
         case .françaisFrance:
           return SymbolData(symbol: "♢", names: ["carreaux"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "♢", names: ["καρό"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -51,6 +57,8 @@ extension Symbol {
           return SymbolData(symbol: "♣", names: ["Kreuz"])
         case .françaisFrance:
           return SymbolData(symbol: "♣", names: ["trèfles"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "♣", names: ["σπαθιά"])
         }
       }),
     ]
