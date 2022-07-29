@@ -75,7 +75,7 @@ extension Symbol {
       }),
       LocalizedSymbol({ localization in
         switch localization {
-        case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
+        case .englishUnitedKingdom, .englishUnitedStates, .englishCanada,
           .deutschDeutschland, .françaisFrance:
           return nil
         case .ελληνικάΕλλάδα:
