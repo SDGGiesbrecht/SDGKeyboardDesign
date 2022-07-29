@@ -141,7 +141,7 @@ extension Symbol {
           return SymbolData(symbol: "₾", names: ["Lari"])
         case .françaisFrance:
           return SymbolData(symbol: "₾", names: ["lari", "laris"])
-        case .françaisFrance:
+        case .ελληνικάΕλλάδα:
           return SymbolData(symbol: "₾", names: ["λάρι"])
         }
       }),
