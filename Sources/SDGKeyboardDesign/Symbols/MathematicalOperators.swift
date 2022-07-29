@@ -21,6 +21,8 @@ extension Symbol {
           return SymbolData(symbol: "+", names: ["plus"])
         case .françaisFrance:
           return SymbolData(symbol: "+", names: ["plus"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "+", names: ["plus"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -29,6 +31,8 @@ extension Symbol {
           return SymbolData(symbol: "+", names: ["positive"])
         case .deutschDeutschland, .françaisFrance:
           return nil
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "+", names: ["θετικό"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -39,6 +43,8 @@ extension Symbol {
           return SymbolData(symbol: "±", names: ["plus oder minus"])
         case .françaisFrance:
           return SymbolData(symbol: "±", names: ["plus ou moins"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "±", names: ["συν ή μείον"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -49,6 +55,8 @@ extension Symbol {
           return SymbolData(symbol: "−", names: ["minus"])
         case .françaisFrance:
           return SymbolData(symbol: "−", names: ["moins"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "−", names: ["μείον"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -57,6 +65,8 @@ extension Symbol {
           return SymbolData(symbol: "−", names: ["negative"])
         case .deutschDeutschland, .françaisFrance:
           return nil
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "−", names: ["αρνητικό"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -67,6 +77,8 @@ extension Symbol {
           return SymbolData(symbol: "∓", names: ["minus oder plus"])
         case .françaisFrance:
           return SymbolData(symbol: "∓", names: ["moins ou plus"])
+        case .françaisFrance:
+          return SymbolData(symbol: "∓", names: ["μείον ή συν"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -77,6 +89,8 @@ extension Symbol {
           return SymbolData(symbol: "⋅", names: ["mal"])
         case .françaisFrance:
           return SymbolData(symbol: "⋅", names: ["fois"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "×", names: ["επί", "φορές"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -87,16 +101,20 @@ extension Symbol {
           return SymbolData(symbol: "∶", names: ["durch"])
         case .françaisFrance:
           return SymbolData(symbol: "∶", names: ["divisé par"])
+        case .françaisFrance:
+          return SymbolData(symbol: "÷", names: ["δια"])
         }
       }),
       LocalizedSymbol({ localization in
         switch localization {
         case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
-          return SymbolData(symbol: "∶", names: ["ratio"])
+          return SymbolData(symbol: "∶", names: ["to"])
         case .deutschDeutschland:
-          return nil
+          return SymbolData(symbol: "∶", names: ["zu"])
         case .françaisFrance:
-          return SymbolData(symbol: "∶", names: ["rapport"])
+          return SymbolData(symbol: "∶", names: ["à"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "∶", names: ["προς"])
         }
       }),
       LocalizedSymbol({ localization in
