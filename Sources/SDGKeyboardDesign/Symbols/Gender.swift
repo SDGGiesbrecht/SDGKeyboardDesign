@@ -21,6 +21,8 @@ extension Symbol {
           return SymbolData(symbol: "♂", names: ["Männlich"])
         case .françaisFrance:
           return SymbolData(symbol: "♂", names: ["masculin"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "♂", names: ["αρσενικός"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -31,6 +33,8 @@ extension Symbol {
           return SymbolData(symbol: "♀", names: ["Weiblich"])
         case .françaisFrance:
           return SymbolData(symbol: "♀", names: ["féminin"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "♀", names: ["θηλυκός"])
         }
       }),
     ]
