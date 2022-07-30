@@ -369,7 +369,10 @@ extension Symbol {
         case .deutschDeutschland:
           return SymbolData(symbol: "′", names: ["Minute"])
         case .ελληνικάΕλλάδα:
-          return SymbolData(symbol: "′", names: ["λεπτό της ώρας", "λεπτά της ώρας"])  // → του ευρώ (c)
+          return SymbolData(
+            symbol: "′",
+            names: ["λεπτό της ώρας", "λεπτά της ώρας"]  // → του ευρώ (c)
+          )
         }
       }),
     ]
