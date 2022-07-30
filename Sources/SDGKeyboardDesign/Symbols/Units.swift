@@ -197,7 +197,7 @@ extension Symbol {
           return SymbolData(symbol: "Z", names: ["zetta"])
         case .deutschDeutschland:
           return SymbolData(symbol: "Z", names: ["Zetta"])
-        case .ελλ:
+        case .ελληνικάΕλλάδα:
           return SymbolData(symbol: "Z", names: ["ζεττα"])
         }
       }),
