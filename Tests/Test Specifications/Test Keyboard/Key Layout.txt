@@ -2002,6 +2002,7 @@
       <when next="_C2_A4open_20fron" state="_C2_A4open_20fro"/>
       <when output="ɲ" state="_C2_A4palatal_20"/>
       <when output="£" state="_C2_A4pou"/>
+      <when output="–" state="_C2_A4ra"/>
       <when output="ɳ" state="_C2_A4retroflex_20"/>
       <when next="_C2_A4secon" state="_C2_A4seco"/>
       <when output="℗" state="_C2_A4sou"/>
@@ -2146,6 +2147,7 @@
       <when output="₱" state="_C2_A4peso_20"/>
       <when output="₱" state="_C2_A4pesos_20"/>
       <when output="∝" state="_C2_A4pro"/>
+      <when output="∶" state="_C2_A4ra"/>
       <when output="₹" state="_C2_A4rou"/>
       <when output="₹" state="_C2_A4ru"/>
       <when next="_C2_A4sp" state="_C2_A4s"/>
@@ -2260,7 +2262,7 @@
       <when output="₴" state="_C2_A4h"/>
       <when output="᷄" state="_C2_A4high_20"/>
       <when next="_C2_A4hoher" state="_C2_A4hohe"/>
-      <when output="∩" state="_C2_A4inte"/>
+      <when next="_C2_A4inter" state="_C2_A4inte"/>
       <when next="_C2_A4kleiner" state="_C2_A4kleine"/>
       <when output="₾" state="_C2_A4la"/>
       <when next="_C2_A4labiodentaler" state="_C2_A4labiodentale"/>
@@ -2374,6 +2376,7 @@
       <when next="_C2_A4besonders" state="_C2_A4besonder"/>
       <when output="̋" state="_C2_A4besonders_20hohe"/>
       <when output="̏" state="_C2_A4besonders_20niedrige"/>
+      <when output="–" state="_C2_A4bi"/>
       <when output="¢" state="_C2_A4cent"/>
       <when next="_C2_A4clos" state="_C2_A4clo"/>
       <when output="̸" state="_C2_A4cro"/>
@@ -2393,6 +2396,7 @@
       <when next="_C2_A4gerundeter_20halbgeschloss" state="_C2_A4gerundeter_20halbgeschlos"/>
       <when output="́" state="_C2_A4hohe"/>
       <when output="᷄" state="_C2_A4hoher_20"/>
+      <when output="∩" state="_C2_A4inter"/>
       <when next="_C2_A4kleiner_20als" state="_C2_A4kleiner_20al"/>
       <when next="_C2_A4les" state="_C2_A4le"/>
       <when next="_C2_A4less" state="_C2_A4les"/>
@@ -2509,6 +2513,7 @@
       <when next="_C2_A4palat" state="_C2_A4pala"/>
       <when output="P" state="_C2_A4pe"/>
       <when output="ɧ" state="_C2_A4pos"/>
+      <when output="∶" state="_C2_A4ra"/>
       <when next="_C2_A4ret" state="_C2_A4re"/>
       <when next="_C2_A4retract" state="_C2_A4retrac"/>
       <when next="_C2_A4st" state="_C2_A4s"/>
@@ -2628,6 +2633,7 @@
       <when next="_C2_A4alv" state="_C2_A4al"/>
       <when output="÷" state="_C2_A4di"/>
       <when next="_C2_A4fricativ" state="_C2_A4fricati"/>
+      <when output="–" state="_C2_A4inter"/>
       <when output="ʍ" state="_C2_A4labio"/>
       <when output="ʟ" state="_C2_A4lateraler_20"/>
       <when next="_C2_A4lateraler_20alv" state="_C2_A4lateraler_20al"/>
@@ -2744,7 +2750,6 @@
       <when output="↓" state="_C2_A4south"/>
       <when output="̬" state="_C2_A4stimmhaft"/>
       <when output="̥" state="_C2_A4stimmlos"/>
-      <when output="∶" state="_C2_A4to"/>
       <when output="̌" state="_C2_A4ton_20ascendant"/>
       <when output="↑" state="_C2_A4up"/>
       <when output="ɣ" state="_C2_A4velarisiert"/>
@@ -3313,6 +3318,7 @@
     <when output="¤in" state="_C2_A4in"/>
     <when output="¤int" state="_C2_A4int"/>
     <when output="¤inte" state="_C2_A4inte"/>
+    <when output="¤inter" state="_C2_A4inter"/>
     <when output="¤k" state="_C2_A4k"/>
     <when output="¤ki" state="_C2_A4ki"/>
     <when output="¤kl" state="_C2_A4kl"/>
