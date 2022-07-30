@@ -1865,7 +1865,7 @@ extension Symbol {
         case .françaisFrance:
           return SymbolData(symbol: "‿", names: ["liaison"])
         case .ελληνικάΕλλάδα:
-          return SymbolData(symbol: "‿", names: ["σύζευξη"])
+          return SymbolData(symbol: "‿", names: ["φωνητική σύζευξη"])
         }
       }),
       LocalizedSymbol({ localization in
