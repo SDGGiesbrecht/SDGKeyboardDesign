@@ -21,6 +21,8 @@ extension Symbol {
           return nil
         case .françaisFrance:
           return SymbolData(symbol: "♭", names: ["bémollisé"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "♭", names: ["ύφεση"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -30,7 +32,9 @@ extension Symbol {
         case .deutschDeutschland:
           return nil
         case .françaisFrance:
-          return SymbolData(symbol: "♭", names: ["diésé"])
+          return SymbolData(symbol: "♯", names: ["diésé"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "♯", names: ["δίεση"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -41,6 +45,8 @@ extension Symbol {
           return nil
         case .françaisFrance:
           return SymbolData(symbol: "♮", names: ["naturel"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "♮", names: ["αναίρεση"])
         }
       }),
     ]

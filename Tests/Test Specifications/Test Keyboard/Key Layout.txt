@@ -628,7 +628,6 @@
       <when output="≤" state="_C2_A4kleiner_20als"/>
       <when next="_C2_A4labiodental_20" state="_C2_A4labiodental"/>
       <when next="_C2_A4labiodentaler_20" state="_C2_A4labiodentaler"/>
-      <when next="_C2_A4labiovelarer_20" state="_C2_A4labiovelarer"/>
       <when output="l" state="_C2_A4lateral"/>
       <when next="_C2_A4lateraler_20" state="_C2_A4lateraler"/>
       <when next="_C2_A4lateraler_20alveolarer_20" state="_C2_A4lateraler_20alveolarer"/>
@@ -720,7 +719,6 @@
       <when output="&#x1F1E6;&#x1F1EA;" state="_C2_A4Vereinigte_20"/>
       <when output="ɹ" state="_C2_A4alveolarer_20"/>
       <when output="ʋ" state="_C2_A4labiodentaler_20"/>
-      <when output="w" state="_C2_A4labiovelarer_20"/>
       <when output="l" state="_C2_A4lateraler_20alveolarer_20"/>
       <when output="j" state="_C2_A4palataler_20"/>
       <when output="ɻ" state="_C2_A4retroflexer_20"/>
@@ -754,7 +752,6 @@
       <when next="_C2_A4F" state="_C2_A4"/>
       <when output="ɦ" state="_C2_A4glottaler_20"/>
       <when output="ⱱ" state="_C2_A4labiodentaler_20"/>
-      <when output="ʍ" state="_C2_A4labiovelarer_20"/>
       <when output="ɺ" state="_C2_A4lateraler_20alveolarer_20"/>
       <when output="ɽ" state="_C2_A4retroflexer_20"/>
       <when output="z" state="_C2_A4stimmhafter_20alveolarer_20"/>
@@ -1023,7 +1020,6 @@
       <when output="w" state="_C2_A4labi"/>
       <when next="_C2_A4labiodenta" state="_C2_A4labiodent"/>
       <when output="ʋ" state="_C2_A4labiodental_20"/>
-      <when next="_C2_A4labiovela" state="_C2_A4labiovel"/>
       <when next="_C2_A4latera" state="_C2_A4later"/>
       <when next="_C2_A4lateraler_20a" state="_C2_A4lateraler_20"/>
       <when next="_C2_A4lateraler_20alveola" state="_C2_A4lateraler_20alveol"/>
@@ -1216,7 +1212,7 @@
       <when output="ɗ" state="Hook"/>
       <when output="đ" state="Stroke"/>
       <when next="_C2_A4d" state="_C2_A4"/>
-      <when output="&#x1F1E6;&#x1F1E9;" state="_C2_A4An"/>
+      <when next="_C2_A4And" state="_C2_A4An"/>
       <when next="_C2_A4Bild" state="_C2_A4Bil"/>
       <when output="cd" state="_C2_A4Can"/>
       <when output="₵" state="_C2_A4Ce"/>
@@ -1320,8 +1316,7 @@
       <when next="_C2_A4besonde" state="_C2_A4besond"/>
       <when next="_C2_A4besonders_20hohe" state="_C2_A4besonders_20hoh"/>
       <when next="_C2_A4besonders_20nie" state="_C2_A4besonders_20ni"/>
-      <when next="_C2_A4besonders_20niedrie" state="_C2_A4besonders_20niedri"/>
-      <when next="_C2_A4besonders_20niedriege" state="_C2_A4besonders_20niedrieg"/>
+      <when next="_C2_A4besonders_20niedrige" state="_C2_A4besonders_20niedrig"/>
       <when next="_C2_A4bilabiale" state="_C2_A4bilabial"/>
       <when next="_C2_A4ce" state="_C2_A4c"/>
       <when output="⌧" state="_C2_A4cl"/>
@@ -1364,8 +1359,6 @@
       <when next="_C2_A4le" state="_C2_A4l"/>
       <when next="_C2_A4labiode" state="_C2_A4labiod"/>
       <when next="_C2_A4labiodentale" state="_C2_A4labiodental"/>
-      <when next="_C2_A4labiove" state="_C2_A4labiov"/>
-      <when next="_C2_A4labiovelare" state="_C2_A4labiovelar"/>
       <when next="_C2_A4late" state="_C2_A4lat"/>
       <when next="_C2_A4laterale" state="_C2_A4lateral"/>
       <when next="_C2_A4lateraler_20alve" state="_C2_A4lateraler_20alv"/>
@@ -1532,7 +1525,7 @@
       <when next="_C2_A4Urug" state="_C2_A4Uru"/>
       <when next="_C2_A4Vereinig" state="_C2_A4Vereini"/>
       <when output="̝" state="_C2_A4an"/>
-      <when next="_C2_A4besonders_20niedrieg" state="_C2_A4besonders_20niedrie"/>
+      <when next="_C2_A4besonders_20niedrig" state="_C2_A4besonders_20niedri"/>
       <when output="°" state="_C2_A4de"/>
       <when output="h" state="_C2_A4fricative_20"/>
       <when next="_C2_A4gerundeter_20g" state="_C2_A4gerundeter_20"/>
@@ -1560,6 +1553,7 @@
       <when next="_C2_A4h" state="_C2_A4"/>
       <when next="_C2_A4Bah" state="_C2_A4Ba"/>
       <when next="_C2_A4Ch" state="_C2_A4C"/>
+      <when output="&#x1F1EA;&#x1F1F9;" state="_C2_A4Et"/>
       <when output="&#x1F1EC;&#x1F1ED;" state="_C2_A4G"/>
       <when next="_C2_A4Ph" state="_C2_A4P"/>
       <when next="_C2_A4Sch" state="_C2_A4Sc"/>
@@ -1664,7 +1658,6 @@
       <when next="_C2_A4di" state="_C2_A4d"/>
       <when output="d" state="_C2_A4dec"/>
       <when output="ʼ" state="_C2_A4eject"/>
-      <when output="ꜜ" state="_C2_A4fa"/>
       <when output="⋅" state="_C2_A4fo"/>
       <when next="_C2_A4fri" state="_C2_A4fr"/>
       <when next="_C2_A4fricati" state="_C2_A4fricat"/>
@@ -1806,7 +1799,6 @@
       <when output="k" state="_C2_A4ki"/>
       <when next="_C2_A4kleiner_20al" state="_C2_A4kleiner_20a"/>
       <when next="_C2_A4labiodental" state="_C2_A4labiodenta"/>
-      <when next="_C2_A4labiovel" state="_C2_A4labiove"/>
       <when next="_C2_A4lateral" state="_C2_A4latera"/>
       <when next="_C2_A4lateraler_20al" state="_C2_A4lateraler_20a"/>
       <when next="_C2_A4lateraler_20alveol" state="_C2_A4lateraler_20alveo"/>
@@ -2010,6 +2002,7 @@
       <when next="_C2_A4open_20fron" state="_C2_A4open_20fro"/>
       <when output="ɲ" state="_C2_A4palatal_20"/>
       <when output="£" state="_C2_A4pou"/>
+      <when output="–" state="_C2_A4ra"/>
       <when output="ɳ" state="_C2_A4retroflex_20"/>
       <when next="_C2_A4secon" state="_C2_A4seco"/>
       <when output="℗" state="_C2_A4sou"/>
@@ -2033,6 +2026,7 @@
       <when output="o" state="none"/>
       <when output="ø" state="Stroke"/>
       <when next="_C2_A4o" state="_C2_A4"/>
+      <when output="&#x1F1E6;&#x1F1E9;" state="_C2_A4And"/>
       <when next="_C2_A4Bo" state="_C2_A4B"/>
       <when next="_C2_A4Co" state="_C2_A4C"/>
       <when next="_C2_A4Do" state="_C2_A4D"/>
@@ -2238,7 +2232,7 @@
       <when next="_C2_A4besonder" state="_C2_A4besonde"/>
       <when output="˥" state="_C2_A4besonders_20hohe"/>
       <when next="_C2_A4besonders_20niedr" state="_C2_A4besonders_20nied"/>
-      <when output="˩" state="_C2_A4besonders_20niedriege"/>
+      <when output="˩" state="_C2_A4besonders_20niedrige"/>
       <when next="_C2_A4bilabialer" state="_C2_A4bilabiale"/>
       <when next="_C2_A4cr" state="_C2_A4c"/>
       <when output="♢" state="_C2_A4ca"/>
@@ -2268,12 +2262,10 @@
       <when output="₴" state="_C2_A4h"/>
       <when output="᷄" state="_C2_A4high_20"/>
       <when next="_C2_A4hoher" state="_C2_A4hohe"/>
-      <when output="∩" state="_C2_A4inte"/>
+      <when next="_C2_A4inter" state="_C2_A4inte"/>
       <when next="_C2_A4kleiner" state="_C2_A4kleine"/>
       <when output="₾" state="_C2_A4la"/>
       <when next="_C2_A4labiodentaler" state="_C2_A4labiodentale"/>
-      <when next="_C2_A4labiovelar" state="_C2_A4labiovela"/>
-      <when next="_C2_A4labiovelarer" state="_C2_A4labiovelare"/>
       <when next="_C2_A4later" state="_C2_A4late"/>
       <when next="_C2_A4lateraler" state="_C2_A4laterale"/>
       <when output="z" state="_C2_A4lateraler_20"/>
@@ -2354,6 +2346,7 @@
       <when next="_C2_A4voiceless_20uvular" state="_C2_A4voiceless_20uvula"/>
       <when next="_C2_A4voiceless_20velar" state="_C2_A4voiceless_20vela"/>
       <when next="_C2_A4weiter" state="_C2_A4weite"/>
+      <when output="̽" state="_C2_A4zu"/>
     </action>
     <action id="s">
       <when output="s" state="none"/>
@@ -2382,7 +2375,8 @@
       <when next="_C2_A4bes" state="_C2_A4be"/>
       <when next="_C2_A4besonders" state="_C2_A4besonder"/>
       <when output="̋" state="_C2_A4besonders_20hohe"/>
-      <when output="̏" state="_C2_A4besonders_20niedriege"/>
+      <when output="̏" state="_C2_A4besonders_20niedrige"/>
+      <when output="–" state="_C2_A4bi"/>
       <when output="¢" state="_C2_A4cent"/>
       <when next="_C2_A4clos" state="_C2_A4clo"/>
       <when output="̸" state="_C2_A4cro"/>
@@ -2402,6 +2396,7 @@
       <when next="_C2_A4gerundeter_20halbgeschloss" state="_C2_A4gerundeter_20halbgeschlos"/>
       <when output="́" state="_C2_A4hohe"/>
       <when output="᷄" state="_C2_A4hoher_20"/>
+      <when output="∩" state="_C2_A4inter"/>
       <when next="_C2_A4kleiner_20als" state="_C2_A4kleiner_20al"/>
       <when next="_C2_A4les" state="_C2_A4le"/>
       <when next="_C2_A4less" state="_C2_A4les"/>
@@ -2448,7 +2443,7 @@
       <when next="_C2_A4Aust" state="_C2_A4Aus"/>
       <when output="&#x1F1E7;&#x1F1FC;" state="_C2_A4Bo"/>
       <when next="_C2_A4Cent" state="_C2_A4Cen"/>
-      <when output="&#x1F1EA;&#x1F1F9;" state="_C2_A4E"/>
+      <when next="_C2_A4Et" state="_C2_A4E"/>
       <when output="&#x1F1EE;&#x1F1F9;" state="_C2_A4I"/>
       <when output="∫" state="_C2_A4In"/>
       <when output="&#x1F1F6;&#x1F1E6;" state="_C2_A4Ka"/>
@@ -2626,7 +2621,7 @@
       <when next="_C2_A4voiced_20uvu" state="_C2_A4voiced_20uv"/>
       <when next="_C2_A4voiceless_20u" state="_C2_A4voiceless_20"/>
       <when next="_C2_A4voiceless_20uvu" state="_C2_A4voiceless_20uv"/>
-      <when output="̽" state="_C2_A4z"/>
+      <when next="_C2_A4zu" state="_C2_A4z"/>
     </action>
     <action id="v">
       <when output="v" state="none"/>
@@ -2638,7 +2633,8 @@
       <when next="_C2_A4alv" state="_C2_A4al"/>
       <when output="÷" state="_C2_A4di"/>
       <when next="_C2_A4fricativ" state="_C2_A4fricati"/>
-      <when next="_C2_A4labiov" state="_C2_A4labio"/>
+      <when output="–" state="_C2_A4inter"/>
+      <when output="ʍ" state="_C2_A4labio"/>
       <when output="ʟ" state="_C2_A4lateraler_20"/>
       <when next="_C2_A4lateraler_20alv" state="_C2_A4lateraler_20al"/>
       <when output="£" state="_C2_A4li"/>
@@ -2718,10 +2714,11 @@
     </action>
     <action id="_C2_A4">
       <when next="_C2_A4" state="none"/>
-      <when output="ꜜ" state="_C2_A4"/>
       <when output="͡" state="_C2_A4Affrikate"/>
+      <when output="&#x0026;" state="_C2_A4And"/>
       <when output="c" state="_C2_A4Cent"/>
       <when output="&#x1F1E9;&#x1F1F2;" state="_C2_A4Dominica"/>
+      <when output="&#x0026;" state="_C2_A4Et"/>
       <when output="♣" state="_C2_A4Kreuz"/>
       <when output="μ" state="_C2_A4Mikro"/>
       <when output="mol" state="_C2_A4Mol"/>
@@ -2759,6 +2756,7 @@
       <when output="ɣ" state="_C2_A4velarized"/>
       <when output="̬" state="_C2_A4voiced"/>
       <when output="̥" state="_C2_A4voiceless"/>
+      <when output="∶" state="_C2_A4zu"/>
     </action>
     <action id="_D0_93">
       <when output="Г" state="none"/>
@@ -2838,6 +2836,7 @@
     <when output="¤Affrikate" state="_C2_A4Affrikate"/>
     <when output="¤Am" state="_C2_A4Am"/>
     <when output="¤An" state="_C2_A4An"/>
+    <when output="¤And" state="_C2_A4And"/>
     <when output="¤Au" state="_C2_A4Au"/>
     <when output="¤Aus" state="_C2_A4Aus"/>
     <when output="¤Aust" state="_C2_A4Aust"/>
@@ -2877,6 +2876,7 @@
     <when output="¤Dominica" state="_C2_A4Dominica"/>
     <when output="¤E" state="_C2_A4E"/>
     <when output="¤El" state="_C2_A4El"/>
+    <when output="¤Et" state="_C2_A4Et"/>
     <when output="¤F" state="_C2_A4F"/>
     <when output="¤Fe" state="_C2_A4Fe"/>
     <when output="¤Fi" state="_C2_A4Fi"/>
@@ -3103,9 +3103,8 @@
     <when output="¤besonders nied" state="_C2_A4besonders_20nied"/>
     <when output="¤besonders niedr" state="_C2_A4besonders_20niedr"/>
     <when output="¤besonders niedri" state="_C2_A4besonders_20niedri"/>
-    <when output="¤besonders niedrie" state="_C2_A4besonders_20niedrie"/>
-    <when output="¤besonders niedrieg" state="_C2_A4besonders_20niedrieg"/>
-    <when output="¤besonders niedriege" state="_C2_A4besonders_20niedriege"/>
+    <when output="¤besonders niedrig" state="_C2_A4besonders_20niedrig"/>
+    <when output="¤besonders niedrige" state="_C2_A4besonders_20niedrige"/>
     <when output="¤bi" state="_C2_A4bi"/>
     <when output="¤bil" state="_C2_A4bil"/>
     <when output="¤bila" state="_C2_A4bila"/>
@@ -3319,6 +3318,7 @@
     <when output="¤in" state="_C2_A4in"/>
     <when output="¤int" state="_C2_A4int"/>
     <when output="¤inte" state="_C2_A4inte"/>
+    <when output="¤inter" state="_C2_A4inter"/>
     <when output="¤k" state="_C2_A4k"/>
     <when output="¤ki" state="_C2_A4ki"/>
     <when output="¤kl" state="_C2_A4kl"/>
@@ -3346,14 +3346,6 @@
     <when output="¤labiodentale" state="_C2_A4labiodentale"/>
     <when output="¤labiodentaler" state="_C2_A4labiodentaler"/>
     <when output="¤labiodentaler " state="_C2_A4labiodentaler_20"/>
-    <when output="¤labiov" state="_C2_A4labiov"/>
-    <when output="¤labiove" state="_C2_A4labiove"/>
-    <when output="¤labiovel" state="_C2_A4labiovel"/>
-    <when output="¤labiovela" state="_C2_A4labiovela"/>
-    <when output="¤labiovelar" state="_C2_A4labiovelar"/>
-    <when output="¤labiovelare" state="_C2_A4labiovelare"/>
-    <when output="¤labiovelarer" state="_C2_A4labiovelarer"/>
-    <when output="¤labiovelarer " state="_C2_A4labiovelarer_20"/>
     <when output="¤lat" state="_C2_A4lat"/>
     <when output="¤late" state="_C2_A4late"/>
     <when output="¤later" state="_C2_A4later"/>
@@ -3952,5 +3944,6 @@
     <when output="¤yo" state="_C2_A4yo"/>
     <when output="¤z" state="_C2_A4z"/>
     <when output="¤ze" state="_C2_A4ze"/>
+    <when output="¤zu" state="_C2_A4zu"/>
   </terminators>
 </keyboard>

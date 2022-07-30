@@ -23,6 +23,8 @@ public enum ContentLocalization: String, InputLocalization {
 
   case françaisFrance = "fr\u{2D}FR"
 
+  case ελληνικάΕλλάδα = "el\u{2D}GR"
+
   // MARK: - Localization
 
   public static let fallbackLocalization: ContentLocalization = .englishUnitedKingdom

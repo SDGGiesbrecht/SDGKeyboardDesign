@@ -21,6 +21,8 @@ extension Symbol {
           return SymbolData(symbol: "=", names: ["gleich"])
         case .françaisFrance:
           return SymbolData(symbol: "=", names: ["égal"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "=", names: ["ίσον"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -31,6 +33,8 @@ extension Symbol {
           return SymbolData(symbol: "≈", names: ["ungefähr gleich"])
         case .françaisFrance:
           return SymbolData(symbol: "≈", names: ["presque égal"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "≈", names: ["περίπου ίσον"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -41,6 +45,8 @@ extension Symbol {
           return SymbolData(symbol: "<", names: ["kleiner als"])
         case .françaisFrance:
           return SymbolData(symbol: "<", names: ["inférieur"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "<", names: ["μικρότερο από"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -51,6 +57,8 @@ extension Symbol {
           return SymbolData(symbol: "≤", names: ["kleiner als oder gleich"])
         case .françaisFrance:
           return SymbolData(symbol: "≤", names: ["inférieur ou égal"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "≤", names: ["μικρότερο ή ίσον"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -61,6 +69,8 @@ extension Symbol {
           return SymbolData(symbol: ">", names: ["größer als"])
         case .françaisFrance:
           return SymbolData(symbol: ">", names: ["supérieur"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: ">", names: ["μεγαλύρερο από"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -71,6 +81,8 @@ extension Symbol {
           return SymbolData(symbol: "≥", names: ["größer als oder gleich"])
         case .françaisFrance:
           return SymbolData(symbol: "≥", names: ["supérieur ou égal"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "≥", names: ["μεγαλύτερο ή ίσον"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -81,6 +93,8 @@ extension Symbol {
           return SymbolData(symbol: "∝", names: ["proportional"])
         case .françaisFrance:
           return SymbolData(symbol: "∝", names: ["proportionellement"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "∝", names: ["αναλογικά"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -91,6 +105,8 @@ extension Symbol {
           return SymbolData(symbol: "̸", names: ["ausgestrichen"])
         case .françaisFrance:
           return SymbolData(symbol: "̸", names: ["barré", "barrée"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "̸", names: ["διαγραμμένος"])
         }
       }),
     ]

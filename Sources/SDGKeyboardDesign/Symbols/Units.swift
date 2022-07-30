@@ -23,6 +23,8 @@ extension Symbol {
           return SymbolData(symbol: "m", names: ["Meter"])
         case .françaisFrance:
           return SymbolData(symbol: "m", names: ["mètre", "mètres"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "m", names: ["μέτρο", "μέτρα"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -34,6 +36,8 @@ extension Symbol {
           return SymbolData(symbol: "g", names: ["gram", "grams"])
         case .deutschDeutschland:
           return SymbolData(symbol: "g", names: ["Gramm"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "g", names: ["γραμμάριο", "γραμμάρια"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -44,6 +48,8 @@ extension Symbol {
           return SymbolData(symbol: "s", names: ["Sekunde"])
         case .françaisFrance:
           return SymbolData(symbol: "s", names: ["seconde", "secondes"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "s", names: ["δευτερόλεπτο", "δευτερόλεπτα"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -54,6 +60,8 @@ extension Symbol {
           return SymbolData(symbol: "A", names: ["Ampere"])
         case .françaisFrance:
           return SymbolData(symbol: "A", names: ["ampère", "ampères"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "A", names: ["αμπέρ"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -63,6 +71,8 @@ extension Symbol {
           return SymbolData(symbol: "K", names: ["kelvin", "kelvins"])
         case .deutschDeutschland:
           return SymbolData(symbol: "K", names: ["Kelvin"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "K", names: ["κέλβιν"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -72,6 +82,8 @@ extension Symbol {
           return SymbolData(symbol: "mol", names: ["mole", "moles"])
         case .deutschDeutschland:
           return SymbolData(symbol: "mol", names: ["Mol"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "mol", names: ["γραμμομόριο", "γραμμομόρια"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -81,6 +93,8 @@ extension Symbol {
           return SymbolData(symbol: "cd", names: ["candela", "candelas"])
         case .deutschDeutschland:
           return SymbolData(symbol: "cd", names: ["Candela"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "cd", names: ["κηρίο", "κηρία"])
         }
       }),
 
@@ -92,6 +106,8 @@ extension Symbol {
           return SymbolData(symbol: "da", names: ["Deka"])
         case .françaisFrance:
           return SymbolData(symbol: "da", names: ["déca"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "da", names: ["δεκα"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -101,6 +117,8 @@ extension Symbol {
           return SymbolData(symbol: "h", names: ["hecto"])
         case .deutschDeutschland:
           return SymbolData(symbol: "h", names: ["Hekto"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "h", names: ["εκατο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -110,6 +128,8 @@ extension Symbol {
           return SymbolData(symbol: "k", names: ["kilo"])
         case .deutschDeutschland:
           return SymbolData(symbol: "h", names: ["Kilo"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "h", names: ["χιλιο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -120,6 +140,8 @@ extension Symbol {
           return SymbolData(symbol: "M", names: ["Mega"])
         case .françaisFrance:
           return SymbolData(symbol: "M", names: ["méga"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "M", names: ["μεγα"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -129,6 +151,8 @@ extension Symbol {
           return SymbolData(symbol: "G", names: ["giga"])
         case .deutschDeutschland:
           return SymbolData(symbol: "G", names: ["Giga"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "G", names: ["γιγα"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -139,6 +163,8 @@ extension Symbol {
           return SymbolData(symbol: "T", names: ["Tera"])
         case .françaisFrance:
           return SymbolData(symbol: "T", names: ["téra"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "T", names: ["τερα"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -149,6 +175,8 @@ extension Symbol {
           return SymbolData(symbol: "P", names: ["Peta"])
         case .françaisFrance:
           return SymbolData(symbol: "P", names: ["péta"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "P", names: ["πετα"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -158,6 +186,8 @@ extension Symbol {
           return SymbolData(symbol: "E", names: ["exa"])
         case .deutschDeutschland:
           return SymbolData(symbol: "E", names: ["Exa"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "E", names: ["εξα"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -167,6 +197,8 @@ extension Symbol {
           return SymbolData(symbol: "Z", names: ["zetta"])
         case .deutschDeutschland:
           return SymbolData(symbol: "Z", names: ["Zetta"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "Z", names: ["ζεττα"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -176,6 +208,8 @@ extension Symbol {
           return SymbolData(symbol: "Y", names: ["yotta"])
         case .deutschDeutschland:
           return SymbolData(symbol: "Y", names: ["Yotta"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "Y", names: ["γιοττα"])
         }
       }),
 
@@ -187,6 +221,8 @@ extension Symbol {
           return SymbolData(symbol: "d", names: ["Dezi"])
         case .françaisFrance:
           return SymbolData(symbol: "d", names: ["déci"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "d", names: ["δεκατο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -196,6 +232,8 @@ extension Symbol {
           return SymbolData(symbol: "c", names: ["centi"])
         case .deutschDeutschland:
           return SymbolData(symbol: "c", names: ["Zenti"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "c", names: ["εκατοστο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -205,6 +243,8 @@ extension Symbol {
           return SymbolData(symbol: "m", names: ["milli"])
         case .deutschDeutschland:
           return SymbolData(symbol: "m", names: ["Milli"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "m", names: ["χιλιοστο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -214,6 +254,8 @@ extension Symbol {
           return SymbolData(symbol: "μ", names: ["micro"])
         case .deutschDeutschland:
           return SymbolData(symbol: "μ", names: ["Mikro"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "μ", names: ["μικρο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -223,6 +265,8 @@ extension Symbol {
           return SymbolData(symbol: "n", names: ["nano"])
         case .deutschDeutschland:
           return SymbolData(symbol: "n", names: ["Nano"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "n", names: ["νανο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -232,6 +276,8 @@ extension Symbol {
           return SymbolData(symbol: "p", names: ["pico"])
         case .deutschDeutschland:
           return SymbolData(symbol: "p", names: ["Piko"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "p", names: ["πικο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -241,6 +287,8 @@ extension Symbol {
           return SymbolData(symbol: "f", names: ["femto"])
         case .deutschDeutschland:
           return SymbolData(symbol: "f", names: ["Femto"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "f", names: ["φεμτο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -250,6 +298,8 @@ extension Symbol {
           return SymbolData(symbol: "a", names: ["atto"])
         case .deutschDeutschland:
           return SymbolData(symbol: "a", names: ["Atto"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "a", names: ["αττο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -259,6 +309,8 @@ extension Symbol {
           return SymbolData(symbol: "z", names: ["zepto"])
         case .deutschDeutschland:
           return SymbolData(symbol: "z", names: ["Zepto"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "z", names: ["ζεπτο"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -268,6 +320,8 @@ extension Symbol {
           return SymbolData(symbol: "y", names: ["yocto"])
         case .deutschDeutschland:
           return SymbolData(symbol: "y", names: ["Yokto"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "y", names: ["γιοκτο"])
         }
       }),
 
@@ -279,6 +333,8 @@ extension Symbol {
           return SymbolData(symbol: "%", names: ["Prozent"])
         case .françaisFrance:
           return SymbolData(symbol: "%", names: ["pour cent"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "%", names: ["τοις εκατό"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -289,6 +345,8 @@ extension Symbol {
           return SymbolData(symbol: "‰", names: ["Promille"])
         case .françaisFrance:
           return SymbolData(symbol: "‰", names: ["pour mille"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "‰", names: ["τοις χιλίοις"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -299,6 +357,8 @@ extension Symbol {
           return SymbolData(symbol: "°", names: ["Grad"])
         case .françaisFrance:
           return SymbolData(symbol: "°", names: ["degré", "degrés"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "°", names: ["μοίρα", "μοίρες"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -308,6 +368,11 @@ extension Symbol {
           return SymbolData(symbol: "′", names: ["minute", "minutes"])
         case .deutschDeutschland:
           return SymbolData(symbol: "′", names: ["Minute"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(
+            symbol: "′",
+            names: ["λεπτό της ώρας", "λεπτά της ώρας"]  // → του ευρώ (c)
+          )
         }
       }),
     ]

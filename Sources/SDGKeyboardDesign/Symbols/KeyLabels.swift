@@ -21,6 +21,8 @@ extension Symbol {
           return SymbolData(symbol: "⎋", names: ["Escape"])
         case .françaisFrance:
           return SymbolData(symbol: "⎋", names: ["échappement"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⎋", names: ["διαφυγή"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -31,6 +33,8 @@ extension Symbol {
           return SymbolData(symbol: "⌫", names: ["Rücktaste"])
         case .françaisFrance:
           return SymbolData(symbol: "⌫", names: ["retour arrière"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⌫", names: ["πίσω χώρου"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -41,6 +45,8 @@ extension Symbol {
           return SymbolData(symbol: "⇤", names: ["Tabulator links"])
         case .françaisFrance:
           return SymbolData(symbol: "⇤", names: ["tabulation gauche"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⇤", names: ["στυλοθέτηση αριστερά"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -51,6 +57,8 @@ extension Symbol {
           return SymbolData(symbol: "⇤", names: ["Tabulator rechts"])
         case .françaisFrance:
           return SymbolData(symbol: "⇤", names: ["tabulation droite"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⇤", names: ["στυλοθέτηση δεξιά"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -61,6 +69,8 @@ extension Symbol {
           return SymbolData(symbol: "⇪", names: ["Feststelltaste"])
         case .françaisFrance:
           return SymbolData(symbol: "⇪", names: ["verrouillage des majuscules"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⇪", names: ["κλείδωμα κεφαλαίων"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -71,6 +81,8 @@ extension Symbol {
           return SymbolData(symbol: "⏎", names: ["Rückführtaste"])
         case .françaisFrance:
           return SymbolData(symbol: "⏎", names: ["retour"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⏎", names: ["επιστροφή"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -81,6 +93,8 @@ extension Symbol {
           return SymbolData(symbol: "⇧", names: ["Umschalttaste"])
         case .françaisFrance:
           return SymbolData(symbol: "⇧", names: ["majuscule"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⇧", names: ["μετάθεση"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -91,6 +105,8 @@ extension Symbol {
           return SymbolData(symbol: "⌃", names: ["Steuerungstaste"])
         case .françaisFrance:
           return SymbolData(symbol: "⌃", names: ["contrôle"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⌃", names: ["έλεγχος"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -101,6 +117,8 @@ extension Symbol {
           return SymbolData(symbol: "⌥", names: ["Wahltaste"])
         case .françaisFrance:
           return SymbolData(symbol: "⌥", names: ["option"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⌥", names: ["εναλλαγή"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -111,6 +129,8 @@ extension Symbol {
           return SymbolData(symbol: "⌘", names: ["Befehlstaste"])
         case .françaisFrance:
           return SymbolData(symbol: "⌘", names: ["commande"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⌘", names: ["εντολή"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -121,6 +141,8 @@ extension Symbol {
           return SymbolData(symbol: "⌦", names: ["Entfernen"])
         case .françaisFrance:
           return SymbolData(symbol: "⌦", names: ["suppression"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⌫", names: ["διαγραφή"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -131,6 +153,8 @@ extension Symbol {
           return SymbolData(symbol: "⇞", names: ["Bild auf"])
         case .françaisFrance:
           return SymbolData(symbol: "⇞", names: ["page précédente"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⇞", names: ["παραπάνω οθόνη"])
         }
       }),
       LocalizedSymbol({ localization in
@@ -141,13 +165,15 @@ extension Symbol {
           return SymbolData(symbol: "⇟", names: ["Bild ab"])
         case .françaisFrance:
           return SymbolData(symbol: "⇟", names: ["page suivante"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⇟", names: ["παρακάτω οθόνη"])
         }
       }),
       LocalizedSymbol({ localization in
         switch localization {
         case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
           return SymbolData(symbol: "⌧", names: ["clear"])
-        case .deutschDeutschland, .françaisFrance:
+        case .deutschDeutschland, .françaisFrance, .ελληνικάΕλλάδα:
           return nil
         }
       }),
@@ -159,13 +185,15 @@ extension Symbol {
           return SymbolData(symbol: "⌤", names: ["Eingabe"])
         case .françaisFrance:
           return SymbolData(symbol: "⌤", names: ["entrée"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "⌤", names: ["εισαγωγή"])
         }
       }),
       LocalizedSymbol({ localization in
         switch localization {
         case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
           return SymbolData(symbol: "⏏", names: ["eject"])
-        case .deutschDeutschland, .françaisFrance:
+        case .deutschDeutschland, .françaisFrance, .ελληνικάΕλλάδα:
           return nil
         }
       }),

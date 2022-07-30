@@ -21,6 +21,8 @@ extension Symbol {
           return SymbolData(symbol: "→", names: ["reagiert zu", "reagieren zu"])
         case .françaisFrance:
           return SymbolData(symbol: "→", names: ["donne", "donnent"])
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "→", names: ["παράγεται", "παράγονται"])
         }
       })
     ]

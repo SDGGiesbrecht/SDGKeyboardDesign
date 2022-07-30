@@ -17,7 +17,7 @@ extension Symbol {
         switch localization {
         case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
           return SymbolData(symbol: "*", names: ["asterisk"])
-        case .deutschDeutschland, .françaisFrance:
+        case .deutschDeutschland, .françaisFrance, .ελληνικάΕλλάδα:
           return nil
         }
       }),
@@ -25,7 +25,7 @@ extension Symbol {
         switch localization {
         case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
           return SymbolData(symbol: "†", names: ["dagger"])
-        case .deutschDeutschland, .françaisFrance:
+        case .deutschDeutschland, .françaisFrance, .ελληνικάΕλλάδα:
           return nil
         }
       }),
@@ -33,7 +33,7 @@ extension Symbol {
         switch localization {
         case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
           return SymbolData(symbol: "‡", names: ["double dagger"])
-        case .deutschDeutschland, .françaisFrance:
+        case .deutschDeutschland, .françaisFrance, .ελληνικάΕλλάδα:
           return nil
         }
       }),
@@ -41,7 +41,7 @@ extension Symbol {
         switch localization {
         case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
           return SymbolData(symbol: "§", names: ["section"])
-        case .deutschDeutschland, .françaisFrance:
+        case .deutschDeutschland, .françaisFrance, .ελληνικάΕλλάδα:
           return nil
         }
       }),
@@ -49,7 +49,7 @@ extension Symbol {
         switch localization {
         case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
           return SymbolData(symbol: "‖", names: ["double bar"])
-        case .deutschDeutschland, .françaisFrance:
+        case .deutschDeutschland, .françaisFrance, .ελληνικάΕλλάδα:
           return nil
         }
       }),
@@ -57,7 +57,7 @@ extension Symbol {
         switch localization {
         case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
           return SymbolData(symbol: "¶", names: ["paragraph"])
-        case .deutschDeutschland, .françaisFrance:
+        case .deutschDeutschland, .françaisFrance, .ελληνικάΕλλάδα:
           return nil
         }
       }),
