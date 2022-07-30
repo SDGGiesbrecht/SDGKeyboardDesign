@@ -108,11 +108,11 @@ extension Symbol {
       LocalizedSymbol({ localization in
         switch localization {
         case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
-          return SymbolData(symbol: "∶", names: ["to"])
+          return SymbolData(symbol: "∶", names: ["ratio"])  // → to (range, –)
         case .deutschDeutschland:
           return SymbolData(symbol: "∶", names: ["zu"])
         case .françaisFrance:
-          return SymbolData(symbol: "∶", names: ["à"])
+          return SymbolData(symbol: "∶", names: ["rapport"])  // → à (intervalle, –)
         case .ελληνικάΕλλάδα:
           return SymbolData(symbol: "∶", names: ["προς"])
         }

@@ -52,6 +52,18 @@ extension Symbol {
       LocalizedSymbol({ localization in
         switch localization {
         case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
+          return SymbolData(symbol: "–", names: ["range"])  // → to (ratio, ∶)
+        case .deutschDeutschland:
+          return SymbolData(symbol: "–", names: ["bis"])
+        case .françaisFrance:
+          return SymbolData(symbol: "–", names: ["intervalle"])  // → à (rapport, ∶)
+        case .ελληνικάΕλλάδα:
+          return SymbolData(symbol: "–", names: ["ως", "έως"])
+        }
+      }),
+      LocalizedSymbol({ localization in
+        switch localization {
+        case .englishUnitedKingdom, .englishUnitedStates, .englishCanada:
           return SymbolData(symbol: "@", names: ["at"])
         case .deutschDeutschland:
           return nil

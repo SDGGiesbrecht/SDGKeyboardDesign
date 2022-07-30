@@ -34,7 +34,7 @@ extension Symbol {
         case .françaisFrance:
           return SymbolData(symbol: "∧", names: ["conjonction"])
         case .ελληνικάΕλλάδα:
-          return SymbolData(symbol: "∧", names: ["λογική σύζευξη"])
+          return SymbolData(symbol: "∧", names: ["λογική σύζευξη"])  // → φωνητική (‿)
         }
       }),
       LocalizedSymbol({ localization in

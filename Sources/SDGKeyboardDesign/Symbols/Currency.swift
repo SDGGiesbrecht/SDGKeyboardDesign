@@ -58,7 +58,7 @@ extension Symbol {
         case .françaisFrance:
           return SymbolData(symbol: "c", names: ["centime", "centimes"])
         case .ελληνικάΕλλάδα:
-          return SymbolData(symbol: "c", names: ["λεπτό του ευρώ", "λεπτά του ευρώ"])
+          return SymbolData(symbol: "c", names: ["λεπτό του ευρώ", "λεπτά του ευρώ"])  // → της ώρας (′)
         }
       }),
       LocalizedSymbol({ localization in
