@@ -1036,7 +1036,10 @@ extension Symbol {
         case .françaisFrance:
           return SymbolData(symbol: "ɪ", names: ["voyelle pré‐fermée antérieure non arrondie"])
         case .ελληνικάΕλλάδα:
-          return SymbolData(symbol: "ɪ", names: ["χαμηλωμένο‐κλειστό πρόσθιο αστρογγυλεμένο φωνήεν"])
+          return SymbolData(
+            symbol: "ɪ",
+            names: ["χαμηλωμένο‐κλειστό πρόσθιο αστρογγυλεμένο φωνήεν"]
+          )
         }
       }),
       LocalizedSymbol({ localization in

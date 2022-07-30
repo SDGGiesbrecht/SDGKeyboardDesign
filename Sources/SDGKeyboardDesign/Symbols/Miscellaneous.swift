@@ -70,7 +70,7 @@ extension Symbol {
         case .françaisFrance:
           return nil
         case .ελληνικάΕλλάδα:
-          return SymbolData(symbol: "ʹ", names: ["αριθμός"])
+          return SymbolData(symbol: "ʹ", names: ["αριθμός"])
         }
       }),
       LocalizedSymbol({ localization in
