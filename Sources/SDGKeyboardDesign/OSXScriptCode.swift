@@ -10,7 +10,7 @@
  */
 
 /// A code for a script to use for applications that do not support Unicode.
-public enum OSXScriptCode: String {
+public enum OSXScriptCode: String, Sendable {
 
   /// Western Latin alphabets.
   case latinWestern = "0"
