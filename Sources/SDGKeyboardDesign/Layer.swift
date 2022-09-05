@@ -61,14 +61,4 @@ public enum Layer: Comparable, OrderedEnumeration, Sendable {
       return .command
     }
   }
-
-  // #workaround(SDGCornerstone 9.0.0, Redundant, but for _ComparableUnlessBrokenByPlatform.)
-  /// See `Comparable`.
-  ///
-  /// - Parameters:
-  ///   - lhs: See `Comparable`.
-  ///   - rhs: See `Comparable`.
-  public static func < (lhs: Self, rhs: Self) -> Bool {
-    return indexMapping[lhs]! < indexMapping[rhs]!
-  }
 }
