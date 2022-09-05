@@ -40,7 +40,9 @@ public struct KeyboardLayoutBundle<L> where L: InputLocalization {
     var bundle = bundleIdentifier
     let requiredSubstring: StrictString = ".keyboardlayout."
     if ¬bundle.contains(requiredSubstring) {
-      let range = bundle.lastMatch(for: ".")?.range ?? bundle.endIndex..<bundle.endIndex
+      let range =
+        bundle.lastMatch(for: ".".scalars.literal())?.range
+        ?? bundle.endIndex..<bundle.endIndex
       bundle.replaceSubrange(range, with: requiredSubstring)
     }
     self.bundleIdentifier = bundle
