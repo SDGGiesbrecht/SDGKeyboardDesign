@@ -394,7 +394,7 @@ public struct KeyboardLayout<L> where L: InputLocalization {
         let result = mapping[state]!
         var rule = keyLayoutWhen()
         rule.attributes["state"] = XML.AttributeValue(text: mangle(action: state))
-        if result.hasPrefix("¤".unicodeScalars) {
+        if result.hasPrefix("¤".unicodeScalars.literal()) {
           rule.attributes["next"] = XML.AttributeValue(text: mangle(action: result))
           // Pending Symbol state
         } else {
@@ -505,23 +505,23 @@ public struct KeyboardLayout<L> where L: InputLocalization {
     let xml = keyLayoutXML()
     var string = xml.source()
 
-    string.replaceMatches(for: "\u{1}".scalars, with: "&#x0001;".scalars)
-    string.replaceMatches(for: "\u{3}".scalars, with: "&#x0003;".scalars)
-    string.replaceMatches(for: "\u{4}".scalars, with: "&#x0004;".scalars)
-    string.replaceMatches(for: "\u{5}".scalars, with: "&#x0005;".scalars)
-    string.replaceMatches(for: "\u{8}".scalars, with: "&#x0008;".scalars)
-    string.replaceMatches(for: "\u{9}".scalars, with: "&#x0009;".scalars)
-    string.replaceMatches(for: "\u{B}".scalars, with: "&#x000B;".scalars)
-    string.replaceMatches(for: "\u{C}".scalars, with: "&#x000C;".scalars)
-    string.replaceMatches(for: "\u{D}".scalars, with: "&#x000D;".scalars)
-    string.replaceMatches(for: "\u{10}".scalars, with: "&#x0010;".scalars)
-    string.replaceMatches(for: "\u{1B}".scalars, with: "&#x001B;".scalars)
-    string.replaceMatches(for: "\u{1C}".scalars, with: "&#x001C;".scalars)
-    string.replaceMatches(for: "\u{1D}".scalars, with: "&#x001D;".scalars)
-    string.replaceMatches(for: "\u{1E}".scalars, with: "&#x001E;".scalars)
-    string.replaceMatches(for: "\u{1F}".scalars, with: "&#x001F;".scalars)
-    string.replaceMatches(for: "\u{27}".scalars, with: "&#x0027;".scalars)
-    string.replaceMatches(for: "\u{7F}".scalars, with: "&#x007F;".scalars)
+    string.replaceMatches(for: "\u{1}".scalars.literal(), with: "&#x0001;".scalars)
+    string.replaceMatches(for: "\u{3}".scalars.literal(), with: "&#x0003;".scalars)
+    string.replaceMatches(for: "\u{4}".scalars.literal(), with: "&#x0004;".scalars)
+    string.replaceMatches(for: "\u{5}".scalars.literal(), with: "&#x0005;".scalars)
+    string.replaceMatches(for: "\u{8}".scalars.literal(), with: "&#x0008;".scalars)
+    string.replaceMatches(for: "\u{9}".scalars.literal(), with: "&#x0009;".scalars)
+    string.replaceMatches(for: "\u{B}".scalars.literal(), with: "&#x000B;".scalars)
+    string.replaceMatches(for: "\u{C}".scalars.literal(), with: "&#x000C;".scalars)
+    string.replaceMatches(for: "\u{D}".scalars.literal(), with: "&#x000D;".scalars)
+    string.replaceMatches(for: "\u{10}".scalars.literal(), with: "&#x0010;".scalars)
+    string.replaceMatches(for: "\u{1B}".scalars.literal(), with: "&#x001B;".scalars)
+    string.replaceMatches(for: "\u{1C}".scalars.literal(), with: "&#x001C;".scalars)
+    string.replaceMatches(for: "\u{1D}".scalars.literal(), with: "&#x001D;".scalars)
+    string.replaceMatches(for: "\u{1E}".scalars.literal(), with: "&#x001E;".scalars)
+    string.replaceMatches(for: "\u{1F}".scalars.literal(), with: "&#x001F;".scalars)
+    string.replaceMatches(for: "\u{27}".scalars.literal(), with: "&#x0027;".scalars)
+    string.replaceMatches(for: "\u{7F}".scalars.literal(), with: "&#x007F;".scalars)
 
     // The macOS XML parser has an intermittent bug involving non‐BMP scalars.
     string.scalars.mutateMatches(for: ConditionalPattern({ $0.value ≥ 0x10000 })) { match in

@@ -16,7 +16,7 @@ extension Int {
 
   internal func inUninteruptedDigits() -> StrictString {
     return inDigits(thousandsSeparator: " ")
-      .replacingMatches(for: " ".scalars, with: "".scalars)
-      .replacingMatches(for: "−".scalars, with: "\u{2D}".scalars)
+      .replacingMatches(for: " ".scalars.literal(), with: "".scalars)
+      .replacingMatches(for: "−".scalars.literal(), with: "\u{2D}".scalars)
   }
 }
