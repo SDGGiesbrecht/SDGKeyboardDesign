@@ -355,7 +355,7 @@ for target in package.targets {
     // @endExample
 
     // Internal‐only:
-    // #warning(Swift 5.6.1, Web lacks Foundation.NSHomeDirectory().)
-    //.define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi])),
+    // #workaround(Swift 5.7, Web lacks Foundation.NSHomeDirectory().)
+    .define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi])),
   ])
 }
