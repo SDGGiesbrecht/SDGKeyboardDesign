@@ -4,7 +4,7 @@
  This source file is part of the SDGKeyboardDesign open source project.
  https://sdggiesbrecht.github.io/SDGKeyboardDesign
 
- Copyright ©2019–2022 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
+ Copyright ©2019–2023 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
 
  Soli Deo gloria.
  */
@@ -34,33 +34,3 @@ configuration._validateSDGStandards()
 
 configuration.licence.licence = nil
 configuration.licence.manage = false
-
-configuration.documentation.api.ignoredDependencies = [
-
-  // SDGCornerstone
-  "SDGCalendar",
-  "SDGCollections",
-  "SDGControlFlow",
-  "SDGCornerstoneLocalizations",
-  "SDGLocalization",
-  "SDGLogic",
-  "SDGMathematics",
-  "SDGPersistence",
-  "SDGPersistenceTestUtilities",
-  "SDGTesting",
-  "SDGText",
-  "SDGXCTestUtilities",
-
-  // SDGInterface
-  "SDGKeyboard",
-
-  // SDGWeb
-  "SDGHTML",
-  "SDGWebLocalizations",
-
-  // Swift
-  "Dispatch",
-  "Foundation",
-  "Swift",
-  "XCTest",
-]
