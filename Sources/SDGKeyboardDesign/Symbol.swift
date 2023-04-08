@@ -41,6 +41,7 @@ public enum Symbol {
       mathematicalRelations,
       miscellaneous,
       music,
+      numerals,
       phonetics,
       setLogic,
       units,
