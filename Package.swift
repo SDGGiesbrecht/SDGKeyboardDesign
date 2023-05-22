@@ -344,8 +344,8 @@ for target in package.targets {
   var swiftSettings = target.swiftSettings ?? []
   defer { target.swiftSettings = swiftSettings }
   swiftSettings.append(contentsOf: [
-    // #workaround(Swift 5.7, Web lacks Foundation.FileMananger.)
-    // #workaround(Swift 5.7, Web lacks Foundation.PropertyListSerialization.data(fromPropertyList:format:options:).)
+    // #workaround(Swift 5.8, Web lacks Foundation.FileMananger.)
+    // #workaround(Swift 5.8, Web lacks Foundation.PropertyListSerialization.data(fromPropertyList:format:options:).)
     // @example(conditions)
     .define("PLATFORM_LACKS_FOUNDATION_FILE_MANAGER", .when(platforms: [.wasi])),
     .define(
@@ -355,7 +355,7 @@ for target in package.targets {
     // @endExample
 
     // Internal‐only:
-    // #workaround(Swift 5.7, Web lacks Foundation.NSHomeDirectory().)
+    // #workaround(Swift 5.8, Web lacks Foundation.NSHomeDirectory().)
     .define("PLATFORM_LACKS_FOUNDATION_NS_HOME_DIRECTORY", .when(platforms: [.wasi])),
   ])
 }
