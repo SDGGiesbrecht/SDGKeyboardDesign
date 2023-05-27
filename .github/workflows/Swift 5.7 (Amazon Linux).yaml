@@ -1,0 +1,26 @@
+# Swift 5.7 (Amazon Linux).yaml
+#
+# This source file is part of the SDGKeyboardDesign open source project.
+# https://sdggiesbrecht.github.io/SDGKeyboardDesign
+#
+# Copyright ©2021–2023 Jeremy David Giesbrecht and the SDGKeyboardDesign project contributors.
+#
+# Soli Deo gloria.
+
+name: Swift 5.7 (Amazon Linux)
+
+on: [push, pull_request]
+
+jobs:
+  Swift_5_7_Amazon_Linux:
+    name: Swift 5.7 (Amazon Linux)
+    runs-on: ubuntu-20.04
+    container: swift:5.7.3-amazonlinux2
+    steps:
+    - name: Check out
+      uses: actions/checkout@v2
+    - name: Validate
+      shell: bash
+      run: |
+        set -x
+        swift test
