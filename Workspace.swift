@@ -14,7 +14,7 @@ import WorkspaceConfiguration
 let configuration = WorkspaceConfiguration()
 configuration._applySDGDefaults()
 
-configuration.documentation.currentVersion = Version(2, 1, 2)
+configuration.documentation.currentVersion = Version(2, 1, 3)
 
 configuration.documentation.documentationURL = URL(
   string: "https://sdggiesbrecht.github.io/SDGKeyboardDesign"
