@@ -273,7 +273,7 @@ Some platforms lack certain features. The compilation conditions which appear th
 
 ## Importing
 
-SDGKeyboardDesign provides a library for use with the [Swift Package Manager](https://swift.org/package-manager/).
+SDGKeyboardDesign provides a library for use with the Swift Package Manager.
 
 Simply add SDGKeyboardDesign as a dependency in `Package.swift`:
 
@@ -282,7 +282,6 @@ let package = Package(
   name: "MyPackage",
   dependencies: [
     .package(
-      name: "SDGKeyboardDesign",
       url: "https://github.com/SDGGiesbrecht/SDGKeyboardDesign",
       from: Version(2, 1, 3)
     ),
